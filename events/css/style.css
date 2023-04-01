@@ -208,7 +208,57 @@ section{
 }
 
 
+.cards {
+  width: 100vw;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
+
+}
+
+.card {
+  width: 40vw;
+  height: 70%;
+  background-color: yellowgreen;
+  text-align: center;
+
+  animation: textclip 5s linear infinite;
+  background-image: linear-gradient(to right,
+      #ffffff 0%,
+      #7e7e7e 29%,
+      #a3a3a3 67%,
+      #ffffff 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  border-radius: 3px;
+
+}
+
+.card img {
+  height: 70%;
+}
+
+.card p {
+  text-align: justify;
+  padding: 10px;
+}
+
+.card a {
+  background: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  position: relative;
+  top: 13px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+
+
+}
 
 
 @media screen and (max-width: 767px) {
@@ -247,54 +297,10 @@ margin-bottom: 100px
   .college{
     font-size: 20px;
   }
-}
-
-.cards{
-  width: 100vw;
-  height: 100%;
-  background: black;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  
-}
-.card{
-  width: 40vw;
-  height: 70%;
-  background-color: yellowgreen;
-  text-align: center;
-
-  animation: textclip 5s linear infinite;
-  background-image: linear-gradient(
-    to right,
-    #ffffff 0%,
-    #7e7e7e 29%,
-    #a3a3a3 67%,
-    #ffffff 100%
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  border-radius: 3px;
-
-}
-.card img{
-  height: 70%;
-}
-.card p{
-  text-align: justify;
-  padding:10px;
-}
-.card a{
-  background: #333;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 25px;
-  position: relative;
-  top: 13px;
-  font-size: 17px;
-  font-weight: bold;
-  color: white;
-
-  
+  .cards{
+    flex-direction: column;
+  }
+  .card{
+    width:100vw;
+  }
 }
