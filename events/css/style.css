@@ -267,10 +267,11 @@ section{
    height: 50px;
   }
   .header img{
-    width: 45px;
+    width: 35px;
+    padding: 5px;
   }
   .name{
-  font-size: 20px;
+  font-size: 10px;
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
   }
@@ -295,12 +296,17 @@ margin-bottom: 100px
   width: 100%;
   }
   .college{
-    font-size: 20px;
+    font-size: 17px;
+    line-height: 18px;
+  }
+  .embed{
+   
   }
   .cards{
     flex-direction: column;
   }
   .card{
     width:100vw;
+    margin-top: 10px;
   }
 }
