@@ -275,8 +275,8 @@ body.disabled {
  
 .icon {
   display: block;
+ color: grey;
 }
-
  
 .icon.hide {
   display: none;
@@ -294,7 +294,7 @@ body.disabled {
   display: block;
   padding: 40px 0;
   text-align: center;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease;
   z-index: 999;
 }
@@ -380,4 +380,5 @@ footer{
   .copyright p{
     font-family: 'Courier New', Courier, monospace;
   }
+  
 }
