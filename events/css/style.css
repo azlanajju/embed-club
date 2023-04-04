@@ -239,6 +239,8 @@ section{
 
 .card img {
   height: 70%;
+  width: 250px;
+  height: 300px;
 }
 
 .card p {

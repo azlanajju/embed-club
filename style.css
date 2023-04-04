@@ -18,6 +18,31 @@
 body{
   overflow-x: hidden;     
 }
+video{
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  filter: blur(3px);
+  
+}
+.video-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.video-background video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 .home{
 background-image: url("./images/cpubg.jpg");
 filter: blur(5px);
@@ -29,13 +54,12 @@ background-attachment: fixed;
 transition:3s;
 }
 .home1{
-  background-image: url("./images/cpubg.jpg");
+  background-image: url("./images/b1.jpg");
   filter: blur(5px);
   height: 100vh; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-background-attachment: fixed;
 
   
   }
@@ -59,6 +83,7 @@ background-attachment: fixed;
 .home-content img{
   width: 100px;
   border-radius: 20px;
+  filter: invert();
 }
 .home-content p{
   font-weight: normal;
