@@ -17,6 +17,8 @@
  
 body{
   overflow-x: hidden;     
+
+background:#000;
 }
 video{
   position: fixed;
@@ -32,7 +34,6 @@ video{
   position: relative;
   width: 100vw;
   height: 100vh;
-background:#000;
 }
 
 .video-background video {
