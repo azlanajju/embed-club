@@ -17,10 +17,9 @@
  
 body{
   overflow-x: hidden;     
-
-background:#000;
 }
 video{
+background: #000;
   position: fixed;
   top: 0;
   left: 0;
