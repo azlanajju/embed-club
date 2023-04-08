@@ -544,6 +544,7 @@ footer{
   }
  .popcontent{
    width: 90vw;
+   align-items: center;
  } 
  .eventname{
    font-size: 50px;
@@ -553,5 +554,10 @@ footer{
  }
  .ctent{
   font-size: 17px;
+ }
+ #ebtn{
+   max-width: 200px;
+   
+   
  }
 }
