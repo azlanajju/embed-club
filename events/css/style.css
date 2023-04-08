@@ -189,7 +189,9 @@ footer {
   background-color: #f8f9fa;
   padding: 20px 0;
   text-align: center;
-  width: 100vw
+  width: 100vw;
+  position: relative;
+  bottom: 0;
 }
 
 footer p {
@@ -220,6 +222,7 @@ section{
 }
 #section2{
   height: 120%;
+  position: relative;
 
 }
 
