@@ -255,7 +255,7 @@ font-family: 'Courier New', Courier, monospace;
   z-index: 1000;
   width: 0;
   overflow: hidden;
-  transition: 2s;
+  transition: 1s;
 }
 .popcontent{
   margin-top: -80px;
@@ -301,29 +301,6 @@ color: white;
 font-family: 'glitch';
 
 }
-@keyframes border{
-0%{
-  border: 5px solid blue;
-  box-shadow: -3px -3px 10px 10px blue inset;
-}
-33.3%{
-  border: 5px solid red;
-  box-shadow: -3px -3px 10px 10px red inset;
-
-}
-66.6%{
-  border: 5px solid green;
-  box-shadow: -3px -3px 10px 10px green inset;
-
-}
-100%{
-  border: 5px solid blue;    
-  box-shadow: 0px 0px 10px 10px blue inset;
-}
-
-}
-
-
 
 
 
@@ -537,5 +514,10 @@ footer{
     font-family: 'Courier New', Courier, monospace;
     color: black;
   }
-  
+ .popcontent{
+   width: 90vw;
+ } 
+ .eventname{
+   font-size: 50px;
+ }
 }
