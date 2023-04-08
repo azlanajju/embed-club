@@ -268,7 +268,7 @@ border-radius: 25px;
 /* box-shadow: -3px -3px 10px 10px white inset; */
 border: 5px solid white;
 text-align: center;
-transition: 1s;
+transition: 1s ease-in-out;
 display: flex;
 flex-direction: column;
 }
