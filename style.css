@@ -269,6 +269,8 @@ border-radius: 25px;
 border: 5px solid white;
 text-align: center;
 transition: 1s;
+display: flex;
+flex-direction: column;
 }
 .minimize{
   max-height: 100px;
@@ -285,6 +287,7 @@ transition: 1s;
   margin-top: 5px;
 
 }
+
 .popcontent p{
   font-size: 30px;
   color: white;
@@ -299,6 +302,12 @@ transition: 1s;
   border-radius: 20px;
   font-size: 20px;
   color: white;
+  margin-top: 40px;
+
+}
+.ctent{
+  color: white;
+  font-size: 30px;
 }
 .exit{
 position:relative;

@@ -7,6 +7,8 @@ const body = document.querySelector("body");
     const eventname = document.getElementById('eventname');
     const ebtn = document.getElementById('ebtn');
     const exitbtn = document.getElementById('exitbtn');
+    const ctent = document.getElementById('ctent');
+
 
 
 
@@ -43,7 +45,8 @@ setTimeout(pop, 2000);
 
       popupcontent.classList.add('minicontnent');
       exitbtn.style.display="none";
+      ctent.style.display="none";
 
     }
 
-    
+  
