@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embers'22</title>
-    <link rel="stylesheet" href="../css/event.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embers'22</title>
+  <link rel="stylesheet" href="../css/event.css">
 </head>
+
 <body>
-    
-<section id="section2">    <div class="formcontainer">
-	
-    <form class="form">
-  <h1>Embers '22 Registeration Form</h1>
-      <span>
-      <label for="team">Team Name:</label>
-      <input type="text" class="inputfield"  id="team" name="team" placeholder="Team Name*" required></span>
-      <span>
-        <label for="team">Team Leader Name:</label>
-      <input type="text" class="inputfield" id="username" name="username" placeholder="Team Leader Name*" required></span>
-      <span>
-        <label for="team"> Email:</label>
-      <input type="email" class="inputfield" id="email" name="email" placeholder="Email*" required></span>
-      <span>
-        <label for="phone">Phone Number:</label>
-      <input type="text" class="inputfield" id="phone" name="phone" placeholder="Phone Number*" required></span>
+
+  <section id="section2">
+    <div class="formcontainer">
+
+      <form class="form" method="POST" name="google-sheet">
+        <h1>Embers '22 Registeration Form</h1>
+        <span>
+          <label for="team">Team Name:</label>
+          <input type="text" class="inputfield" id="team" name="teamName" placeholder="Team Name*" required></span>
+        <span>
+          <label for="team">Team Leader Name:</label>
+          <input type="text" class="inputfield" id="username" name="leaderName" placeholder="Team Leader Name*"
+            required></span>
+        <span>
+          <label for="team"> Email:</label>
+          <input type="email" class="inputfield" id="email" name="Email" placeholder="Email*" required></span>
+        <span>
+          <label for="phone">Phone Number:</label>
+          <input type="text" class="inputfield" id="phone" name="Phone" placeholder="Phone Number*" required></span>
         <span>
           <label for="phone">events</label>
-          <select class="inputfield" id="cars" name="cars">
-            <option value="volvo" >--Select--</option>
-            <option value="volvo">embedathon</option>
-            <option value="saab">Project Exhibition</option>
-          </select>       
-        <span>
-          <label for="tid">Transaction ID:</label>
-          <input type="text" class="inputfield" id="tid" name="tid" placeholder="Transaction ID*" required></span>
-            <span>
-              <label for="ss">Screenshot:</label>
-              <input type="file" class="inputfield" id="ss" name="ss" placeholder="Phone Number*" required></span>
-  
-      <input type="submit" value="Submit">
-    </form>
-  </div>
+          <select class="inputfield" id="cars" name="Events">
+            <option value="volvo">--Select--</option>
+            <option value="embedathon">embedathon</option>
+            <option value="Project Exhibition">Project Exhibition</option>
+          </select>
+          <span>
+            <label for="tid">Transaction ID:</label>
+            <input type="text" class="inputfield" id="tid" name="transactionId" placeholder="Transaction ID*"
+              required></span>
+
+
+          <input type="submit" value="Submit" name="submit">
+      </form>
+    </div>
   </section>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzx2ItdHGkBltJI3W0hUlxRwneKTBJsKa0hbRHNqjbVO1wrFYQD1WsxmLJ6wpnnAdDpYg/exec'
+    const form = document.forms['google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
+
 </html>
