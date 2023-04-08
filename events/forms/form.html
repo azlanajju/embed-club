@@ -40,6 +40,9 @@
             <label for="tid">Transaction ID:</label>
             <input type="text" class="inputfield" id="tid" name="transactionId" placeholder="Transaction ID*"
               required></span>
+              <label for="tid">Time:</label>
+              <input type="text" class="inputfield" id="datetime" name="ss"
+                disabled></span>
 
 
           <input type="submit" value="Submit" name="submit">
@@ -53,9 +56,27 @@
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .then(response => alert("Thanks for Registering..! We Will Contact You Soon..."))
         .catch(error => console.error('Error!', error.message))
     })
+
+
+
+
+
+
+  const datetimeField = form.querySelector('#datetime');
+
+  // Get current date and time
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  datetimeField.value = `${hours}:${minutes} | ${day}-${month}-${year} `;
+
   </script>
 </body>
 
