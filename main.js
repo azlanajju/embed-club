@@ -32,7 +32,7 @@ function pop(){
   popup.style.width="100%";
 
 }    
-setTimeout(pop, 2000);
+setTimeout(pop, 1000);
 
      
     function exit(){
