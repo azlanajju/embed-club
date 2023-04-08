@@ -2,6 +2,9 @@ const body = document.querySelector("body");
     const navbar = document.querySelector(".navbar");
     const menuBtn = document.querySelector(".menu-btn");
     const cancelBtn = document.querySelector(".cancel-btn");
+    const popup = document.getElementById('popup');
+    const popupcontent = document.getElementById('popupcontent');
+
 
     
     menuBtn.onclick = ()=>{
@@ -17,6 +20,20 @@ const body = document.querySelector("body");
     window.onscroll = ()=>{
       this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
+
+function pop(){
+  popup.style.width="100%";
+
+}    
+setTimeout(pop, 2000);
+
      
+    function exit(){
+      popup.style.width="80px";
+      popup.style.height="50px";
+      popup.style.right="10px";
+      popup.style.borderRadius="5px"
+      popupcontent.style.width="45px"
+    }
 
     

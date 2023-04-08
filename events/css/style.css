@@ -214,38 +214,36 @@ section{
   background: black;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  height: 100%;
 
+
+}
+#section2{
+  height: 120%;
 
 }
 
 .card {
-  width: 40vw;
-  height: 70%;
-  background-color: yellowgreen;
+  width: 60vw;
   text-align: center;
 
   animation: textclip 5s linear infinite;
-  background-image: linear-gradient(to right,
-      #ffffff 0%,
-      #7e7e7e 29%,
-      #a3a3a3 67%,
-      #ffffff 100%);
+
   background-size: 200% auto;
   background-clip: text;
   border-radius: 3px;
+  height: 100%;
 
 }
 
 .card img {
-  height: 70%;
-  width: 250px;
-  height: 300px;
+  width:70%;
 }
 
 .card p {
   text-align: justify;
   padding: 10px;
+  color: white;
 }
 
 .card a {
