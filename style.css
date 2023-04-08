@@ -257,17 +257,33 @@ font-family: 'Courier New', Courier, monospace;
   width: 0;
   overflow: hidden;
   transition: 1s;
+  overflow-y: scroll;
 }
 .popcontent{
   margin-top: -80px;
 width: 50vw; 
-background: rgba(24, 24, 24, 0.644);
+background: rgba(24, 24, 24, 0.712);
 height: 50vh;
 border-radius: 25px;
-box-shadow: -3px -3px 10px 10px white inset;
+/* box-shadow: -3px -3px 10px 10px white inset; */
 border: 5px solid white;
 text-align: center;
 transition: 1s;
+}
+.minimize{
+  max-height: 100px;
+  max-width: 80px;
+  right: 10px;
+  border-radius: 5px;
+  
+}
+.minicontnent{
+  max-width: 60px;
+  max-height: 90%;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-top: 5px;
+
 }
 .popcontent p{
   font-size: 30px;

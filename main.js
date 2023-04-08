@@ -4,6 +4,11 @@ const body = document.querySelector("body");
     const cancelBtn = document.querySelector(".cancel-btn");
     const popup = document.getElementById('popup');
     const popupcontent = document.getElementById('popupcontent');
+    const eventname = document.getElementById('eventname');
+    const ebtn = document.getElementById('ebtn');
+    const exitbtn = document.getElementById('exitbtn');
+
+
 
 
     
@@ -29,11 +34,16 @@ setTimeout(pop, 2000);
 
      
     function exit(){
-      popup.style.width="80px";
-      popup.style.height="50px";
+      popup.classList.add('minimize');
       popup.style.right="10px";
-      popup.style.borderRadius="5px"
-      popupcontent.style.width="45px"
+
+      eventname.style.fontSize="10px"
+      ebtn.style.fontSize="6px";
+      ebtn.style.padding="1px 3px";
+
+      popupcontent.classList.add('minicontnent');
+      exitbtn.style.display="none";
+
     }
 
     
