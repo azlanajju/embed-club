@@ -79,8 +79,21 @@
   input[type=submit]:hover {
     background-color: #111;
   }
+  .qr {
+    width: 100%;
+    text-align: center;
+  }
+  .qr img{
+    width: 30%;
   
-
+  }
+  .submitspan{
+    width: 100%;
+  }
+.submit{
+  margin-left: auto;
+  margin-right: auto;
+}
   /*
 ==============================================================================
                                  responsiveness
@@ -90,5 +103,9 @@
 
   .formcontainer {
     width: 100%;
+  }
+  .qr img{
+    width: 40%;
+  
   }
 }
