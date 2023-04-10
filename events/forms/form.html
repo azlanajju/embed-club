@@ -7,9 +7,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embers'22</title>
   <link rel="stylesheet" href="../css/event.css">
+  <style>
+    .loading {
+ border: 5px solid white;
+      display: none;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  animation: loading 2s linear infinite;
+      transition: 2s;
+
+}
+@keyframes loading{
+  0%{
+    border-top: 5px solid black;
+
+  }
+  33.3%{
+    border-right: 5px solid black;
+  }
+  66.6%{
+    border-bottom: 5px solid black;
+
+  }
+
+  99.9%{
+    border-left: 5px solid black;
+
+  }
+}
+
+  </style>
 </head>
 
 <body>
+  <div class="loading">
+  </div>
+  
 
   <section id="section2">
     <div class="formcontainer">
@@ -55,13 +96,28 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzx2ItdHGkBltJI3W0hUlxRwneKTBJsKa0hbRHNqjbVO1wrFYQD1WsxmLJ6wpnnAdDpYg/exec'
     const form = document.forms['google-sheet']
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => alert("Thanks for Registering..! We Will Contact You Soon..."))
-        .catch(error => console.error('Error!', error.message))
-    })
+// Add a reference to the loading element
+const loading = document.querySelector('.loading');
 
+// Add an event listener to the form submit button
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  // Show the loading animation
+  loading.style.display = 'block';
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      // Hide the loading animation
+      loading.style.display = 'none';
+      alert("Thanks for Registering..! We Will Contact You Soon...");
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      // Hide the loading animation
+      loading.style.display = 'none';
+    });
+});
 
 
 
