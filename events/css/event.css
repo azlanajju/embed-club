@@ -98,27 +98,6 @@
 .submit{
 margin-top: 30px  ;
 }
-  /*
-==============================================================================
-                                 responsiveness
-==============================================================================
- */
-@media screen and (max-width: 767px) {
-
-  .formcontainer {
-    width: 100%;
-  }
-  .qr img{
-    width: 40%;
-  
-  }
-  form h1{
-    font-size: 20px;
-  }
-}
-
-
-
 .loading {
   border: 5px solid white;
        display: none;
@@ -155,3 +134,24 @@ margin-top: 30px  ;
    }
  }
  
+  /*
+==============================================================================
+                                 responsiveness
+==============================================================================
+ */
+@media screen and (max-width: 767px) {
+
+  .formcontainer {
+    max-width: 100vw;
+  }
+  .qr img{
+    width: 40%;
+  
+  }
+  form h1{
+    font-size: 20px;
+  }
+}
+
+
+
