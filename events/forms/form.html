@@ -7,45 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embers'22</title>
   <link rel="stylesheet" href="../css/event.css">
-  <style>
 
-    .loading {
- border: 5px solid white;
-      display: none;
-  border-radius: 50%;
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  z-index: 10000;
-  top: 0;
-  bottom: 0;
-  animation: loading 2s linear infinite;
-      transition: 2s;
-
-}
-@keyframes loading{
-  0%{
-    border-top: 5px solid black;
-
-  }
-  33.3%{
-    border-right: 5px solid black;
-  }
-  66.6%{
-    border-bottom: 5px solid black;
-
-  }
-
-  99.9%{
-    border-left: 5px solid black;
-
-  }
-}
-
-  </style>
 </head>
 
 <body>
@@ -53,7 +15,6 @@
   </div>
   
 
-  <section id="section2">
     <div class="formcontainer">
 
       <form class="form" method="POST" name="google-sheet">
@@ -66,19 +27,16 @@
           <input type="text" class="inputfield" id="username" name="leaderName" placeholder="Team Leader Name*"
             required></span>
             <span>
-              <label for="member">Team member 2 Name</label>
-              <input type="text" class="inputfield" id="member" name="member" placeholder="Team Leader Name*"
-                required></span>
+              <span>
+               <label for="member">Team Member Names: (maximum 4 in a team)</label>
+               <textarea style="text-align: left;" class="inputfield" name="mems_name" id=""   cols="30" rows="4">
+member 2: ,
+Member 3: ,
+Member 4: .
 
-                <span>
-                  <label for="team">Team member 3 Name</label>
-                  <input type="text" class="inputfield" id="member" name="member" placeholder="Team Leader Name*"
-                    required></span>
+               </textarea>
 
-                    <span>
-                      <label for="team">Team member 4 Name</label>
-                      <input type="text" class="inputfield" id="member" name="member" placeholder="Team Leader Name*"
-                        required></span>
+              </span>
 
 
         <span>
@@ -95,19 +53,19 @@
             <option value="Project Exhibition">Project Exhibition</option>
           </select>
           <label for="title">Project Title</label>
-          <input type="text" class="inputfield" id="title" name="title" placeholder="Enter your project title" required></span>
+          <input type="text" class="inputfield" id="title" name="P_title" placeholder="Enter your Project Title" required></span>
           <span>
             <label for="idea">What is your Idea of the project</label>
-          <input type="text" class="inputfield" id="idea" name="idea" placeholder="Enter the idea of the Project" required></span>
+          <textarea class="inputfield" name="P_idea" placeholder="Enter the idea of the Project" id="" cols="30" rows="4"></textarea>
+
           <span>
             <label for="challenge">What are the challenges it overcomes</label>
-          <input type="text" class="inputfield" id="challenge" name="challenge" placeholder="Enter the challeges it overcmes" required></span>
+          <textarea class="inputfield" name="p_challenges" placeholder="Enter the challeges it can overcome" id="" cols="30" rows="4"></textarea>
+        
+           <span> <label for="requirments">What are the requirments u need in the college</label>
+          <input  type="text" class="inputfield" id="requirments" name="Requirements" placeholder="requirments like(plug, socket, space)" required></span>
           <span>
-            <label for="idea">What is your Idea of the project</label>
-          <input type="text" class="inputfield" id="idea" name="idea" placeholder="Enter the idea of the Project" required></span>
-
-            <label for="requirments">What are the requirments u need in the college</label>
-          <input type="text" class="inputfield" id="requirments" name="requirments" placeholder="requirments like(plug, socket, space)" required></span>
+            <span>
             <label for="tid">Transaction ID:</label>
             <input type="text" class="inputfield" id="tid" name="transactionId" placeholder="Transaction ID*"
               required></span>
@@ -115,13 +73,12 @@
     <span>        <div class="qr">
       <img  src="../images/azlanqr.jpeg" alt=""></div></span>
           <span>
-              <input type="hidden" class="inputfield" id="datetime" name="ss"  ></span>
+              <input type="hidden" class="inputfield" id="datetime" name="date_time"  ></span>
 
-
+<br>
 <span class="submitspan"><input class="submit" type="submit" value="Submit" name="submit"> </span> 
      </form>
     </div>
-  </section>
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzx2ItdHGkBltJI3W0hUlxRwneKTBJsKa0hbRHNqjbVO1wrFYQD1WsxmLJ6wpnnAdDpYg/exec'
     const form = document.forms['google-sheet']
