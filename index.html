@@ -1,118 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-<head>
- 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Embed Club</title>
-  <link rel="stylesheet" href="style.css">
-  <!--   icons     -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="icon" type="image/x-icon" href="images/embedlogo.ico">
- 
-   
-</head>
- 
-<body>
-  <!-- <div id="home"></div> -->
-  <div class="video-background">
-    <video src="/images/bg.mp4" autoplay muted loop></video>
-  </div>
-  
- <!-- <div id="back"></div> -->
-  <nav class="navbar">
-    <div class="logo" style="font-weight: bold;">
-      EMBED CLUB
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Embed Club</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- tailwind css cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
+    />
+    <!--   icons     -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="images/embedlogo.ico" />
+  </head>
+
+  <body>
+    <!-- <div id="home"></div> -->
+    <!-- <div class="video-background ">
+      <video src="/images/bg.mp4" autoplay muted loop></video>
+    </div> -->
+    <div class="relative w-screen h-screen">
+      <video autoplay muted loop playsinline class="fixed object-cover w-full h-full">
+        <source src="/images/bg.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <!-- <div class="absolute inset-0 flex flex-col justify-center items-center">
+        <h1 class="text-white text-4xl md:text-6xl lg:text-8xl xl:text-9xl">Your Video Title</h1>
+        <p class="text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl">Your Video Subtitle</p>
+      </div> -->
     </div>
-    <div class="content">
-      <!-- <div class="logo">
+    
+
+    <!-- <div id="back"></div> -->
+    <nav class="navbar">
+      <div class="logo" style="font-weight: bold">EMBED CLUB</div>
+      <div class="content">
+        <!-- <div class="logo">
         Title
       </div> -->
-      <ul class="menu-list">
-        <div id="button" class="icon cancel-btn">
-          <i style="color: white;" class="fa fa-close"></i>
+        <ul class="menu-list">
+          <div id="button" class="icon cancel-btn">
+            <i style="color: white" class="fa fa-close"></i>
+          </div>
+
+          <li><a href="#home">Home</a></li>
+          <li><a href="./events/index.html">Events</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Achievements</a></li>
+        </ul>
+
+        <div id="button" class="icon menu-btn">
+          <i class="fa fa-bars"></i>
         </div>
-
-
-        <li><a href="#home">Home</a></li>
-        <li><a href="./events/index.html">Events</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a  href="#">Achievements</a></li>
- 
-    </ul>
-
-
-      <div id="button" class="icon menu-btn">
-        <i class="fa fa-bars"></i>
       </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="flex justify-center">
+        <img src="images/embed_logo.png" class="items-center" alt="" />
+      </div>
+      <h1 style="font-size: 50px">Embed Club</h1>
+      <p>
+        Where Innovation Meets Technology! The premiere organization for
+        technocrats who are passionate about embedded systems and cutting-edge
+        technology. Our club has a successful track record of organizing various
+        workshops, outreach programs, and design challenges that are
+        thoughtfully designed to keep students up-to-date with current
+        technological trends. We have conducted several workshops that have
+        helped students gain knowledge on Microbit, IoT, and other emerging
+        technologies. Our outreach programs are focused on creating awareness
+        for technology. Each semester, we host the Embed Design Challenge where
+        students showcase their innovative ideas through mini-projects. Their
+        participation in the challenge provides them with an opportunity to
+        sharpen their skills and work on real-world problems.
+      </p>
     </div>
-  </nav>
- 
- 
-<div class="home-content">
-  <img src="images/embed_logo.png" alt="">
-  <h1 style="font-size:50px">Embed Club</h1>
-<p>
 
-Where Innovation Meets Technology! The premiere organization for technocrats who are passionate about embedded systems and cutting-edge technology. Our club has a successful track record of organizing various workshops, outreach programs, and design challenges that are thoughtfully designed to keep students up-to-date with current technological trends. We have conducted several workshops that have helped students gain knowledge on Microbit, IoT, and other emerging technologies. Our outreach programs are focused on creating awareness for technology. Each semester, we host the Embed Design Challenge where students showcase their innovative ideas through mini-projects. Their participation in the challenge provides them with an opportunity to sharpen their skills and work on real-world problems.
-</p>
-</div>
+    <footer>
+      <div class="foot_row">
+        <img src="./images/embed_logo.png" alt="" />
+        <h1>EMBED CLUB</h1>
+      </div>
+      <img src="" alt="" />
+      <div class="source">
+        <ul>
+          <li><i class="fa fa-instagram"></i></li>
+          <li><i class="fa fa-whatsapp"></i></li>
+          <li><i class="fa fa-linkedin-square"></i></li>
+        </ul>
+      </div>
 
- 
-
-
-
- <footer>
-  <div class="foot_row">
-    <img src="./images/embed_logo.png" alt="">
-    <h1>EMBED CLUB</h1>
-
-  </div>
-  <img src="" alt="">
-  <div class="source">
-    <ul>
-      <li><i class="fa fa-instagram"></i></li>
-      <li><i class="fa fa-whatsapp"></i></li>
-      <li><i class="fa fa-linkedin-square"></i></li>
-    </ul>
-  </div>
-  
-  <div class="footer_content">
-    <p><pre>
+      <div class="footer_content">
+        <pre>
     <strong>  P A College of Engineering</strong>
       Nadupadav, Montepadav Post
       Kairangala
       Mangalore - 574153
-      Karnataka, INDIA.</pre></p>
-
-  </div>
-
- </footer>
- <div  class="copyright">
-  <h1>© 2023 EMBED CLUB.</h1>
-  <p>All Rights Reserved.</p>
-</div>
- 
- <div  id="popup" class="popup">
-  <div id="popupcontent" class="popcontent">
-    <div onclick="exit()" id="exitbtn" class="exit">X</div>
-    <!-- <p id="">New</p> -->
-    <div id="eventname" class="eventname">
-      Embers '23
+      Karnataka, INDIA.</pre>
+      </div>
+    </footer>
+    <div class="copyright">
+      <h1>© 2023 EMBED CLUB.</h1>
+      <p>All Rights Reserved.</p>
     </div>
-    <div id="ctent" class="ctent"> Where Ideas Ignite,  Brilliance Shines!
-    </div>
-    <a id="ebtn" href="events/index.html">Explore now</a>
-  </div>
- </div>
- 
- 
 
-  <script src="main.js">
-  </script>
-</body>
- 
+    <!-- ======= POP UP BOX OLD ================ -->
+    <div id="popup" class="popup">
+      <div id="popupcontent" class="popcontent p-3">
+        <div onclick="exit()" id="exitbtn" class="exit">X</div>
+        <!-- <p id="">New</p> -->
+        <span id="eventname" class="text-white text-center text-5xl sm:text-8xl ">Embers '23</span>
+        <div id="ctent" class="ctent">
+          Where Ideas Ignite, Brilliance Shines!
+        </div>
+        <!-- <a id="ebtn" href="events/index.html">Explore now</a> -->
+        <a
+          href="events/index.html"
+          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 m-3"
+          ><button type="button">Explore Now</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- ========== PPOP UP BOX OLD END ======================= -->
+
+    <!-- =========== POP UP BOX NEW ================== -->
+
+    <script src="main.js"></script>
+  </body>
 </html>
- 

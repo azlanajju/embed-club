@@ -36,7 +36,7 @@ video{
 .video-background {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .video-background video {
@@ -263,7 +263,7 @@ font-family: 'Courier New', Courier, monospace;
   margin-top: -80px;
 width: 50vw; 
 background: rgba(24, 24, 24, 0.712);
-height: 50vh;
+/* height: 50vh; */
 border-radius: 25px;
 /* box-shadow: -3px -3px 10px 10px white inset; */
 border: 5px solid white;
@@ -295,10 +295,10 @@ flex-direction: column;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
 }
-.popcontent a{
+.popcontent {
   text-decoration: none;
-  padding: 10px 20px ;
-  background: gray;
+  /* padding: 10px 20px ; */
+  /* background: gray; */
   border-radius: 20px;
   font-size: 20px;
   color: white;
@@ -322,9 +322,9 @@ margin-left: 95%;
 
 }
 
-.eventname{
-font-size: 100px;
-color: white;
+#eventname{
+/* font-size: 100px; */
+/* color: white; */
 font-family: 'glitch';
 
 }
@@ -546,9 +546,7 @@ footer{
    width: 90vw;
    align-items: center;
  } 
- .eventname{
-   font-size: 50px;
- }
+ 
  .exit{
   margin-left: 87%;
  }
@@ -556,7 +554,7 @@ footer{
   font-size: 17px;
  }
  #ebtn{
-   max-width: 200px;
+   /* max-width: 200px; */
    
    
  }
