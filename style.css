@@ -192,14 +192,14 @@ section{
   width: 100vw;
   background: rgb(32, 32, 32);
 }
-  
+/*   
 footer{
   background: #dddcdc;
   display: flex;
   justify-content: space-around;
   align-items: center;
   
-}
+} */
 .footer_content{
   
   font-size: 15px;
@@ -509,12 +509,12 @@ body.disabled {
   color: white;
   
 }
-footer{
+/* ooter{
   flex-direction: column;
   max-height: 230px;
   color: dimgrey;
   overflow-y: hidden;
-}
+}f */
 .foot_row {
   width:100vw;
   justify-content: center;
