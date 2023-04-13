@@ -35,6 +35,24 @@ html,body{
   margin-left: 30px;
   padding: 5px;
 }
+
+/* //event page css */
+.headerEvent{
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+  z-index: 10;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+}
+.headerEvent img{
+  padding: 0px;
+  /* width:65px; */
+  margin-left: 30px;
+  padding: 5px;
+}
+
 .college{
 color: #fff;
 /* color: #999; */
