@@ -156,8 +156,17 @@ padding: 10px;
     background-position: -200% center;
   }
 }
-
-
+.reg-btn{
+  width:100%;
+  text-align: center;
+  margin:10px;
+}
+.reg-btn a{
+  background: #BF1322;
+  padding: 8px 13px;
+  border-radius: 10px;
+  font-weight: bold;
+}
 #typewriter {
   font-family: 'Tillana', cursive;
   display: inline-block;
