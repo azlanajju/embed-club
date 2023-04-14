@@ -36,14 +36,15 @@ setTimeout(pop, 1000);
 
      
     function exit(){
-      popup.classList.add('minimize');
+      popup.classList.add('hidden');
+      // popup.classList.add('minimize');
       popup.style.right="10px";
 
       eventname.style.fontSize="10px"
       ebtn.style.fontSize="6px";
       ebtn.style.padding="1px 3px";
 
-      popupcontent.classList.add('minicontnent');
+      // popupcontent.classList.add('minicontnent');
       exitbtn.style.display="none";
       ctent.style.display="none";
 
