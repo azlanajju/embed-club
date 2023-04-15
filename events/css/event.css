@@ -5,19 +5,22 @@
   html,body{ 
     width: 100%;
     height:100%;
-      background:#fff;
+      background:#e2e1e1;
     overflow-x: hidden;
   }
   ::-webkit-scrollbar{
     width: 0;
   }
-  
+  h1{
+    color: #b80410;
+  }
   section{
     height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
   .form {
     display: flex;
@@ -33,20 +36,7 @@
     margin-right: auto;
     color: #000;
     animation: textclip 5s linear infinite;
-    background-image: linear-gradient(
-      to right,
-      #c0c0c0 0%,
-      #7e7e7e 29%,
-      #a3a3a3 67%,
-      #c4c4c4 100%
-    );
-    -moz-background-image:linear-gradient(
-      to right,
-      #c0c0c0 0%,
-      #7e7e7e 29%,
-      #a3a3a3 67%,
-      #c4c4c4 100%
-    );
+    background: #020214;
 
     background-size: 200% auto;
     background-clip: text;
@@ -59,7 +49,9 @@
   .form span{
     width: 100%;
   }
-  
+  label{
+    color: #b80410;
+  }
   .inputfield {
     width: 100%;
     padding: 12px 20px;
@@ -68,8 +60,8 @@
     border: none;
     border-radius: 4px;
     font-size: 17px;
-    color: white;
-    background: #000000f1;
+    color: #b80410;
+    background: #d6d5d5;
   }
   
   input[type=submit] {
@@ -105,6 +97,7 @@
   }
 .submit{
 margin-top: 30px  ;
+background-color: #b80410;
 }
 
 .loading {
@@ -116,11 +109,11 @@ margin-top: 30px  ;
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 3px solid rgba(0, 0, 0, 0.2);
-  border-top-color: #949494;
+  border: 5px solid white;
+  border-top-color: #b80410;
   animation: spin 1s ease-in-out infinite;
   position: absolute;
   margin: auto;
