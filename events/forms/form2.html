@@ -112,6 +112,7 @@
                     // Hide the loading animation
                     loading.style.display = 'none';
                     alert("Thanks for Registering..! We Will Contact You Soon...");
+                form.reset();
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
