@@ -63,6 +63,9 @@ margin-left: 2px;
 line-height: 28px;
 padding: 10px;
 }
+.college.dark-mode{
+ color:#fff;
+}
 
 .embed{
   position: absolute;
