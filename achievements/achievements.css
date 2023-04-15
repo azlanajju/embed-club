@@ -40,7 +40,7 @@ section {
   .img img {
     height: 220px;
     border-radius: 10px;
-    box-shadow:  0 0 10px rgb(0, 0, 0);
+    box-shadow: 0 25px 45px rgba(255, 255, 0, 0.25); /* Yellow box  */
 
   }
 
@@ -83,7 +83,7 @@ section {
   border-radius: 25px;
   backdrop-filter: blur(25px);
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 15px rgba(93, 93, 9, 0.25); /* Yellow box  */
   border: 1px solid rgba(255, 255, 255, 0.1);
   backface-visibility: hidden;
 
