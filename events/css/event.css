@@ -11,6 +11,11 @@
   ::-webkit-scrollbar{
     width: 0;
   }
+html.dark-mode, body.dark-mode{
+color:white;
+}
+
+
   
   section{
     height: 100vh;
