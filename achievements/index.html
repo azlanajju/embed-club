@@ -23,6 +23,38 @@
   background-color: #333;
   color: #f1f1f1;
 }
+
+.back-face-content {
+  /* Define height and overflow for the back face content */
+  height: 100%; /* Set the height of the content */
+  overflow-y: auto; /* Enable vertical scrollbar if needed */
+  padding: 20px; /* Add padding as needed */
+}
+.back-face-content::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+.back-face-content::-webkit-scrollbar-thumb {
+  background-color: #ffcc00; /* Set the background color of the scrollbar thumb */
+  border-radius: 4px; /* Add border radius to the scrollbar thumb */
+}
+
+.back-face-content::-webkit-scrollbar-thumb:hover {
+  background-color: #ffea80; /* Set the background color of the scrollbar thumb on hover */
+}
+
+.back-face-content::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Set the background color of the scrollbar track */
+}
+
+.back-face-content::-webkit-scrollbar-track:hover {
+  background-color: #ebebeb; /* Set the background color of the scrollbar track on hover */
+}
+
+
+
+
+
     </style>
   </head>
   <body>
@@ -55,17 +87,28 @@
               </div>
             </div>
           </div>
+
           <div class="card back-face">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            fuga blanditiis nihil fugiat nostrum, aperiam iure architecto
-            recusandae tenetur! Eum repellat pariatur, voluptatibus dolores
-            magnam est veritatis omnis ipsa non.
+            <!-- Back face content with scrollbar -->
+            <div class="back-face-content">
+              <!-- Content goes here -->
+              ADC 2022 Champions! 🏆
+              Our team of ingenious students proudly representing Embed Club - Shabnaz, Rifah Aysha and Sumaya recently participated in ADC 2022 - a prestigious national-level project competition held at IIIT Bangalore and emerged as the proud winners!
+              Their project "Flygirl," an automatic sanitary pad vending machine, stole the spotlight with its cutting-edge technology and social impact.
+              This win is a testament to our commitment at Embed Club to foster and nurture the creativity and talent of our students.
+              Embed Club is proud to have them as representatives and looks forward to their continued achievements and contributions in the future.
+            </div>
           </div>
+          
+
+
+
+
         </div>
 
         <!-- container2 -->
 
-        <div class="container">
+        <!-- <div class="container">
           <div class="card front-face">
             <header>
               <span class="logo">
@@ -95,10 +138,10 @@
             recusandae tenetur! Eum repellat pariatur, voluptatibus dolores
             magnam est veritatis omnis ipsa non.
           </div>
-        </div>
+        </div> -->
 
         <!-- container3 -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="card front-face">
             <header>
               <span class="logo">
@@ -162,10 +205,10 @@
             recusandae tenetur! Eum repellat pariatur, voluptatibus dolores
             magnam est veritatis omnis ipsa non.
           </div>
-        </div>
+        </div> -->
 
         <!-- container2 -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="card front-face">
             <header>
               <span class="logo">
@@ -195,10 +238,10 @@
             recusandae tenetur! Eum repellat pariatur, voluptatibus dolores
             magnam est veritatis omnis ipsa non.
           </div>
-        </div>
+        </div> -->
 
         <!-- container3 -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="card front-face">
             <header>
               <span class="logo">
@@ -228,7 +271,7 @@
             recusandae tenetur! Eum repellat pariatur, voluptatibus dolores
             magnam est veritatis omnis ipsa non.
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </body>
