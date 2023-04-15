@@ -35,15 +35,20 @@
 .back-face-content::-webkit-scrollbar-track:hover {
   background-color: #ebebeb; /* Set the background color of the scrollbar track on hover */
 }
-
-
-
-
+.home-link {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 9999;
+}
 
     </style>
   </head>
   <body>
-
+    <a href="../index.html" class="home-link">
+      <i class="fa fa-home" style="font-size:48px;color:red"></i>
+    </a>
     <section>
 
       <div class="row">
@@ -65,7 +70,7 @@
                 <div class="loc">
                   <i class="fa fa-calendar"></i>
 
-                  <p>12-22-6764</p>
+                  <p>10/mar/2023</p>
                 </div>
                 
               </div>
@@ -105,7 +110,7 @@
                 <div class="loc">
                   <i class="fa fa-calendar"></i>
 
-                  <p>18-oct-2022</p>
+                  <p>18/oct/2022</p>
                 </div>
                 
               </div>
@@ -123,40 +128,49 @@
             </div>
           </div>
         </div>
+
+
         <!-- container3 -->
-        <!-- <div class="container">
+
+        <div class="container">
           <div class="card front-face">
             <header>
               <span class="logo">
-                <h5>ADC Winners @ IIIT.B</h5>
+                <h5> Workshop at BIT</h5>
               </span>
             </header>
             <div class="img">
-              <img src="./images/adc.jpeg" alt="adc" />
+              <img src="./images/pacp.jpeg" alt="adc" />
               <div>
                 <div class="loc">
                   <i class="fa fa-map-marker"></i>
-                  IIT.b
+                  PACP
                 </div>
 
                 <div class="loc">
                   <i class="fa fa-calendar"></i>
 
-                  <p>12-22-6764</p>
+                  <p>23/mar/2022</p>
                 </div>
                 
               </div>
             </div>
           </div>
+
           <div class="card back-face">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            fuga blanditiis nihil fugiat nostrum, aperiam iure architecto
-            recusandae tenetur! Eum repellat pariatur, voluptatibus dolores
-            magnam est veritatis omnis ipsa non.
+            <!-- Back face content with scrollbar -->
+            <div class="back-face-content">
+              <!-- Content goes here -->
+              Conducted an exciting workshop at P A Polytechnic, introducing the students to the world of microcontroller programming through the user-friendly Microbit board. 
+              The workshop aimed to make learning easy and interesting,  using a hands-on approach, with step-by-step guidance and interactive activities that made programming accessible and enjoyable for beginners.
+               Through block-based programming, the students learned coding concepts in a fun and interactive way, creating their own projects and witnessing their code come to life on the Microbit display. 
+              The workshop was led by Shabnaz, Rifah,Nouman and Muadh from the Embed Club, who shared their passion for embedded systems and inspired the students with real-world examples of Microbit projects.           
+             </div>
           </div>
         </div>
-      </div>
 
+
+<!--         
       <div class="row">
         <div class="container">
           <div class="card front-face">
@@ -188,7 +202,7 @@
             recusandae tenetur! Eum repellat pariatur, voluptatibus dolores
             magnam est veritatis omnis ipsa non.
           </div>
-        </div> -->
+        </div> --> 
 
         <!-- container2 -->
         <!-- <div class="container">
