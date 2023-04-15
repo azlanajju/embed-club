@@ -22,6 +22,9 @@
         <form class="form" method="POST" name="google-sheet">
             <h1>embedathon Registeration </h1>
             <br>
+            <input type="hidden" id="registration-key" name="registration-key" value="">
+            <input type="hidden" id="num-registrations" name="num-registrations" value="0">
+
             <span>
                 <label for="team">Team Name:</label>
                 <input type="text" class="inputfield" id="team" name="Team_Name" placeholder="Team Name*"
@@ -88,7 +91,7 @@
                         <input type="hidden" class="inputfield" id="datetime" name="date_time"></span>
 
                     <br>
-                    <span class="submitspan"><input class="submit" type="submit" value="Submit" name="submit"> </span>
+                    <span class="submitspan"><input class="submit" type="submit" value="Submit" onclick="generateRegistrationKey();" name="submit"> </span>
         </form>
     </div>
     <script>
@@ -133,6 +136,24 @@
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
         datetimeField.value = `${hours}:${minutes} | ${day}-${month}-${year} `;
+
+    </script>
+    <script>
+          function generateRegistrationKey() {
+          // Get the number of registrations already submitted
+          var numRegistrations = Number(document.getElementById('num-registrations').value);
+
+          // Generate the new registration key
+          var keyPrefix = "EC";
+          var keySuffix = numRegistrations + 100;
+          var registrationKey = keyPrefix + keySuffix;
+
+          // Update the hidden field with the new key
+          document.getElementById('registration-key').value = registrationKey;
+  
+          // Increment the number of registrations counter
+          document.getElementById('num-registrations').value = numRegistrations + 1;
+    }
 
     </script>
 </body>
