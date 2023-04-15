@@ -83,7 +83,7 @@ section {
   border-radius: 25px;
   backdrop-filter: blur(25px);
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 15px rgba(93, 93, 9, 0.25); /* Yellow box  */
+  box-shadow: 0 2px 5px rgba(93, 93, 9, 0.25); /* Yellow box  */
   border: 1px solid rgba(255, 255, 255, 0.1);
   backface-visibility: hidden;
 
