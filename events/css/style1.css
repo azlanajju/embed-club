@@ -171,6 +171,18 @@ padding: 10px;
   border-radius: 10px;
   font-weight: bold;
 }
+.read-btn{
+  width:100%;
+  text-align: center;
+  margin:10px;
+}
+.read-btn a{
+  background: linear-gradient(to bottom, rgb(245, 187, 80), rgb(243, 59, 59), red);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
 #typewriter {
   font-family: 'Tillana', cursive;
   display: inline-block;
@@ -332,6 +344,7 @@ margin: auto;position: absolute;left: 0;right: 0;width: 180px;text-align: center
     word-wrap: break-word;
     word-break: break-word; 
   }
+
   .welcome p{
     font-size: 11px;
 word-wrap: break-word;
@@ -374,5 +387,8 @@ margin-bottom: 100px
   .rules pre{
     margin-top: 30px;
     font-size: 15px;
+  }
+  .read-btn a{
+    padding: 8px 13px;
   }
 }
