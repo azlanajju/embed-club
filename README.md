@@ -12,7 +12,6 @@ We are proud to share some of our achievements in the field of embedded systems:
 
 - First prize in the National Level Robotics Competition, 2022
 - Best Embedded Project Award at the State-level Technical Symposium, 2021
-- Published research paper on "IoT-based Smart Agriculture System" in International Journal of Embedded Systems, 2020
 
 ## Embadthon Registration
 
@@ -45,7 +44,7 @@ If you are interested in embedded systems, IoT, robotics, or any other related f
 
 For any inquiries or suggestions, please feel free to reach out to us:
 
-- Email: [embedclub@example.com](mailto:embedclub@pace.edu.in)
+- Email: [embedclub@pace.edu.in](mailto:embedclub@pace.edu.in)
 - Phone: +91-9845119468
 - Follow us on social media: [Instagram](https://www.instagram.com/embedclub) | [Linkedin](https://www.linkedin.com/embedclub)
 
