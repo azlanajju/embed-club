@@ -19,7 +19,9 @@
   overflow-x: hidden;
   background: #000;
 } */
-
+body{
+  overflow-x: hidden;
+}
 .header{
   width: 100vw;
   position: absolute;
