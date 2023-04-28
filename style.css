@@ -10,6 +10,7 @@
   width: 0px;
 }
  
+
  
  
 * {
@@ -558,4 +559,29 @@ body.disabled {
    
    
  }
+}
+
+
+.reg-btn{
+  width:100%;
+  text-align: center;
+  margin:10px;
+}
+.reg-btn a{
+  background: #BF1322;
+  padding: 8px 13px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.read-btn{
+  width:100%;
+  text-align: center;
+  margin:10px;
+}
+.read-btn a{
+  background: linear-gradient(to bottom, rgb(245, 187, 80), rgb(243, 59, 59), red);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
 }
