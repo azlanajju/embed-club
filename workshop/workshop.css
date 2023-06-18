@@ -22,7 +22,7 @@
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.4);    
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);    
 }
 
 .card img {
@@ -81,7 +81,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .close {
