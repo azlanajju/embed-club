@@ -31,6 +31,7 @@ We are proud to have a talented team of developers who have contributed to the d
 - [Rabeeh TA](https://github.com/rabeeh-ta)
 - [Nouman](https://github.com/nou-man)
 - [Rifaz](https://github.com/rifaz124)
+- [Munazza](https://github.com/munazzabegam) 
 
 ## Website
 
