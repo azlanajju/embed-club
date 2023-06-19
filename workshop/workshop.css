@@ -161,3 +161,9 @@
     z-index: 9999;
   }
   
+
+  @media screen and (max-width: 768px) {
+.card{
+    width: 100vw;
+}
+}
