@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+}
+
+.event-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 500px;
+    flex: 0 1 500px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1em 0.5em;
+    background: #ffffffb6;
+    -webkit-box-shadow: 0 1px 5px rgba(104, 104, 104, 0.5);
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.5);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.event-card:hover {
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+    box-shadow: 0 14px 28px rgba(255, 255, 255, 0.541), 0 10px 10px rgba(0, 0, 0, .22);
+}
+
+.event-image {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 160px;
+    border-radius: 2px 2px 0 0;
+}
+
+.event-desc {
+    padding: 0.5em 1em;
+    color: #3c4043;
+}
+
+.event-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 1em;
+}
+
+.event-title a {
+    color: #000;
+}
+
+.event-title a:hover {
+    color: rgb(102, 51, 153);
+}
+
+@media screen and (min-width: 40em) {
+    .event-card {
+        max-width: calc(50% - 1em);
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .event-card {
+        max-width: calc(25% - 1em);
+    }
+}

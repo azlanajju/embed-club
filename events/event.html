@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Embed Club</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
 
     <!-- tailwind css cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
@@ -17,41 +19,38 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="images/embedlogo.ico" />
+    <link rel="icon" type="image/x-icon" href="../images/embedlogo.ico" />
+<link rel="stylesheet" href="./event.css">
   </head>
 
   <body>
 
-    <div class="relative w-screen h-screen">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        class="fixed object-cover w-full h-full"
-      >
-        <source src="/images/bg.mp4" type="video/mp4" />
-      </video>
-      <div class="absolute inset-0 bg-black opacity-50"></div>
 
-    </div>
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="fixed object-cover w-full h-full"
+        >
+          <source src="/images/bg.mp4" type="video/mp4" />
+        </video>
+  
+<div style="height:80px ;"></div>
 
-    <!-- <div id="back"></div> -->
     <nav class="navbar">
       <div class="logo" style="font-weight: bold">EMBED CLUB</div>
       <div class="content">
-        <!-- <div class="logo">
-        Title
-      </div> -->
+
         <ul class="menu-list">
           <div id="button" class="icon cancel-btn">
             <i style="color: white" class="fa fa-close"></i>
           </div>
 
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="./events/events.html">Events</a></li>
-          <li><a href="./workshop/workshop.html">workshops</a></li>
-          <li><a href="./achievements/index.html">Achievements</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a class="active">Events</a></li>
+          <li><a href="../workshop/workshop.html">workshops</a></li>
+          <li><a href="../achievements/index.html">Achievements</a></li>
         </ul>
 
         <div id="button" class="icon menu-btn">
@@ -59,29 +58,41 @@
         </div>
       </div>
     </nav>
+    <!-- ================== events start ================ -->
+<section style="background: transparent;">
 
-    <div class="home-content">
-      <div class="flex justify-center">
-        <img src="images/embed_logo.png" class="items-center" alt="" />
-      </div>
-      <h1 style="font-size: 50px">Embed Club</h1>
-      <p>
-        Where Innovation Meets Technology! The premiere organization for
-        technocrats who are passionate about embedded systems and cutting-edge
-        technology. Our club has a successful track record of organizing various
-        workshops, outreach programs, and design challenges that are
-        thoughtfully designed to keep students up-to-date with current
-        technological trends. We have conducted several workshops that have
-        helped students gain knowledge on Microbit, IoT, and other emerging
-        technologies. Our outreach programs are focused on creating awareness
-        for technology. Each semester, we host the Embed Design Challenge where
-        students showcase their innovative ideas through mini-projects. Their
-        participation in the challenge provides them with an opportunity to
-        sharpen their skills and work on real-world problems.
-      </p>
-    </div>
+    <!-- Event Section -->
+    <div class="padding container">
+        <div class="event-container">
 
+ 
+            <div class="event-card">
+                <div class="event-details">
+                    <a href="../events/microbit/microbit.html"><img class="event-image"
+                            src="./microbit/20230615_224552.jpg" alt="" /></a>
+                    <div class="event-desc">
+                        <p class="event-title"><a href="./microbit/microbit.html">Microbit & tinker caed</a></p>
+                        <p class="event-date"> 20-06-2023</p>
+                        <p class="event-date"> 09:00 am to 11:00 am</p>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-details">
+                    <a href="./embers23/embers23.html"><img class="event-image"
+                            src="./embers23/poster(169kb).jpg" alt="" /></a>
+                    <div class="event-desc">
+                        <p class="event-title"><a href="./embers23/embers23.html">Embers '23</a></p>
+                        <p class="event-date"> 07-05-2023 & 08-05-2023</p>
+                        <p class="event-date"> 09:00 am to 05:00 pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </section>
 
+<!-- ============== footer start ================= -->
 
     <footer class="mb-0 bg-white dark:bg-gray-900">
       <div class="mx-auto h-full w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -93,7 +104,6 @@
                 class="h-20 mr-3"
                 alt="Embed Club Logo"
               />
-              <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
             </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -212,6 +222,6 @@
 
 
 
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
   </body>
 </html>
