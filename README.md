@@ -19,7 +19,7 @@ We are currently conducting Embadthon, our flagship event that brings together e
 
 ## Team
 
-- President: Jouhar Ali K V
+- President: Muadh Bin Mohammed Ali
 - Faculty Advisor: Mr. Habeeb Sir
 
 ## Developers
