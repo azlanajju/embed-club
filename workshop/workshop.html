@@ -74,11 +74,22 @@
             <img src="./workshop/automation.png" alt="Image 3">
             <h3>HOME-AUTOMATION USING GOOGLE HOME, NODEMCU, SINRIC PRO</h3>
         </div>
-        <div class="card" id="card4">
+        <div class="card" id="card5">
             <img src="./workshop/server.jpeg" alt="Image 4">
             <h3>NON-SERVER CONTROLLER
             </h3>
         </div>
+        <div class="card" id="card4">
+          <img src="./workshop/ledblink.png" alt="Image 4">
+          <h3>BLINK LED
+          </h3>
+      </div>
+      <div class="card" id="card6">
+        <img src="./workshop/ultrasonic.png" alt="Image 4">
+        <h3>ULTRASONIC SENSOR READING
+
+        </h3>
+    </div>
 
     </div>
 
@@ -419,21 +430,49 @@ void loop()
 
 
 
-    <div id="modal4" class="modal">
+    <!-- <div id="modal4" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <p>This is the content for Card 4 modal.</p>
             <button class="copy-btn">Copy</button>
         </div>
-    </div>
+    </div> -->
 
     <div id="modal5" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>This is the content for Card 5 modal.</p>
-            <button class="copy-btn">Copy</button>
+<textarea class="text-area">
+  void setup() {
+    pinMode(D1, OUTPUT); 
+  }
+  void loop() {
+    digitalWrite(D1, LOW);  
+    delay(1000);                     
+    digitalWrite(D1, HIGH); 
+    delay(2000);                     
+  }
+</textarea>      
+      <button class="copy-btn">Copy</button>
         </div>
     </div>
+
+    <div id="modal6" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+<textarea class="text-area">
+void setup() {
+  pinMode(D1, OUTPUT); 
+}
+void loop() {
+  digitalWrite(D1, LOW);  
+  delay(1000);                     
+  digitalWrite(D1, HIGH); 
+  delay(2000);                     
+}
+</textarea>      
+    <button class="copy-btn">Copy</button>
+      </div>
+  </div>
 
 
     <script src="./workshop.js"></script>
