@@ -74,20 +74,20 @@
             <img src="./workshop/automation.png" alt="Image 3">
             <h3>HOME-AUTOMATION USING GOOGLE HOME, NODEMCU, SINRIC PRO</h3>
         </div>
-        <div class="card" id="card5">
+        <div class="card" id="card4">
             <img src="./workshop/server.jpeg" alt="Image 4">
             <h3>NON-SERVER CONTROLLER
             </h3>
         </div>
-        <div class="card" id="card4">
-          <img src="./workshop/ledblink.png" alt="Image 4">
-          <h3>BLINK LED
+        <div class="card" id="card5">
+          <img src="./workshop/server.jpeg" alt="Image 4">
+          <h3>LED BLINK
           </h3>
       </div>
-      <div class="card" id="card6">
-        <img src="./workshop/ultrasonic.png" alt="Image 4">
-        <h3>ULTRASONIC SENSOR READING
 
+      <div class="card" id="card6">
+        <img src="./workshop/server.jpeg" alt="Image 4">
+        <h3>ultra sonic sensor
         </h3>
     </div>
 
@@ -430,49 +430,72 @@ void loop()
 
 
 
-    <!-- <div id="modal4" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>This is the content for Card 4 modal.</p>
-            <button class="copy-btn">Copy</button>
-        </div>
-    </div> -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <pre> 
+          void setup() {
+            pinMode(D1, OUTPUT); 
+          }
+          void loop() {
+            digitalWrite(D1, LOW);  
+            delay(1000);                     
+            digitalWrite(D1, HIGH); 
+            delay(2000);                     
+          }
 
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-<textarea class="text-area">
-  void setup() {
-    pinMode(D1, OUTPUT); 
-  }
-  void loop() {
-    digitalWrite(D1, LOW);  
-    delay(1000);                     
-    digitalWrite(D1, HIGH); 
-    delay(2000);                     
-  }
-</textarea>      
-      <button class="copy-btn">Copy</button>
-        </div>
+
+        </pre>
+        <button class="copy-btn">Copy</button>
     </div>
+</div>
 
-    <div id="modal6" class="modal">
-      <div class="modal-content">
-          <span class="close">&times;</span>
-<textarea class="text-area">
+
+
+<div id="modal6" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <pre> 
+
+const int trigPin = D5; 
+const int echoPin = D6; 
+
+long duration;
+int distance;
+
 void setup() {
-  pinMode(D1, OUTPUT); 
+pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+pinMode(echoPin, INPUT); // Sets the echoPin as an Input
+Serial.begin(9600); // Starts the serial communication
 }
 void loop() {
-  digitalWrite(D1, LOW);  
-  delay(1000);                     
-  digitalWrite(D1, HIGH); 
-  delay(2000);                     
-}
-</textarea>      
-    <button class="copy-btn">Copy</button>
-      </div>
+
+// Clears the trigPin
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+
+// Sets the trigPin on HIGH state for 10 micro seconds
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+
+// Reads the echoPin, returns the sound wave travel time in microseconds
+duration = pulseIn(echoPin, HIGH);
+
+// Calculating the distance
+distance= duration*0.034/2;
+// Prints the distance on the Serial Monitor
+Serial.print("Distance: ");
+Serial.println(distance);
+delay(2000);
+} 
+
+
+      </pre>
+      <button class="copy-btn">Copy</button>
   </div>
+</div>
+
 
 
     <script src="./workshop.js"></script>
