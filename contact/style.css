@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:1,300,400,400italic,500,700,700italic,900');
+
+:root {
+    --main-color: #d7c7ae;
+    --primary-color: #8a6d46;
+    --hover: #5a4d3e;
+    --black: #2a201c;
+    --white: #fff;
+    --light-bg: #f3efec;
+    --dark-bg: rgba(0, 0, 0, .7);
+    --border: .1rem solid #aaa;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.styles .content {
+    text-align: justify;
+}
+
+* {
+    font-family: 'Playfair Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar {
+    width: .6rem;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--white);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+section {
+    padding: 5rem 7%;
+}
+
+.heading {
+    text-align: center;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    margin-top: 4rem;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem 3rem;
+}
+
+.btn:hover {
+    background: var(--hover);
+}
+
+.visit {
+    background: url('../images/visit.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.visit .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.visit .row .image {
+    flex: 1 1 40rem;
+}
+
+.visit .row .image img {
+    width: 100%;
+}
+
+.visit .row form {
+    flex: 1 1 40rem;
+    border: 0.1rem solid var(--main-color);
+    padding: 2rem;
+}
+
+.visit .row form h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.visit .row form .inputBox {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(--main-color);
+    border: var(--border);
+}
+
+.visit .row form .inputBox input, .visit .row form .inputBox select, .visit .row form .inputBox textarea {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: var(--black); /* Changed text color to black */
+    text-transform: none;
+    background: none;
+}
+
+.visit .row form .inputBox textarea {
+    height: 10rem;
+}
+
+/* Additional styling for the field of interest dropdown */
+.visit .row form .inputBox select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('images/arrow-down.svg'); /* Replace with your own dropdown arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 1.5rem auto;
+}
