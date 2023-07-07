@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity">
+ <TextView
+ android:id="@+id/countervalue1"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="COUNTER APPLICATION"
+ android:textColor="#E91E63"
+ android:textSize="24sp"
+ android:textStyle="bold"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintHorizontal_bias="0.533"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.109" /> 
+ <Button
+ android:id="@+id/stopbtn"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:background="#9C27B0"
+ android:text="STOP"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.723" />
+ <TextView
+ android:id="@+id/countervalue"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:hint="Counter Value"
+ android:gravity="center"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent" 
+ app:layout_constraintHorizontal_bias="0.498"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.227" />
+</android.support.constraint.ConstraintLayout> 
+
+
+
+
+
+
+this is xml awaa up one
+
+
+
+
+
+now java
+Java Code:
+MainActivity.java
+package com.example.counter;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+ private static final String TAG = "thread";
+ Handler mainHandler = new Handler();
+ int count, i;
+ boolean running = false;
+ Button startbtn, stopbtn;
+ TextView countervalue;
+ void startThread()
+ {
+ NewThread nObj = new NewThread();
+ nObj.start();
+ }
+ @Override
+ protected void onCreate(Bundle savedInstanceState) { Java Code:
+MainActivity.java
+package com.example.counter;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+ private static final String TAG = "thread";
+ Handler mainHandler = new Handler();
+ int count, i;
+ boolean running = false;
+ Button startbtn, stopbtn;
+ TextView countervalue;
+ void startThread()
+ {
+ NewThread nObj = new NewThread();
+ nObj.start();
+ }
+ @Override
+ protected void onCreate(Bundle savedInstanceState) { 
+    super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ countervalue = findViewById(R.id.countervalue);
+ startbtn = findViewById(R.id.startbtn);
+ startbtn.setOnClickListener(new View.OnClickListener() {
+ @Override
+ public void onClick(View view) {
+ count = 0;
+ running = true;
+ startThread();
+ }
+ });
+ stopbtn = findViewById(R.id.stopbtn);
+ stopbtn.setOnClickListener(new View.OnClickListener() {
+ @Override
+ public void onClick(View view) {
+ running = false;
+ }
+ });
+ }
+ class NewThread extends Thread{
+ @Override
+ public void run(){
+ while(running)
+ {
+ count++;
+ mainHandler.post(new Runnable() {
+ @Override
+ public void run() {
+ countervalue.setText(String.valueOf(count));
+ } 
+  });
+ Log.d(TAG, "startThread" +i);
+ try{
+ Thread.sleep(2000);
+ }
+ catch (InterruptedException e)
+ {
+ e.printStackTrace();
+ }
+ }
+ }
+ }
+} 
+
+
+    </pre>
+</body>
+</html>
