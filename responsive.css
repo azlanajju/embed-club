@@ -56,4 +56,17 @@
     top: 60px;
     margin: 10px;
 }
+.homeContent {
+    width: 100vw;
+    position: absolute;
+    top: 150px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(5px);
+
+}
+.event-card {
+width: 94vw;
+}
 }
