@@ -11,50 +11,38 @@
     <!-- css -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../responsive.css">
-
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- bootsrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   
 
 </head>
 
 <body>
     <div class="topBar">
-
-
         <div class="paceLogo">
-            <img src="../images/PaceLogo.png" alt=""> <img src="../images/PACollegeName.png" alt="">
+            <img src="../images/emedClub_logo.png" alt="">
         </div>
         <div class="searchBar">
 
-                <form class="form-inline active-cyan-4">
-                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                      aria-label="Search">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                  </form>
-
-
+            <form class="form-inline active-cyan-4">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </form>
         </div>
-
-        <div class="embedClubLOGO">
-            <img src="../images/embedClubCS.png" alt="">
-        </div>
-
     </div>
 
     <div class="menu-icon">
-        <i id="menuBtn" class="fas fa-bars"></i> 
+        <i id="menuBtn" class="fas fa-bars"></i>
     </div>
 
-    <div  id="sideNav" class="sideNav ">
-<i  id="closeBtn" class="fas fa-times closeIcon"></i> 
+    <div id="sideNav" class="sideNav ">
+        <i id="closeBtn" class="fas fa-times closeIcon"></i>
         <div style="height: 70px;"></div>
         <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
         <a href="#" class="item active"><i class="fas fa-calendar-alt"></i> Events</a>
@@ -65,35 +53,410 @@
         <a href="#" class="item"><i class="fas fa-comment"></i> Feedback</a>
         <a href="#" class="item"><i class="fas fa-envelope"></i> Contact</a>
     </div>
-    
-<div class="nothing"></div>
+
+    <div class="nothing"></div>
 
 
-   <div class="mainContents">
-      <div class="homeBg">
-         <img src="../images/home-bg.jpg" alt="Homepage Background Image">
-         <div class="homeContent">
-            <h1>Events</h1>
-            <p>Home > Events</p>
-         </div>
-      </div>
-
-    <section>
-        <div class="event-card">
-            <img src="../event-img/iot.jpeg" alt="Event 2">
-            <h2>IoT Security, Vulnerabilities & Challenges</h2>
-            <p>Date: October 30, 2023</p>
-            <p>Location: MPH, PACE</p>
-            <a href="./oneEvent.html">Learn More</a>
+    <div class="mainContents">
+        <div class="homeBg">
+            <img src="../images/home-bg.jpg" alt="Homepage Background Image">
+            <div class="homeContent  homNavigation">
+                <h1>Events</h1>
+                <p>Home > Events</p>
+            </div>
         </div>
 
+        <!--==================== event details start====================  -->
+        <section>
+            <!-- popup container start  -->
+            <div id="popup1" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/talk_zahidAnsari.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            <article>
 
+                                Embed Club, in association with IEEE Computer Society and Women in Engineering, hosted an enlightening talk on 'Catalyst: Preparing for a Capstone Project.'
+
+                                Dr. Zahid Ansari, Associate Professor at Aligarh Muslim University, shared invaluable insights . It was an enriching session not to be forgotten! </article>
+                            <a href=""></a>
+
+                        </div>
+                        <button onclick="closePopup('popup1')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+
+            <!-- popup container start  -->
+            <div id="popup2" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/rc_car.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            
+                            <article>
+
+                                The "RC CAR " Expo, organized by the Department of Computer Science and Engineering and the Embed Club, held at the PACE Auditorium.
+
+                                The event showcased the RC car building and controlling prowess of second-year Computer Science Engineering students.
+
+                                The competition encompassed a Single Lane Drag Race, Track Race, and Car Sumo Combat, allowing participants to showcase their speed, control, and strategic abilities.
+                            </article>
+                        </div>
+                        <button onclick="closePopup('popup2')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+            <!-- popup container start  -->
+            <div id="popup3" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/shahiz_talk.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            <article>
+                                Our recent Google Meet session, led by our talented alumni Mohammed Shayiz KP from WebileApps Technologies, Hyderabad, was packed with insights on building an RC car for the RC car Competition! Let's rev up our skills and gear up for some thrilling engineering adventures!
+                                ✨✨
+                            </article>
+                        </div>
+                        <button onclick="closePopup('popup3')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+            <!-- popup container start  -->
+            <div id="popup4" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/iot_talk.jpeg" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            
+                            <article>
+                                ✨✨A tech talk titled on "IoT Security Vulnerabilities and Challenges" was
+                                organized in the Multipurpose Hall on On October 30, 2023 by Embed Club. ✨✨
+                                
+                                The event aimed to educate final year students of Computer Science and Electronics and Communication Engineering departments about the critical issues surrounding Internet of Things (IoT) security.
+                                
+                                Speaker: Uma Maheshwari
+                                Principal applications engineer, ARM, Bangalore.
+                            </article>
+                        </div>
+                        <button onclick="closePopup('popup4')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+
+            <!-- popup container start  -->
+            <div id="popup5" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/prePlacementTalk_7edge.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            
+                            <article>
+                                Throwback to the fantastic event that recently happened at Embed Club! 🎉 We had the privilege of hosting Mr. Nishanth Narayanan, who shared invaluable insights about the 7 Edge company placement drive. It was an enlightening session that prepared us for success. 🚀
+                            </article>
+                        </div>
+                        <button onclick="closePopup('popup5')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+            <!-- popup container start  -->
+            <div id="popup6" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/placed.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            
+                            <article>
+                                We're thrilled to announce that several of our talented members from Embed Club have achieved remarkable success! 🎉 Muadh, Azlan, Shabnaz, Saniya, Rabeeh, and Nouman have secured coveted positions at Novigo Solutions, taking their careers to new heights. 🚀
+
+                                Their hard work, dedication, and commitment to excellence have paid off, and we couldn't be prouder! 🌠
+                                
+                                Join us in congratulating these incredible individuals on their achievements and wishing them all the best in this exciting new chapter. 🎓💼                            </article>
+                        </div>
+                        <button onclick="closePopup('popup6')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>                                <!-- detials    -->
+
+            </div>
+            <!-- popup container end  -->
+            
+            <!-- popup container start  -->
+            <div id="popup7" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/preplacementTalk_novigo.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            
+                            <article>
+                                Celebrating the unforgettable event at Embed Club! 🎉
+                                We were privileged to have Mr. Saiful Aseem AK, an expert from Novigo Solutions, sharing his wisdom on interview preparation. The insights he provided are still guiding our journey to success. 💼✨ Can't wait for more such events in the future! Stay tuned for updates on what's coming next.                             </article>
+                        </div>
+                        <button onclick="closePopup('popup7')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+            <!-- popup container start  -->
+            <div id="popup8" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/adc_winner.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            
+                            <article>
+                                Celebrating a remarkable achievement! Join us in congratulating Rifah,Shabnaz,Ayesha Daniya and Summayya on their well-deserved internships at IIIT Bangalore after their victory in ACCS at IIT Bangalore competition. We're confident they'll shine brightly in their new roles and make the most of this incredible opportunity. Best of luck on your journey ahead! 👏🎉                            </article>
+                        </div>
+                        <button onclick="closePopup('popup8')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+            <!-- popup container start  -->
+            <div id="popup9" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/9.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <h2>Details</h2>
+                    <div class="rules-and-regulations">
+                        
+                        <article>
+                            <!-- detials  -->
+                        </article>
+                        <button onclick="closePopup('popup9')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+            <!-- popup container start  -->
+            <div id="popup10" class="popup-container">
+                <div class="popup">
+                    <div class="popup-header">
+                        <img src="../events-img/2023/10.png" alt="Poster Photo" class="popup-poster">
+                    </div>
+                    <div class="popup-content">
+                        <h2>Details</h2>
+                        <div class="rules-and-regulations">
+                            
+                            <article>
+
+                                <!-- details  -->
+                            </article>
+                        </div>
+                        <button onclick="closePopup('popup10')" class="closeBtn">Close</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- popup container end  -->
+            
+
+
+        </section>
+        <!-- ==============event details end============= -->
+
+        <!-- ============event cards=========== -->
+        
+        <section style="margin-top: -50px;">
+            <div class="eventsPage">
+                <div class="container">
+                    <div class="row">
+                        <div class="eventsPage">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div onclick="popup('popup1')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/talk_zahidAnsari.png" alt="Couldn't load">
+                                            <div class="card-img-overlay">
+                                                <p class="card-text">Catalyst: Preparing for a Capstone Project.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onclick="popup('popup2')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/rc_car.png" alt="Couldn't load">
+                                            <div class="card-img-overlay">
+                                                <p class="card-text">RC CAR Combat</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onclick="popup('popup3')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/shahiz_talk.png" alt="Couldn't load">
+                                            <div class="card-img-overlay">
+                                                <p class="card-text">Build, Drive, Crash, Repair</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onclick="popup('popup4')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/iot_talk.jpeg" alt="Couldn't load">
+                                            <div class="card-img-overlay">
+                                                <p class="card-text">IoT Security Vulnerabilities and Challenges</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onclick="popup('popup5')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/prePlacementTalk_7edge.png" alt="Couldn't load">
+                                            <div class="card-img-overlay">                                                                                               <p class="card-text">Prepare for Success</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onclick="popup('popup6')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/placed.png" alt="Couldn't load">
+                                            <div class="card-img-overlay">
+                                                <p class="card-text">Embed Club members Placed</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onclick="popup('popup7')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/preplacementTalk_novigo.png" alt="Couldn't load">
+                                            <div class="card-img-overlay">
+                                                <p class="card-text">Novigo Interview Pre</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onclick="popup('popup8')" data-aos-delay="150" data-aos="fade-up" class="col-md-4">
+                                        <div class="card card-01 height-fix">
+                                            <img class="card-img-top" src="../events-img/2023/adc_winner.png" alt="Couldn't load">
+                                            <div class="card-img-overlay">
+                                                <p class="card-text">ADC 2023 Winners</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- ==============event card end ============ -->
+
+
+
+
+
+<!-- =================footer start ================ -->
     </section>
+    <footer id="footer" class="footer-1">
+      <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget subscribe no-box">
+                <h5 class="widget-title">Embed Club<span></span></h5>
+                
+                <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Quick Links<span></span></h5>
+                <ul class="thumbnail-widget">
+                  <li>
+                    <div class="thumb-content"><a href="./pages/events.html">&nbsp;Events</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="./pages/team.html">&nbsp;Team</a></div>
+                  </li>
+                  <li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Follow up<span></span></h5>
+                <a href="https://www.instagram.com/embed_club/"> <i class="fa fa-instagram"> </i> </a>
+                <a href="https://www.linkedin.com/in/embed-club-486124271/"> <i class="fa fa-linkedin"> </i> </a>
+                <a href="#"> <i class="fa fa-youtube"> </i> </a>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title ">Developed By<span></span></h5>
+                <p>
+                <div class="thumb-content"><a href="https://github.com/azlanajju/"> Azlan</a></div>
+                </p>
+                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
+                <div class="emailfield">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- ======================footer end =============== -->
 
 
-
-   </div>
-   <script src="../main.js"></script>
+    </div>
+    <script src="../main.js"></script>
+    <script src="../js/event.js"></script>
 </body>
 
 </html>
+

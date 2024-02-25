@@ -1,0 +1,36 @@
+.service_heading {
+    display: flex;
+    justify-content: space-around;
+    background: black;
+    align-items: center;
+}
+
+.clients_line {
+    width: 100%;
+    padding: 10px;
+
+}
+.clients_line1 {
+    width: 58%;
+    padding: 10px;
+
+}
+.clents_line_2 {
+  width: 45%;
+  padding: 10px;
+
+}
+
+@media (max-width:780px) {
+    .clents_line_2{
+        width: 350%;
+        font-size: 20px;
+    }
+    .slick-slide {
+        margin: 0px 10px;
+    }
+    .slick-slide img{
+        box-shadow: 2px 6px 10px rgb(133, 1, 185);
+    }
+    
+}

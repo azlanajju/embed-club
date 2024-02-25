@@ -2,107 +2,333 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Club</title>
-    <link rel="icon" href="./images/embedClubLogo.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed Club</title>
+  <link rel="icon" href="./images/embedClubLogo.png" type="image/x-icon">
 
+  <!-- aos animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- css -->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./responsive.css">
+  <!-- css -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./responsive.css">
 
-    <!-- font awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- bootsrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+  <!-- bootsrap  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
 
+  <!-- footer  -->
+  <link rel="stylesheet" href="./css/footer.css">
+  <style>
+
+  </style>
+
+  <style>
+    #dynamic-content {
+      z-index: 99999;
+      position: fixed;
+      transition: 2s;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="topBar">
-
-
-        <div class="paceLogo">
-            <img src="./images/PaceLogo.png" alt=""> <img src="./images/PACollegeName.png" alt="">
-        </div>
-        <div class="searchBar">
-
-                <form class="form-inline active-cyan-4">
-                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                      aria-label="Search">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                  </form>
-
-
-        </div>
-
-        <div class="embedClubLOGO">
-            <img src="./images/embedClubCS.png" alt="">
-        </div>
-
+  <div id="dynamic-content"></div>
+  <div class="topBar">
+    <div class="paceLogo">
+      <img src="./images/emedClub_logo.png" alt="">
     </div>
+    <div class="searchBar">
 
-    <div class="menu-icon">
-        <i id="menuBtn" class="fas fa-bars"></i> 
+      <form class="form-inline active-cyan-4">
+        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </form>
     </div>
+  </div>
 
-    <div  id="sideNav" class="sideNav ">
-<i  id="closeBtn" class="fas fa-times closeIcon"></i> 
-        <div style="height: 70px;"></div>
-        <a href="#" class="item active"><i class="fas fa-home"></i> Home</a>
-        <a href="./pages/events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="#" class="item"><i class="fas fa-book"></i> Resource</a>
-        <a href="#" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="#" class="item"><i class="fas fa-users"></i> Members</a>
-        <a href="#" class="item"><i class="fas fa-info-circle"></i> About</a>
-        <a href="#" class="item"><i class="fas fa-comment"></i> Feedback</a>
-        <a href="#" class="item"><i class="fas fa-envelope"></i> Contact</a>
-    </div>
-    
-<div class="nothing"></div>
+  <div class="menu-icon">
+    <i id="menuBtn" class="fas fa-bars"></i>
+  </div>
+
+  <div id="sideNav" class="sideNav ">
+    <i id="closeBtn" class="fas fa-times closeIcon"></i>
+    <div style="height: 70px;"></div>
+    <a href="#" class="item active"><i class="fas fa-home"></i> Home</a>
+    <a href="./pages/events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
+    <a href="#" class="item"><i class="fas fa-book"></i> Resource</a>
+    <a href="#" class="item"><i class="fas fa-trophy"></i> Achievements</a>
+    <a href="#" class="item"><i class="fas fa-users"></i> Members</a>
+    <a href="#" class="item"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#" class="item"><i class="fas fa-comment"></i> Feedback</a>
+    <a href="#" class="item"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+
+  <div class="nothing"></div>
 
 
-   <div class="mainContents">
-      <div class="homeBg">
-         <img src="./images/home-bg.jpg" alt="Homepage Background Image">
-         <div class="homeContent">
-            <h1>Welcome to Embed Club</h1>
-            <p>"Unlocking the Power of IoT and Embedded Systems"</p>
-            <a href="#">Learn More</a>
-         </div>
+
+
+  <div class="mainContents">
+    <canvas></canvas>
+    <script src="./animation.js"></script>
+    <script src="./animation.js"></script>
+
+    <div class="homeBg">
+
+      <div class="homeContent">
+        <h1>Welcome to Embed Club</h1>
+        <p>"Unlocking the Power of IoT and Embedded Systems"</p>
+        <a  href="#">Learn More</a>
       </div>
-      <section class="mission-vision">
-        <div class="mission">
-            <h2>Our Mission</h2>
-            <p>We are dedicated to advancing knowledge and expertise in embedded systems and electronics. Our mission is to foster a community of passionate learners and innovators who collaborate, create, and make a positive impact through technology.</p>
+    </div>
+
+    <section>
+      <div class="container ">
+        <h5 class="speacialSpan widget-title"> Gallery   <span  class="speacialSpan"></span></h5>
+        <div class="img_carousel">
+          <div><img src="./achievements-img/3d.jpeg"></div>
+          <div><img src="./achievements-img/adc.jpeg"></div>
+          <div><img src="./achievements-img/adcp.jpeg"></div>
+          <div><img src="./achievements-img/arduino.jpeg"></div>
+          <div><img src="./achievements-img/bearys.jpeg"></div>
+          <div><img src="./achievements-img/edc1.jpeg"></div>
+          <div><img src="./achievements-img/edc2.jpeg"></div>
+          <div><img src="./achievements-img/edc3.jpeg"></div>
+          <div><img src="./achievements-img/farewell.jpeg"></div>
+          <div><img src="./achievements-img/intro.jpeg"></div>
+          <div><img src="./achievements-img/iot.jpeg"></div>
+          <div><img src="./achievements-img/kanachur.jpeg"></div>
+          <div><img src="./achievements-img/kunil.jpeg"></div>
+          <div><img src="./achievements-img/microbit.jpeg"></div>
+          <div><img src="./achievements-img/pacp.jpeg"></div>
+          <div><img src="./achievements-img/rasp.jpeg"></div>
+          <div><img src="./achievements-img/sensor.jpeg"></div>
+
         </div>
-        <div class="vision">
-            <h2>Our Vision</h2>
-            <p>Our vision is to be a leading hub for innovation in embedded systems and electronics. We aim to inspire and educate the next generation of engineers and problem solvers who will shape the future of technology.</p>
+        <a href="" style="background: teal;color: white;" class="btn ">View More</a>
+      </div>
+    </section>
+    <div class="nothing"></div>
+    <section data-aos="fade-up">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="counter-card">
+              <h3 class="counter-number" data-target="50">50+</h3>
+              <p>Programs</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="counter-card">
+              <h3 class="counter-number" data-target="15">15+</h3>
+              <p>Active Members</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="counter-card">
+              <h3 class="counter-number" data-target="30">30+</h3>
+              <p>Alumnis</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+    <section data-aos="fade-up" data-aos-delay="200" class="mission-vision">
+      <div class="mission">
+        <h5 class="speacialSpan widget-title"> Mission   <span  class="speacialSpan"></span></h5>
+        <p>We are dedicated to advancing knowledge and expertise in embedded systems and IoT. Our mission is to foster a community of passionate learners and innovators who collaborate, create, and make a positive impact through technology.</p>
+      </div>
+      <div class="vision">
+        <h5 class="speacialSpan widget-title"> Vision   <span  class="speacialSpan"></span></h5>
+        <p>Our vision is to be a leading hub for innovation in embedded systems and IoT. We aim to inspire and educate the next generation of engineers and problem solvers who will shape the future of technology.</p>
+      </div>
     </section>
     <section class="about-us">
-        <h2>About Us</h2>
-        <p>Welcome to the Electronics and Embedded Systems Club at P A College of Engineering. We are a group of passionate students and tech enthusiasts who share a common interest in embedded systems, electronics, and computer science. Our club is dedicated to learning, collaboration, and innovation.</p>
-        <p>Our club provides a platform for students to explore, experiment, and create with technology. We organize events, workshops, and projects that allow members to gain hands-on experience and expand their knowledge in this exciting field.</p>
-        
-        <p>Whether you're an experienced enthusiast or just starting to explore the world of embedded systems, we welcome you to join us, share your ideas, and be part of a vibrant community of tech enthusiasts.</p>
-      
-        <a href="#">Learn More</a>
+      <h5 class="speacialSpan widget-title"> About us   <span  class="speacialSpan"></span></h5>
+      <p>Welcome to the IoT and Embedded Systems Club at P A College of Engineering. We are a group of passionate students and tech enthusiasts who share a common interest in embedded systems, IoT, and computer science. Our club is dedicated to learning, collaboration, and innovation.</p>
+      <p>Our club provides a platform for students to explore, experiment, and create with technology. We organize events, workshops, and projects that allow members to gain hands-on experience and expand their knowledge in this exciting field.</p>
 
+      <p>Whether you're an experienced enthusiast or just starting to explore the world of embedded systems, we welcome you to join us, share your ideas, and be part of a vibrant community of tech enthusiasts.</p>
+
+      <a href="#">Learn More</a>
+
+
+
+<!-- =================footer start ================ -->
     </section>
+    <footer id="footer" class="footer-1">
+      <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget subscribe no-box">
+                <h5 class="widget-title">Embed Club<span></span></h5>
+                
+                <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Quick Links<span></span></h5>
+                <ul class="thumbnail-widget">
+                  <li>
+                    <div class="thumb-content"><a href="./pages/events.html">&nbsp;Events</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="./pages/team.html">&nbsp;Team</a></div>
+                  </li>
+                  <li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Follow up<span></span></h5>
+                <a href="https://www.instagram.com/embed_club/"> <i class="fa fa-instagram"> </i> </a>
+                <a href="https://www.linkedin.com/in/embed-club-486124271/"> <i class="fa fa-linkedin"> </i> </a>
+                <a href="#"> <i class="fa fa-youtube"> </i> </a>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title ">Developed By<span></span></h5>
+                <p>
+                <div class="thumb-content"><a href="https://github.com/azlanajju/"> Azlan</a></div>
+                </p>
+                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="./images/codewizycredits.png" alt=""></a>
+                <div class="emailfield">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- ======================footer end =============== -->
+
+  </div>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+  <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
 
 
 
-   </div>
-   <script src="main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ========================links ==================================== -->
+  <script src="main.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Slick JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      $('.img_carousel').slick({
+        autoplay: true,
+        autoplaySpeed: 1000,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false
+      });
+    });
+  </script>
+
+
+
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function triggerCountingAnimation() {
+    const counterElements = document.querySelectorAll('.counter-number');
+    counterElements.forEach(counter => {
+      if (isInViewport(counter)) {
+        const targetValue = parseInt(counter.dataset.target, 10);
+        const animationDuration = 3000;
+        let currentValue = 0;
+        const increment = Math.ceil(targetValue / (animationDuration / 100));
+        const intervalId = setInterval(() => {
+          currentValue += increment;
+          counter.textContent = currentValue + '+';
+          if (currentValue >= targetValue) {
+            clearInterval(intervalId);
+          }
+        }, 10);
+      }
+    });
+  }
+
+  document.addEventListener('aos:in', ({ detail }) => {
+    if (detail.classList.contains('aos-animate')) {
+      triggerCountingAnimation();
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    triggerCountingAnimation();
+  });
+
+  AOS.init();
+</script>
+
+
+
+<!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+<script>
+  $(document).ready(function () {
+    $.get("./intr.html", function (data) {
+      $("#dynamic-content").html(data);
+      setTimeout(function () {
+        $("#dynamic-content").empty();
+      }, 3000);
+    });
+  });
+</script>
 
 </html>

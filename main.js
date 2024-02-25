@@ -1,3 +1,5 @@
+
+
 let sideNav = document.getElementById("sideNav");
 let menuButton = document.getElementById("menuBtn");
 let menuClose = document.getElementById("closeBtn");
@@ -16,3 +18,5 @@ function closeNav() {
 
 menuButton.addEventListener('click', navToggle);
 menuClose.addEventListener('click', closeNav);
+
+
