@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="../responsive.css">
     <link rel="stylesheet" href="../css/event.css">
     <link rel="stylesheet" href="../css/footer.css">
-
+  <!-- aos animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -50,7 +51,7 @@
         <a href="./events.html" class="item "><i class="fas fa-calendar-alt"></i> Events</a>
         <a href="#" class="item active"><i class="fas fa-book"></i> Resource</a>
         <a href="#" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="#" class="item"><i class="fas fa-users"></i> Members</a>
+        <a href="./members.html" class="item"><i class="fas fa-users"></i> Members</a>
         <a href="#" class="item"><i class="fas fa-info-circle"></i> About</a>
         <a href="#" class="item"><i class="fas fa-comment"></i> Feedback</a>
         <a href="#" class="item"><i class="fas fa-envelope"></i> Contact</a>
@@ -73,7 +74,7 @@
         <!-- ============ resource start =================  -->
         <section>
             <!-- resource   -->
-            <ul>
+            <ul data-aos="fade-up">
                 <li class="resCard">
                     <div class="featured-image">
                         <img src="../resources/serverless.jpg" alt="">
@@ -104,7 +105,7 @@
             <!-- resource  end  -->
 
             <!-- resource   -->
-            <ul>
+            <ul data-aos="fade-up">
                 <li class="resCard">
                     <div class="featured-image">
                         <img src="../resources/arduino_setup.webp" alt="">
@@ -136,7 +137,7 @@
 
 
             <!-- resource 1  -->
-            <ul>
+            <ul data-aos="fade-up">
                 <li class="resCard">
                     <div class="featured-image">
                         <img src="../resources/NodeMCU_DEVKIT_1.0.jpg" alt="">
@@ -167,7 +168,7 @@
             <!-- resource 1 end  -->
 
             <!-- resource   -->
-            <ul>
+                <ul data-aos="fade-up">
                 <li class="resCard">
                     <div class="featured-image">
                         <img src="../resources/homeAutomation.jpeg" alt="">
@@ -197,7 +198,7 @@
             </ul>
             <!-- resource  end  -->
             <!-- resource   -->
-            <ul>
+            <ul data-aos="fade-up">
                 <li class="resCard">
                     <div class="featured-image">
                         <img src="../resources/servelremote.jpeg" alt="">
@@ -210,6 +211,39 @@
 
                                 </div>
                                 <span class="">Take control of your devices from anywhere in the world with our server-based remote system powered by ESP8266.</span>
+
+                                <p class="meta">
+                                    <span class="author">Workshop</span>
+                                    <span> | </span>
+                                    <time class="updated" datetime="" itemprop="datePublished">October 15, 2022</time>
+                                </p>
+                            </a>
+                        </header>
+                        <div class="chips">
+                            <a class="chip">Learn</a>
+                            <a class="chip">Buy</a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+            <!-- resource  end  -->
+
+            <!-- resource   -->
+            <ul data-aos="fade-up">
+                <li class="resCard">
+                    <div class="featured-image">
+                        <img src="../resources/ledDisplay.png" alt="">
+                    </div>
+                    <article class="resCard-body">
+                        <header>
+                            <a href="https://embedclubpace.blogspot.com/2022/02/print-string-on-16x2-lcd.html">
+                                <div class="title">
+                                    <h4 class="speacialSpan widget-title"> Print String on 16X2 LCD
+                                        <span class="speacialSpan"></span>
+                                    </h4>
+
+                                </div>
+                                <span class="">Print String on 16x2 LCD" refers to the process of displaying text on a Liquid Crystal Display (LCD) module that has a dimension of 16 characters in each of its 2 rows. </span>
 
                                 <p class="meta">
                                     <span class="author">Workshop</span>
@@ -299,6 +333,11 @@
     </div>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+      AOS.init();
+
+</script>
 </body>
 
 </html>

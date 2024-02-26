@@ -1,0 +1,217 @@
+
+.all {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.all .container{
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+.container .card-1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: flex-end;
+}
+.card-1 img{
+    padding: 10px;
+    width: 175px;
+    border-radius: 35px;
+    height: 200px;
+    object-fit: cover;
+    background-color: rgba(172, 172, 172, 0.329);
+}
+.container .card-2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 20px;
+}
+.card-2 h1{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.card-2 h2{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.card-2 .boxx{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: rgba(172, 172, 172, 0.329);
+    padding: 20px;
+    border-radius: 20px;
+}
+.box .desc-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.desc-1 h1{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 0;
+
+}
+.box .desc-1 h3{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    margin-right: 20px;
+    text-align: center;
+    
+}
+.click{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.click .chat{
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: black solid 1px;
+    font-size: 12px;
+    background-color: transparent;
+}
+.click .follow{
+    padding: 10px 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 870px){
+    .all .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .container .card-1 .photo{
+        width: 100%;
+        padding: 20px;
+    }
+    .card-1 .photo img{
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .container .card-2{
+        text-align: center;
+        padding: 0;
+    }
+    .boxx .box{
+        margin: 20px;
+    }
+    .box .desc-1 h3{
+        margin: 0;
+        padding: 0;
+    }
+    .button{
+        display: flex;
+        padding-bottom: 20px;
+    }
+    .click{
+        justify-content: space-evenly;
+    }
+    .click .chat{
+        padding: 20px 100px;
+        font-size: 12px;
+    }
+    .click .follow{
+        padding: 20px 100px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .click .chat{
+        padding: 20px 80px;
+        font-size: 12px;
+    }
+    .click .follow{
+        padding: 20px 80px;
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .click .chat{
+        padding: 20px 60px;
+        font-size: 12px;
+    }
+    .click .follow{
+        padding: 20px 60px;
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .click .chat{
+        padding: 15px 50px;
+        font-size: 12px;
+    }
+    .click .follow{
+        padding: 15px 50px;
+        font-size: 12px;
+    }
+    .boxx .box{
+        display: flex;
+        justify-content: space-between;
+    }
+    .box .desc-1 h1{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 375px){
+    .click .chat{
+        padding: 15px 40px;
+        font-size: 12px;
+    }
+    .click .follow{
+        padding: 15px 40px;
+        font-size: 12px;
+    }
+    .boxx .box{
+        display: flex;
+        justify-content: space-between;
+    }
+    .box .desc-1 h1{
+        font-size: 15px;
+    }
+    .box .desc-1 h3{
+        font-size: 12px;
+    }
+    .button{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.memYear{
+    text-align: center;
+}
+.memYear::before{
+    content: "";
+    height: 5px;
+    width: 65px;
+    position: absolute;
+    border-top:5px dotted teal;
+    margin-top: -5px;
+
+}

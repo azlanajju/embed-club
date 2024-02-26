@@ -72,6 +72,9 @@ width: 94vw;
 canvas{
     width: 100vw;
 }
+.copyright-footer p{
+    font-size: 13px;
+}
 }
 
 /* events page news css  */

@@ -52,7 +52,7 @@
 
       <form class="form-inline active-cyan-4">
         <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
-        <i class="fas fa-search" aria-hidden="true"></i>
+        <i style="margin-top: -17px;" class="fas fa-search" aria-hidden="true"></i>
       </form>
     </div>
   </div>
@@ -68,7 +68,7 @@
     <a href="./pages/events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
     <a href="./pages/resource.html" class="item"><i class="fas fa-book"></i> Resource</a>
     <a href="#" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-    <a href="#" class="item"><i class="fas fa-users"></i> Members</a>
+    <a href="./pages/members.html" class="item"><i class="fas fa-users"></i> Members</a>
     <a href="#" class="item"><i class="fas fa-info-circle"></i> About</a>
     <a href="#" class="item"><i class="fas fa-comment"></i> Feedback</a>
     <a href="#" class="item"><i class="fas fa-envelope"></i> Contact</a>
@@ -155,7 +155,7 @@
         <p>Our vision is to be a leading hub for innovation in embedded systems and IoT. We aim to inspire and educate the next generation of engineers and problem solvers who will shape the future of technology.</p>
       </div>
     </section>
-    <section class="about-us">
+    <section class="about-us" >
       <h5 class="speacialSpan widget-title"> About us   <span  class="speacialSpan"></span></h5>
       <p>Welcome to the IoT and Embedded Systems Club at P A College of Engineering. We are a group of passionate students and tech enthusiasts who share a common interest in embedded systems, IoT, and computer science. Our club is dedicated to learning, collaboration, and innovation.</p>
       <p>Our club provides a platform for students to explore, experiment, and create with technology. We organize events, workshops, and projects that allow members to gain hands-on experience and expand their knowledge in this exciting field.</p>
@@ -220,7 +220,7 @@
         <div class="footer-copyright">
           <div class="container">
             <div class="row">
-              <div class="col-md-12 text-center">
+              <div class="col-md-12 text-center copyright-footer">
                 <p>Copyright Embed Club © 2024. All rights reserved.</p>
               </div>
             </div>
@@ -322,11 +322,11 @@
 <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
 <script>
   $(document).ready(function () {
-    $.get("./intr.html", function (data) {
+    $.get("./intro.html", function (data) {
       $("#dynamic-content").html(data);
       setTimeout(function () {
         $("#dynamic-content").empty();
-      }, 3000);
+      }, 1500);
     });
   });
 </script>

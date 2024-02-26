@@ -40,6 +40,7 @@ body{
 
 .sideNav a:hover {
     color: teal;
+    text-decoration: none;
 }
 
 .active {
@@ -95,12 +96,13 @@ body{
 
 .searchBar form input {
     width: 350px !important;
+    height: 40px;
 }
 
 .searchBar form i {
     background: teal;
     color: white;
-    height: 100%;
+    height: 40px;
     
     width: 33px;
     text-align: center;
