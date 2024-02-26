@@ -1,16 +1,21 @@
 @media (max-width:900px) {
-    .sideNav{
-    width: 0;
-    overflow: hidden;
+    .sideNav {
+        width: 0;
+        overflow: hidden;
     }
-    .mainContents{
+
+    .mainContents {
         width: 100vw;
         margin-left: 0;
     }
-    .searchBar{
+
+    .searchBar {
         display: none;
+        transition: all 0.3s ease;
+
     }
-    .menu-icon{
+
+    .menu-icon {
         display: block;
         position: fixed;
         top: 60px;
@@ -21,90 +26,103 @@
         backdrop-filter: blur(5px);
 
     }
-    .menu-icon i{
+
+    .menu-icon i {
         font-size: 30px;
     }
 
-.mission-vision {
-    flex-direction: column;
-}
+    .mission-vision {
+        flex-direction: column;
+    }
 
-.openSideNav{
-    width: 100vw;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    float: right;
-    transition: 0.3s;
-    background: rgba(201, 238, 233, 0.562);
-    backdrop-filter: blur(15px);
-}
-.openSideNav div{
-    display: none;
-}
-.openSideNav a {
-    width: 100vw;
-    text-align: center;
-    font-size: 20px;
-}
-.openSideNav .closeIcon{
-    display: flex;
-    position: absolute;
-    left: 0;
-    font-size: 30px;
-    top: 60px;
-    margin: 10px;
-}
-.homeContent {
-    width: 100vw;
-    position: absolute;
-    top: 150px;
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-    backdrop-filter: blur(5px);
+    .openSideNav {
+        width: 100vw;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: right;
+        transition: all 0.3s ease;
+        background: rgba(201, 238, 233, 0.562);
+        backdrop-filter: blur(15px);
+    }
 
-}
-.event-card {
-width: 94vw;
-}
-canvas{
-    width: 100vw;
-}
-.copyright-footer p{
-    font-size: 13px;
-}
+    .openSideNav div {
+        display: none;
+    }
+
+    .openSideNav a {
+        width: 100vw;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .openSideNav .closeIcon {
+        display: flex;
+        position: absolute;
+        left: 0;
+        font-size: 30px;
+        top: 60px;
+        margin: 10px;
+    }
+
+    .homeContent {
+        width: 100vw;
+        position: absolute;
+        top: 150px;
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+        backdrop-filter: blur(5px);
+
+    }
+
+    .event-card {
+        width: 94vw;
+    }
+
+    canvas {
+        width: 100vw;
+    }
+
+    .copyright-footer p {
+        font-size: 13px;
+    }
 }
 
 /* events page news css  */
 
 @media (max-width:700px) {
-    
 
-.row{
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-}
-.col-md-4{
-    width: 45vw;
-}
-.col-md-4:nth-child(2n){
-    margin-left: 12px;
-}
-.card{
-    width: 45vw ;
-    height: 230px;
-    margin: 0;
-    margin-bottom: 20px
-}
-.card-title{
-    font-size: 18px;
 
-}
-.card-text{
-    font-size: 10px;
-}
+    .row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+
+    .col-md-4 {
+        width: 45vw;
+    }
+
+    .col-md-4:nth-child(2n) {
+        margin-left: 12px;
+    }
+
+    .card {
+        width: 45vw;
+        height: 230px;
+        margin: 0;
+        margin-bottom: 20px
+    }
+
+    .card-title {
+        font-size: 18px;
+
+    }
+
+    .card-text {
+        font-size: 10px;
+    }
 
 }

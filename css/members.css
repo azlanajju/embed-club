@@ -69,6 +69,8 @@
     margin-top: 10px;
     font-size: 15px;
     font-weight: 0;
+    cursor: pointer;
+
 
 }
 .box .desc-1 h3{
@@ -151,6 +153,13 @@
         padding: 20px 80px;
         font-size: 12px;
     }
+    .newBorder {
+        border: 1px solid;
+        margin-bottom: 10px;
+        margin-left: 25px!important;
+
+    }
+    
 }
 @media only screen and (max-width: 500px){
     .click .chat{

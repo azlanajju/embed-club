@@ -1,0 +1,78 @@
+
+.container {
+    width: 70%;
+    /* margin: auto; */
+    position: relative;
+    margin-bottom:30px;
+
+    box-shadow: 0px 10px 0px rgba(0,0,0,0);
+    border-radius: 5px;
+    transition: box-shadow .5s ease;
+}
+.container .logo {
+    background-color: teal;
+    height: 70px;
+    display: inline-block;
+    width: 64px;
+    transform :skew(45deg, 0deg);
+    transition: margin-left .5s ease, margin-right .5s ease;
+}
+.container .logo .fa {
+    transform :skew(-45deg, 0deg);
+    color: white;
+    font-size: 20px;
+    background: none;
+}
+.container .logo.logo-left {
+    float: left;
+    margin-left: -512px;
+    padding: 20px 64px 20px 512px;
+    transform :skew(45deg, 0deg);
+}
+.container .logo.logo-left .fa {
+    transform :skew(-45deg, 0deg);
+}
+.container .logo.logo-right {
+    float: right;
+    margin-right: -512px;
+    padding: 20px 512px 20px 64px;
+    transform :skew(-45deg, 0deg);
+}
+.container .logo.logo-right .fa {
+    transform :skew(45deg, 0deg);
+}
+.container:hover {
+    box-shadow: 0px 10px 40px rgba(0,0,0,0.2);
+}
+.container:hover .logo-left {
+    margin-left: -448px;
+}
+.container:hover .logo-right {
+    margin-right: -448px;
+}
+.container:hover .title {
+    background-color: hsl(0,0%,85%);
+}
+.container .title {
+    display: inline-block;
+    position: absolute;
+    background-color: hsl(0,0%,90%);
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8.5px 0px;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+    border-radius: 5px 5px 0px 0px;
+    transition: background-color .5s ease;
+    height: 70px;
+    vertical-align: center !important;
+}
+.container .text p {
+    padding: 20px 10px;
+    line-height: 1.5em;
+    clear: both;
+    text-align: justify;
+}
