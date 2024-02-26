@@ -1,0 +1,187 @@
+.resCard {
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resCard .resCard-body {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px;
+}
+
+.resCard header {
+  flex: 100%;
+}
+
+.resCard .meta {
+  margin-bottom: 22px;
+}
+
+.resCard .chips {
+  align-self: flex-end;
+}
+
+.resCard .featured-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+  .resCard {
+    flex-direction: row;
+    max-height: 279px;
+  }
+
+  .resCard h3 {
+    font-size: calc(100% + 1vw);
+  }
+
+  .resCard .featured-image {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    max-width: 390px;
+    max-height: 279px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .resCard h3 {
+    font-size: 32px;
+  }
+}
+
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #222;
+  margin: .5em 0;
+}
+
+.pre-heading {
+  color: #444;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.meta {
+  color: #555;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.author {
+  text-transform: uppercase;
+}
+
+ul {
+  display: block;
+  margin: 0 auto;
+  max-width: 1160px;
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.chips {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-overflow-style: none;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: white;
+  background: teal;
+  border-radius: 25px;
+  margin-right: 8px;
+  padding: 5px 12px;
+  max-height: 32px;
+  width: 100px;
+  text-align: center;
+}
+
+.chip.large {
+  text-transform: uppercase;
+  color: black;
+  border: 1px solid #E0E0E0;
+  background: white;
+  padding: 10px 15px;
+  max-height: 44px;
+}
+
+.chip input {
+  margin-bottom: 0 !important;
+  height: 22px !important;
+  background-color: transparent !important;
+  padding: 3px 0 0 0 !important;
+}
+
+.chip input::placeholder {
+  color: black;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a.chip {
+  cursor: pointer;
+}
+
+a.chip:hover,
+a.chip:visited,
+a.chip:active {
+  color: white;
+}
+
+a.chip.large:visited,
+a.chip.large:hover,
+a.chip.large:active {
+  color: black;
+}
+
+/*# sourceMappingURL=test.css.map */
+.featured-image{
+  padding: 10px;
+  background: white;
+}
+.featured-image img{
+
+  height: 230px;
+  width: 330px;
+  object-fit: cover;
+  border-radius: 5px;
+border: 0.5px solid rgba(0, 128, 128, 0.418);
+}
+
+.widget-title{
+  color: teal;
+}
