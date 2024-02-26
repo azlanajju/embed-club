@@ -16,9 +16,12 @@
     }
     .card{
         width: 45vw ;
-        height: 230px;
+        height: 200px !important;
+
+        max-height: 180px !important;
         margin: 0;
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        overflow: hidden;
     }
     .card-title{
         font-size: 18px;
@@ -26,6 +29,14 @@
     }
     .card-text{
         font-size: 10px;
+    }
+    .pupup{
+        min-width: 100vw !important;
+        margin: 0;
+    }
+    .popup-poster {
+        width: 100%;
+
     }
 
 }
