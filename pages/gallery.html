@@ -1,3 +1,5 @@
+
+</head>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,11 +10,11 @@
     <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
 
 
-    <!-- css -->
-
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="./Gallery_files/responsive.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../responsive.css">
-    <link rel="stylesheet" href="../css/event.css">
+    <!-- <link rel="stylesheet" href="../css/event.css"> -->
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/members.css">
     <!-- aos animation -->
@@ -28,6 +30,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./Gallery_files/baguetteBox.min.css">
+
+
+
+
+        <link rel="stylesheet" href="./Gallery_files/style.css">
+
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="./Gallery_files/responsive.css">
 
 </head>
 
@@ -75,12 +86,48 @@
         </div>
 
 
-        <!-- ============ contact start =================  -->
+        <!-- ============ GALLERY start =================  -->
         <section>
+
+            </head>
+            
+                <!-- content 		 -->
+                <section class="gallery-block cards-gallery" style="margin-top: 20vh;">
+                    <div class="container">
+ 
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card border-0 transform-on-hover">
+                                    <a class="lightbox" href="../achievements-img/adc.jpeg"><img src="../achievements-img/adc.jpeg" class="card-img-top"></a>
+                                    <div class="card-body">
+                                        <h6>ADC 2023 Winners</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card border-0 transform-on-hover">
+                                    <a class="lightbox" href="./Gallery_files/23.jpg"><img src="./Gallery_files/23.jpg" class="card-img-top"></a>
+                                    <div class="card-body">
+                                        <h6>Cyber Security Workshop at WPT college, Mangalore</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card border-0 transform-on-hover">
+                                    <a class="lightbox" href="./Gallery_files/24.jpg"><img src="./Gallery_files/24.jpg" class="card-img-top"></a>
+                                    <div class="card-body">
+                                        <h6></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                </section>
+
 
 
         </section>
-        <!-- ============     contact end ================= -->
+        <!-- ============     gallery end ================= -->
 
         <!-- =================footer start ================ -->
         </section>
@@ -125,7 +172,7 @@
                                 <p>
                                 <div class="thumb-content"><a href="https://github.com/azlanajju/"> Azlan</a></div>
                                 </p>
-                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
+                                <a href="https://codewizy.in"> <img style="filter: invert(100%);height: 50px;" src="../images/codewizycredits.png" alt=""></a>
                                 <div class="emailfield">
                                     </form>
                                 </div>
@@ -147,6 +194,16 @@
 
 
     </div>
+    <!-- gallery files  -->
+
+     <script src="./Gallery_files/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.cards-gallery', {
+            animation: 'slideIn'
+        });
+    </script>
+
+
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -154,6 +211,10 @@
         AOS.init();
 
     </script>
+
 </body>
 
 </html>
+
+
+

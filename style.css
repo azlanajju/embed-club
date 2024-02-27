@@ -54,7 +54,7 @@ body{
     background: #eeeeee;
     display: flex;
     align-items: center;
-    z-index: 999;
+    z-index: 9999999999;
     position: fixed;
     top: 0;
 
