@@ -29,6 +29,7 @@
 
   <!-- footer  -->
   <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/loader.css">
   <style>
 
   </style>
@@ -43,6 +44,19 @@
 </head>
 
 <body>
+  <div class="loaderBody">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.querySelector('.loaderBody');
+      loader.parentElement.classList.add('loaded'); 
+    });
+  </script>
   <div id="dynamic-content"></div>
   <div class="topBar">
     <div class="paceLogo">
@@ -80,16 +94,20 @@
 
 
   <div class="mainContents">
-    <canvas></canvas>
-    <script src="./animation.js"></script>
-    <script src="./animation.js"></script>
+    <!-- animation old -->
+    <!-- <canvas></canvas> -->
+        <!-- <script src="./animation.js"></script> -->
+
+        <!-- animation new  -->
+    <canvas id = "canvas"></canvas>
+    <script src="./circuitAnimation.js"></script>
 
     <div class="homeBg">
 
       <div class="homeContent">
         <h1>Welcome to Embed Club</h1>
         <p>"Unlocking the Power of IoT and Embedded Systems"</p>
-        <a  href="#">Learn More</a>
+        <a  href="./pages/about.html">Learn More</a>
       </div>
     </div>
 
@@ -235,21 +253,6 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
   <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- ========================links ==================================== -->
   <script src="main.js"></script>
