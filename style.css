@@ -267,7 +267,6 @@ canvas{
     background-color: rgb(1, 94, 94);
 }
 
-
 .img_carousel div img {
     min-width: 200px;
     min-height: 150px;
@@ -278,6 +277,22 @@ canvas{
 
 }
 
+@media (max-width:780px) {
+    .img_carousel{
+        max-height: 200px;
+        overflow: hidden;
+    }
+    .img_carousel div  {
+      
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+          margin: 5px;
+          min-width: 200px;    
+          min-height: 200px
+    }
+    
+}
 .counter-card {
     text-align: center;
     padding: 2rem;
@@ -294,5 +309,5 @@ canvas{
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #343a40; /* Adjust text color as needed */
+    color: #343a40; 
   }

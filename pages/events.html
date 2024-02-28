@@ -25,10 +25,24 @@
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/loader.css">
 
 </head>
 
 <body>
+    <div class="loaderBody">
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <script>
+        window.addEventListener('load', function() {
+          const loader = document.querySelector('.loaderBody');
+          loader.parentElement.classList.add('loaded'); 
+        });
+      </script>
     <div class="topBar">
         <div class="paceLogo">
             <img src="../images/emedClub_logo.png" alt="">
@@ -52,7 +66,7 @@
         <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
         <a href="#" class="item active"><i class="fas fa-calendar-alt"></i> Events</a>
         <a href="./resource.html" class="item"><i class="fas fa-book"></i> Resource</a>
-        <a href="#" class="item"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
         <a href="./members.html" class="item"><i class="fas fa-users"></i> Members</a>
         <a href="./about.html" class="item"><i class="fas fa-info-circle"></i> About</a>
         <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
