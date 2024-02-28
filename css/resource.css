@@ -185,3 +185,6 @@ border: 0.5px solid rgba(0, 128, 128, 0.418);
 .widget-title{
   color: teal;
 }
+.desciptionP{
+  text-align: justify !important;
+}

@@ -63,7 +63,7 @@ body {
     .form-container .form input {
       color: #87A4B6;
       width: 100%;
-      background-color: #fff;
+      background-color: #eee;
       border: none;
       outline: none;
       padding: 10px;
@@ -78,7 +78,7 @@ body {
       padding: 10px;
       border: none;
       outline: none;
-      background-color: #013747;
+      background-color: #eee;
       color: teal;
       font-weight: bold;
       resize: none;
