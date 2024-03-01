@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.onkeydown = function(e) {
         if ((e.ctrlKey && e.shiftKey && e.keyCode === 67)) {
-            document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1></center>';
+            document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1> <br><a style="background: teal;color: white;" class="btn btn-primary" href="">Give up</a></center>';
             return false;
         } else if ((e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 73 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 16 || e.keyCode === 117)) || (e.keyCode === 123)) {
-            document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1></center>';
+            document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1> <br><a style="background: teal;color: white;" class="btn btn-primary" href="">Give up</a></center>';
             return false;
         }
     };
