@@ -52,9 +52,9 @@
     </div>
   </div>
   <script>
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       const loader = document.querySelector('.loaderBody');
-      loader.parentElement.classList.add('loaded'); 
+      loader.parentElement.classList.add('loaded');
     });
   </script>
   <div id="dynamic-content"></div>
@@ -96,10 +96,10 @@
   <div class="mainContents">
     <!-- animation old -->
     <!-- <canvas></canvas> -->
-        <!-- <script src="./animation.js"></script> -->
+    <!-- <script src="./animation.js"></script> -->
 
-        <!-- animation new  -->
-    <canvas id = "canvas"></canvas>
+    <!-- animation new  -->
+    <canvas id="canvas"></canvas>
     <script src="./circuitAnimation.js"></script>
 
     <div class="homeBg">
@@ -107,13 +107,13 @@
       <div class="homeContent">
         <h1>Welcome to Embed Club</h1>
         <p>"Unlocking the Power of IoT and Embedded Systems"</p>
-        <a  href="./pages/about.html">Learn More</a>
+        <a href="./pages/about.html">Learn More</a>
       </div>
     </div>
 
     <section>
       <div class="container ">
-        <h5 class="speacialSpan widget-title"> Gallery   <span  class="speacialSpan"></span></h5>
+        <h5 class="speacialSpan widget-title"> Gallery <span class="speacialSpan"></span></h5>
         <div class="img_carousel">
           <div><img src="./achievements-img/3d.jpeg"></div>
           <div><img src="./achievements-img/adc.jpeg"></div>
@@ -165,16 +165,16 @@
     </section>
     <section data-aos="fade-up" data-aos-delay="200" class="mission-vision">
       <div class="mission">
-        <h5 class="speacialSpan widget-title"> Mission   <span  class="speacialSpan"></span></h5>
+        <h5 class="speacialSpan widget-title"> Mission <span class="speacialSpan"></span></h5>
         <p>We are dedicated to advancing knowledge and expertise in embedded systems and IoT. Our mission is to foster a community of passionate learners and innovators who collaborate, create, and make a positive impact through technology.</p>
       </div>
       <div class="vision">
-        <h5 class="speacialSpan widget-title"> Vision   <span  class="speacialSpan"></span></h5>
+        <h5 class="speacialSpan widget-title"> Vision <span class="speacialSpan"></span></h5>
         <p>Our vision is to be a leading hub for innovation in embedded systems and IoT. We aim to inspire and educate the next generation of engineers and problem solvers who will shape the future of technology.</p>
       </div>
     </section>
-    <section class="about-us" >
-      <h5 class="speacialSpan widget-title"> About us   <span  class="speacialSpan"></span></h5>
+    <section class="about-us">
+      <h5 class="speacialSpan widget-title"> About us <span class="speacialSpan"></span></h5>
       <p>Welcome to the IoT and Embedded Systems Club at P A College of Engineering. We are a group of passionate students and tech enthusiasts who share a common interest in embedded systems, IoT, and computer science. Our club is dedicated to learning, collaboration, and innovation.</p>
       <p>Our club provides a platform for students to explore, experiment, and create with technology. We organize events, workshops, and projects that allow members to gain hands-on experience and expand their knowledge in this exciting field.</p>
 
@@ -184,7 +184,7 @@
 
 
 
-<!-- =================footer start ================ -->
+      <!-- =================footer start ================ -->
     </section>
     <footer id="footer" class="footer-1">
       <div class="main-footer widgets-dark typo-light">
@@ -193,7 +193,7 @@
             <div class="col-xs-12 col-sm-6 col-md-3">
               <div class="widget subscribe no-box">
                 <h5 class="widget-title">Embed Club<span></span></h5>
-                
+
                 <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
               </div>
             </div>
@@ -225,8 +225,8 @@
               <div class="widget no-box">
                 <h5 class="widget-title ">Developed By<span></span></h5>
                 <p>
-                  <div class="thumb-content"><a href="https://github.com/azlanajju/"> Azlan</a></div>
-                  <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. -->                 </p>
+                <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
+                <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. --> </p>
                 <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="./images/codewizycredits.png" alt=""></a>
                 <div class="emailfield">
                   </form>
@@ -248,7 +248,13 @@
     <!-- ======================footer end =============== -->
 
   </div>
-
+  <script>
+    const devCred = document.getElementById("devCred");
+    if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
+      document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
+      alert("Unauthorized changes detected! This website may not function properly.");
+    }
+  </script>
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
@@ -271,6 +277,7 @@
         arrows: false
       });
     });
+
   </script>
 
 

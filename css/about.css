@@ -77,3 +77,9 @@
     clear: both;
     text-align: justify;
 }
+.text{
+    text-align: justify;
+}
+.ulParagraph li{
+    text-align: justify !important ;
+}
