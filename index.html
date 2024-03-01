@@ -327,7 +327,30 @@
   AOS.init();
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.oncontextmenu = function() { return false; };
 
+    document.addEventListener("mousedown", function(e) {
+        if (e.button == 2) {
+            return false;
+        } else {
+            return true;
+        }
+    });
+
+    document.onkeydown = function(e) {
+        if ((e.ctrlKey && e.shiftKey && e.keyCode === 67)) {
+            document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1></center>';
+            return false;
+        } else if ((e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 73 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 16 || e.keyCode === 117)) || (e.keyCode === 123)) {
+            document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1></center>';
+            return false;
+        }
+    };
+});
+
+</script>
 
 <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
 <script>
