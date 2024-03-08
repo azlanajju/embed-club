@@ -45,7 +45,7 @@ h2 {
   padding: 20px;
   width: 100vw;
   text-align: justify;
-  
+  width: calc(100vw - 20px);
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
