@@ -211,6 +211,10 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    .card-1 img{
+        height: 250px !important;
+        
+    }
 }
 .memYear{
     text-align: center;
