@@ -45,6 +45,9 @@ h2 {
   padding: 20px;
   width: 100vw;
   text-align: justify;
+  
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .timeline__event__date {
@@ -163,5 +166,27 @@ h2 {
 
   100% {
       transform: rotate(360deg);
+  }
+}
+
+@media (max-width:780px) {
+  .timeline__event:after {
+    content: "";
+display: none;
+  
+  }
+  .timeline__event:before {
+    content: "";
+
+display: none;
+  }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    margin: 5% auto;
+  }
+  .timeline__event__content {
+    
   }
 }
