@@ -120,7 +120,7 @@
             </div>
             <p class="title title-left">Esp Wroom 32</p>
             <br>
-            < class="text">
+            <div class="text">
                 <div class="link">
                     <br>
                     <br>
@@ -174,6 +174,64 @@
                     </p>
                 }
         </div>
+        <p style="font-weight: bold; margin-bottom: -10px;">OLED</p>
+        <div class="cardBox shadow">
+        </BR>
+             #include < Wire.h><br>
+            #include < Adafruit_GFX.h><br>
+            #include < Adafruit_SSD1306.h><br>            
+            #define OLED_ADDR   0x3C<br>
+            Adafruit_SSD1306 display(128, 64, &Wire, -1);<br>
+            void setup() {
+               <P id="p0">
+                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);<br>
+                display.clearDisplay();<br>
+                display.setTextColor(WHITE);<br>
+                display.setTextSize(2);<br>
+                display.setCursor(10, 20);<br>
+                display.println("Embed Club");<br>
+                display.display();
+            </P> 
+        }</BR>
+            void loop() {}
+    </div>
+    <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR</p>
+    <div class="cardBox shadow">
+    </BR>
+        const int trigPin = 5;<br>
+        const int echoPin = 18;<br>
+        // Define sound speed in cm/uS<br>
+        const float SOUND_SPEED = 0.034;<br>
+        long duration;<br>
+        float distanceCm;<br>
+        void setup() {
+           <P id="p0">
+            Serial.begin(9600); // Start serial communication<br>
+            pinMode(trigPin, OUTPUT); // Set trigPin as an output<br>
+            pinMode(echoPin, INPUT); // Set echoPin as an input
+        </P> 
+    }
+          </BR>
+        void loop() {<br>
+        <p id="p0">
+                     // Clear trigPin<br>
+                    digitalWrite(trigPin, LOW);<br>
+                    delayMicroseconds(2);<br>
+                    // Set trigPin to HIGH state for 10 microseconds<br>
+                    digitalWrite(trigPin, HIGH);<br>
+                    delayMicroseconds(10);<br>
+                    digitalWrite(trigPin, LOW);<br>
+                    // Read echoPin, return sound wave travel time in microseconds<br>
+                    duration = pulseIn(echoPin, HIGH);<br>
+                    // Calculate distance<br>
+                    distanceCm = (duration * SOUND_SPEED) / 2;<br>
+                    // Print distance to Serial Monitor<br>
+                    Serial.print("Distance (cm): ");<br>
+                    Serial.println(distanceCm);<br>
+                    delay(1000); // Wait for a second
+            </p>
+        }
+</div>
         <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR & OLED DISPLAY</p>
         <div class="cardBox shadow">
         </BR>
