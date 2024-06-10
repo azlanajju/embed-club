@@ -32,8 +32,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/loader.css">
     <style>
-      
-        .cardBox {
+      .cardBox {
+            margin: 15px 0 15px 0;
            padding: 0px 0px 10px 20px;
             width: 75vw;
             height: auto;
@@ -48,11 +48,9 @@
                         0.3em 0.3em 1em rgba(0,0,0,0.3);
             }
             #p0 { padding-left: 10px; }
-            .app{
-                display: flex;
-            }
+          
             .app img{
-                padding: 4vh 10vh 0 0;
+                padding: 1vh 5vh 2vh 5vh;
                 height: 40vh;
                 width: 40vw;
             }
@@ -94,13 +92,13 @@
         <i id="closeBtn" class="fas fa-times closeIcon"></i>
         <div style="height: 70px;"></div>
         <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
-        <a href="./events.html" class="item "><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="./resource.html" class="item "><i class="fas fa-book"></i> Resource</a>
-        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="./members.html" class="item "><i class="fas fa-users"></i> Members</a>
-        <a href="./about.html" ><i class="fas fa-info-circle"></i> About</a>
-        <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
-        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="../pages/events.html" class="item "><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="../pages/resource.html" class="item "><i class="fas fa-book"></i> Resource</a>
+        <a href="../pages/achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="../pages/members.html" class="item "><i class="fas fa-users"></i> Members</a>
+        <a href="../pages/about.html" ><i class="fas fa-info-circle"></i> About</a>
+        <a href="../pages/gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
+        <a href="../pages/contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
         <a href="#" class="item active" class="item"><i class="fas fa-comments"></i> FeedBack</a>
     </div>
 
@@ -122,7 +120,7 @@
             </div>
             <p class="title title-left">Esp Wroom 32</p>
             <br>
-            <div class="text">
+            < class="text">
                 <div class="link">
                     <br>
                     <br>
@@ -241,7 +239,7 @@
     </div>
 
       <p style="font-weight: bold; margin-bottom: -10px;">IOT WITH MOBILE APPLICATION</p>
-      <div class="app cardBox shadow">
+      <div class="app cardBox shadow ">
         <div class="code">
         </BR>
         <pre>
@@ -249,67 +247,55 @@
             const char WiFiPassword[] = "1234567890";
             const char AP_NameChar[] = "embedclub" ;
             WiFiServer server(80);
-            
             String header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
             String html_1 = "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;LED Control&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div id='main'&gt;&lt;h2&gt;LED Control&lt;/h2&gt;";
             String html_2 = "&lt;form id='F1' action='LEDON'&gt;&lt;input class='button' type='submit' value='LED ON' &gt;&lt;/form&gt;&lt;br&gt;";
             String html_3 = "&lt;form id='F2' action='LEDOFF'&gt;&lt;input class='button' type='submit' value='LED OFF' &gt;&lt;/form&gt;&lt;br&gt;";
             String html_4 = "&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;";
-            
             String request = "";
             int LED_Pin = 2; // Use GPIO2 for the LED on ESP32
-            
             void setup() {
-                // Initialize serial communication<br>
+                // Initialize serial communication
                 Serial.begin(9600);
-                
-                // Initialize the OLED display<br>
-                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);<br>
-                display.clearDisplay();<br>
-                display.setTextColor(WHITE);<br>
+                // Initialize the OLED display
+                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
+                display.clearDisplay();
+                display.setTextColor(WHITE);
                 display.setTextSize(2);
-                
-                // Initialize ultrasonic sensor pins<br>
-                pinMode(trigPin, OUTPUT);<br>
+                // Initialize ultrasonic sensor pins
+                pinMode(trigPin, OUTPUT);
                 pinMode(echoPin, INPUT);
             }
-            
             void loop() {
-                // Clear trigPin<br>
-                digitalWrite(trigPin, LOW);<br>
-                delayMicroseconds(2);
-                
-                // Set trigPin to HIGH state for 10 microseconds<br>
-                digitalWrite(trigPin, HIGH);<br>
-                delayMicroseconds(10);<br>
+                // Clear trigPin
                 digitalWrite(trigPin, LOW);
-                
+                delayMicroseconds(2);
+                // Set trigPin to HIGH state for 10 microseconds
+                digitalWrite(trigPin, HIGH);
+                delayMicroseconds(10);
+                digitalWrite(trigPin, LOW);
                 // Read echoPin, return sound wave travel time in microseconds<br>
                 duration = pulseIn(echoPin, HIGH);
-                
-                // Calculate distance<br>
+                // Calculate distance
                 distanceCm = (duration * SOUND_SPEED) / 2;
-                
-                // Print distance to Serial Monitor<br>
-                Serial.print("Distance (cm): ");<br>
+                // Print distance to Serial Monitor
+                Serial.print("Distance (cm): ");
                 Serial.println(distanceCm);
-                
-                // Display distance on OLED<br>
-                display.clearDisplay();<br>
-                display.setCursor(0, 20);<br>
-                display.print("Distance: ");<br>
-                display.print(distanceCm);<br>
-                display.print(" cm");<br>
-                display.display();<br>
+                // Display distance on OLED
+                display.clearDisplay();
+                display.setCursor(0, 20);
+                display.print("Distance: ");
+                display.print(distanceCm);
+                display.print(" cm");
+                display.display();
                 delay(1000); // Wait for a second
             }
             </pre>
-            
-        <div class="appimage">
-            <img src="./appiot.jpeg" alt="iot">
-        </div>
       </div>
-
+      <div class="appimage">
+        <img src="./appiot.jpeg" alt="iot">
+    </div>
+      </div>
         <div class="nothing"></div>
         <!-- ============ abomembersut start =================  -->
         
@@ -380,7 +366,7 @@
         <!-- ======================footer end =============== -->
 
 
-    </div>
+    
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
