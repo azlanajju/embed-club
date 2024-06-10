@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Club</title>
+    <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/about.css">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/members.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- bootsrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/resource.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <style>
+      
+        .cardBox {
+           padding: 0px 0px 10px 20px;
+            width: 75vw;
+            height: auto;
+            background: white;
+            border-radius: 10px;
+            transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+             .shadow {
+            box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                        0 0  0 2px rgb(190, 190, 190),
+                        0.3em 0.3em 1em rgba(0,0,0,0.3);
+            }
+            #p0 { padding-left: 10px; }
+            .app{
+                display: flex;
+            }
+            .app img{
+                padding: 4vh 10vh 0 0;
+                height: 40vh;
+                width: 40vw;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="loaderBody">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loaderBody');
+            loader.parentElement.classList.add('loaded');
+        });
+    </script>
+    <div class="topBar">
+        <div class="paceLogo">
+            <img src="../images/emedClub_logo.png" alt="">
+        </div>
+        <div class="searchBar">
+
+            <form class="form-inline active-cyan-4">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </form>
+        </div>
+    </div>
+
+    <div class="menu-icon">
+        <i id="menuBtn" class="fas fa-bars"></i>
+    </div>
+
+    <div id="sideNav" class="sideNav ">
+        <i id="closeBtn" class="fas fa-times closeIcon"></i>
+        <div style="height: 70px;"></div>
+        <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
+        <a href="./events.html" class="item "><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="./resource.html" class="item "><i class="fas fa-book"></i> Resource</a>
+        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="./members.html" class="item "><i class="fas fa-users"></i> Members</a>
+        <a href="./about.html" ><i class="fas fa-info-circle"></i> About</a>
+        <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
+        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="#" class="item active" class="item"><i class="fas fa-comments"></i> FeedBack</a>
+    </div>
+
+    <div class="nothing"></div>
+
+
+    <div class="mainContents">
+        <div class="homeBg">
+            <img src="../images/home-bg.jpg" alt="Homepage Background Image">
+            <div class="homeContent  homNavigation">
+                <h1>Esp Wroom 32</h1>
+                <p>Home > Feedback</p>
+            </div>
+        </div>
+        
+        <div class="container" data-aos="fade-up">
+            <div class="logo logo-left">
+                <i class="fa fa-comments fa-4x"></i>
+            </div>
+            <p class="title title-left">Esp Wroom 32</p>
+            <br>
+            <div class="text">
+                <div class="link">
+                    <br>
+                    <br>
+                    <h5>Installing ESP32 Add-on in Arduino IDE</h5>
+                    <p  style= "font-weight: bold; margin-bottom: -10px;">Enter the following into the “Additional Board Manager URLs” field:</p>
+                    <div class="cardBox shadow">
+                    <p>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</p>
+                    </div>
+                </div>
+                <p style="font-weight: bold; margin-bottom: -10px;">LED BLINK</p>
+                <div class="cardBox shadow">
+                </BR>
+                /***
+                * LED Blinking
+                * Code Written by TechMartian
+                */
+               const int ledPin = 5;
+               void setup() {
+                     <P id="p0">
+                        // setup pin 5 as a digital output pin<br>
+                        pinMode (ledPin, OUTPUT);
+                       </P> 
+                      }
+                      </BR>
+                    void loop() {<br>
+                    <p id="p0">
+                        digitalWrite (ledPin, HIGH);	// turn on the LED<br>
+                        delay(500);	// wait for half a second or 500 milliseconds<br>
+                        digitalWrite (ledPin, LOW);	// turn off the LED<br>
+                        delay(500);	// wait for half a second or 500 milliseconds
+                        </p>
+                    }
+            </div>
+            <p style="font-weight: bold; margin-bottom: -10px;">EXTERNAL LED BLINK</p>
+            <div class="cardBox shadow">
+            </BR>
+                void setup() {
+                   <P id="p0">
+                    // initialize digital pin LED_BUILTIN as an output <br>
+                    pinMode(LED_BUILTIN, OUTPUT);
+                </P> 
+            }
+                  </BR>
+                void loop() {<br>
+                <p id="p0">
+                    // the loop function runs over and over again forever<br>
+                      digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)<br>
+                      delay(1000);                      // wait for a second<br>
+                      digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW<br>
+                      delay(1000);                      // wait for a second
+                    </p>
+                }
+        </div>
+        <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR & OLED DISPLAY</p>
+        <div class="cardBox shadow">
+        </BR>
+            #include < Wire.h> <br>
+            #include < Adafruit_GFX.h> <br>
+            #include < Adafruit_SSD1306.h> <br>
+            #define OLED_ADDR   0x3C<br>
+            Adafruit_SSD1306 display(128, 64, &Wire, -1);<br>
+            const int trigPin = 5;<br>
+            const int echoPin = 18;<br>
+            // Define sound speed in cm/uS<br>
+            const float SOUND_SPEED = 0.034;<br>
+            long duration;<br>
+            float distanceCm;<br>
+            void setup() {
+               <P id="p0">
+                // Initialize serial communication<br>
+                Serial.begin(9600);
+                
+                // Initialize the OLED display<br>
+                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);<br>
+                display.clearDisplay();<br>
+                display.setTextColor(WHITE);<br>
+                display.setTextSize(2);
+                
+                // Initialize ultrasonic sensor pins<br>
+                pinMode(trigPin, OUTPUT);<br>
+                pinMode(echoPin, INPUT);
+            </P> 
+        }
+              </BR>
+            void loop() {<br>
+            <p id="p0">
+                // Clear trigPin<br>
+                    digitalWrite(trigPin, LOW);<br>
+                    delayMicroseconds(2);
+                    
+                    // Set trigPin to HIGH state for 10 microseconds<br>
+                    digitalWrite(trigPin, HIGH);<br>
+                    delayMicroseconds(10);<br>
+                    digitalWrite(trigPin, LOW);
+                    
+                    // Read echoPin, return sound wave travel time in microseconds<br>
+                    duration = pulseIn(echoPin, HIGH);
+                    
+                    // Calculate distance<br>
+                    distanceCm = (duration * SOUND_SPEED) / 2;
+                    
+                    // Print distance to Serial Monitor<br>
+                    Serial.print("Distance (cm): ");<br>
+                    Serial.println(distanceCm);
+                    
+                    // Display distance on OLED<br>
+                    display.clearDisplay();<br>
+                    display.setCursor(0, 20);<br>
+                    display.print("Distance: ");<br>
+                    display.print(distanceCm);<br>
+                    display.print(" cm");<br>
+                    display.display();<br>
+                    delay(1000); // Wait for a second
+                 </p>
+            }
+    </div>
+
+      <p style="font-weight: bold; margin-bottom: -10px;">IOT WITH MOBILE APPLICATION</p>
+      <div class="app cardBox shadow">
+        <div class="code">
+        </BR>
+        <pre>
+            #include &lt;WiFi.h&gt;
+            const char WiFiPassword[] = "1234567890";
+            const char AP_NameChar[] = "embedclub" ;
+            WiFiServer server(80);
+            
+            String header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
+            String html_1 = "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;LED Control&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div id='main'&gt;&lt;h2&gt;LED Control&lt;/h2&gt;";
+            String html_2 = "&lt;form id='F1' action='LEDON'&gt;&lt;input class='button' type='submit' value='LED ON' &gt;&lt;/form&gt;&lt;br&gt;";
+            String html_3 = "&lt;form id='F2' action='LEDOFF'&gt;&lt;input class='button' type='submit' value='LED OFF' &gt;&lt;/form&gt;&lt;br&gt;";
+            String html_4 = "&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;";
+            
+            String request = "";
+            int LED_Pin = 2; // Use GPIO2 for the LED on ESP32
+            
+            void setup() {
+                // Initialize serial communication<br>
+                Serial.begin(9600);
+                
+                // Initialize the OLED display<br>
+                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);<br>
+                display.clearDisplay();<br>
+                display.setTextColor(WHITE);<br>
+                display.setTextSize(2);
+                
+                // Initialize ultrasonic sensor pins<br>
+                pinMode(trigPin, OUTPUT);<br>
+                pinMode(echoPin, INPUT);
+            }
+            
+            void loop() {
+                // Clear trigPin<br>
+                digitalWrite(trigPin, LOW);<br>
+                delayMicroseconds(2);
+                
+                // Set trigPin to HIGH state for 10 microseconds<br>
+                digitalWrite(trigPin, HIGH);<br>
+                delayMicroseconds(10);<br>
+                digitalWrite(trigPin, LOW);
+                
+                // Read echoPin, return sound wave travel time in microseconds<br>
+                duration = pulseIn(echoPin, HIGH);
+                
+                // Calculate distance<br>
+                distanceCm = (duration * SOUND_SPEED) / 2;
+                
+                // Print distance to Serial Monitor<br>
+                Serial.print("Distance (cm): ");<br>
+                Serial.println(distanceCm);
+                
+                // Display distance on OLED<br>
+                display.clearDisplay();<br>
+                display.setCursor(0, 20);<br>
+                display.print("Distance: ");<br>
+                display.print(distanceCm);<br>
+                display.print(" cm");<br>
+                display.display();<br>
+                delay(1000); // Wait for a second
+            }
+            </pre>
+            
+        <div class="appimage">
+            <img src="./appiot.jpeg" alt="iot">
+        </div>
+      </div>
+
+        <div class="nothing"></div>
+        <!-- ============ abomembersut start =================  -->
+        
+        <!-- ============     about end ================= -->
+
+        <!-- =================footer start ================ -->
+        </section>
+        <footer id="footer" class="footer-1">
+            <div class="main-footer widgets-dark typo-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget subscribe no-box">
+                                <h5 class="widget-title">Embed Club<span></span></h5>
+
+                                <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Quick Links<span></span></h5>
+                                <ul class="thumbnail-widget">
+                                    <li>
+                                        <div class="thumb-content"><a href="./pages/events.html">&nbsp;Events</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb-content"><a href="./pages/members.html">&nbsp;Team</a></div>
+                                    </li>
+                                    <li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Follow up<span></span></h5>
+                                <a href="https://www.instagram.com/embed_club/"> <i class="fa fa-instagram"> </i> </a>
+                                <a href="https://www.linkedin.com/in/embed-club-486124271/"> <i class="fa fa-linkedin"> </i> </a>
+                                <a href="https://github.com/embedclubpace"> <i class="fa fa-github"> </i> </a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title ">Developed By<span></span></h5>
+                                <p>
+                                <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
+                                <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. --> </p>
+                                </p>
+                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
+                                <div class="emailfield">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <!-- ======================footer end =============== -->
+
+
+    </div>
+    <script src="../main.js"></script>
+    <script src="../js/event.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+    </script>
+</body>
+<script>
+    const devCred = document.getElementById("devCred");
+    if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
+        document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
+        alert("Unauthorized changes detected! This website may not function properly.");
+    }
+
+</script>
+
+</html>
