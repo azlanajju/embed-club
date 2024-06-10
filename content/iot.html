@@ -54,6 +54,17 @@
                 height: 40vh;
                 width: 40vw;
             }
+            @media (max-width: 414px) { 
+            .cardBox {
+                width: 85vw;
+            }
+            .app img{
+                margin-left: -40px;
+                height: 35vh;
+                width: 100vw;
+            }
+}
+
     </style>
 </head>
 
@@ -99,7 +110,7 @@
         <a href="../pages/about.html" ><i class="fas fa-info-circle"></i> About</a>
         <a href="../pages/gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
         <a href="../pages/contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
-        <a href="#" class="item active" class="item"><i class="fas fa-comments"></i> FeedBack</a>
+        <a href="https://forms.gle/A4bLEMDWJsg1r6Ar8" class="item active" class="item"><i class="fas fa-comments"></i> FeedBack</a>
     </div>
 
     <div class="nothing"></div>
@@ -116,7 +127,7 @@
         
         <div class="container" data-aos="fade-up">
             <div class="logo logo-left">
-                <i class="fa fa-comments fa-4x"></i>
+                <i class="fa  fa-solid fa-microchip "></i>
             </div>
             <p class="title title-left">Esp Wroom 32</p>
             <br>
@@ -127,233 +138,339 @@
                     <h5>Installing ESP32 Add-on in Arduino IDE</h5>
                     <p  style= "font-weight: bold; margin-bottom: -10px;">Enter the following into the “Additional Board Manager URLs” field:</p>
                     <div class="cardBox shadow">
-                    <p>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</p>
+                    <pre>
+
+ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</pre>
                     </div>
                 </div>
                 <p style="font-weight: bold; margin-bottom: -10px;">LED BLINK</p>
                 <div class="cardBox shadow">
                 </BR>
-                /***
-                * LED Blinking
-                * Code Written by TechMartian
-                */
-               const int ledPin = 5;
-               void setup() {
-                     <P id="p0">
-                        // setup pin 5 as a digital output pin<br>
-                        pinMode (ledPin, OUTPUT);
-                       </P> 
-                      }
-                      </BR>
-                    void loop() {<br>
-                    <p id="p0">
-                        digitalWrite (ledPin, HIGH);	// turn on the LED<br>
-                        delay(500);	// wait for half a second or 500 milliseconds<br>
-                        digitalWrite (ledPin, LOW);	// turn off the LED<br>
-                        delay(500);	// wait for half a second or 500 milliseconds
-                        </p>
-                    }
+<pre>
+/***
+ * LED Blinking
+ * Code Written by TechMartian
+ */
+const int ledPin = 5;
+
+void setup() {
+    // setup pin 5 as a digital output pin
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(ledPin, HIGH);  // turn on the LED
+    delay(500);                  // wait for half a second or 500 milliseconds
+    digitalWrite(ledPin, LOW);   // turn off the LED
+    delay(500);                  // wait for half a second or 500 milliseconds
+}
+
+</pre>
             </div>
             <p style="font-weight: bold; margin-bottom: -10px;">EXTERNAL LED BLINK</p>
             <div class="cardBox shadow">
             </BR>
-                void setup() {
-                   <P id="p0">
-                    // initialize digital pin LED_BUILTIN as an output <br>
-                    pinMode(LED_BUILTIN, OUTPUT);
-                </P> 
-            }
-                  </BR>
-                void loop() {<br>
-                <p id="p0">
-                    // the loop function runs over and over again forever<br>
-                      digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)<br>
-                      delay(1000);                      // wait for a second<br>
-                      digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW<br>
-                      delay(1000);                      // wait for a second
-                    </p>
-                }
+<pre>
+    void setup() {
+        // initialize digital pin LED_BUILTIN as an output
+        pinMode(LED_BUILTIN, OUTPUT);
+    }
+    
+    void loop() {
+        // the loop function runs over and over again forever
+        digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+        delay(1000);                      // wait for a second
+        digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+        delay(1000);                      // wait for a second
+    }
+    
+</pre>
         </div>
         <p style="font-weight: bold; margin-bottom: -10px;">OLED</p>
         <div class="cardBox shadow">
         </BR>
-             #include < Wire.h><br>
-            #include < Adafruit_GFX.h><br>
-            #include < Adafruit_SSD1306.h><br>            
-            #define OLED_ADDR   0x3C<br>
-            Adafruit_SSD1306 display(128, 64, &Wire, -1);<br>
-            void setup() {
-               <P id="p0">
-                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);<br>
-                display.clearDisplay();<br>
-                display.setTextColor(WHITE);<br>
-                display.setTextSize(2);<br>
-                display.setCursor(10, 20);<br>
-                display.println("Embed Club");<br>
-                display.display();
-            </P> 
-        }</BR>
-            void loop() {}
+<pre>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#define OLED_ADDR 0x3C
+Adafruit_SSD1306 display(128, 64, &Wire, -1);
+
+void setup() {
+    display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
+    display.clearDisplay();
+    display.setTextColor(WHITE);
+    display.setTextSize(2);
+    display.setCursor(10, 20);
+    display.println("Embed Club");
+    display.display();
+}
+
+void loop() {}
+
+</pre>
     </div>
     <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR</p>
     <div class="cardBox shadow">
-    </BR>
-        const int trigPin = 5;<br>
-        const int echoPin = 18;<br>
-        // Define sound speed in cm/uS<br>
-        const float SOUND_SPEED = 0.034;<br>
-        long duration;<br>
-        float distanceCm;<br>
-        void setup() {
-           <P id="p0">
-            Serial.begin(9600); // Start serial communication<br>
-            pinMode(trigPin, OUTPUT); // Set trigPin as an output<br>
-            pinMode(echoPin, INPUT); // Set echoPin as an input
-        </P> 
-    }
-          </BR>
-        void loop() {<br>
-        <p id="p0">
-                     // Clear trigPin<br>
-                    digitalWrite(trigPin, LOW);<br>
-                    delayMicroseconds(2);<br>
-                    // Set trigPin to HIGH state for 10 microseconds<br>
-                    digitalWrite(trigPin, HIGH);<br>
-                    delayMicroseconds(10);<br>
-                    digitalWrite(trigPin, LOW);<br>
-                    // Read echoPin, return sound wave travel time in microseconds<br>
-                    duration = pulseIn(echoPin, HIGH);<br>
-                    // Calculate distance<br>
-                    distanceCm = (duration * SOUND_SPEED) / 2;<br>
-                    // Print distance to Serial Monitor<br>
-                    Serial.print("Distance (cm): ");<br>
-                    Serial.println(distanceCm);<br>
-                    delay(1000); // Wait for a second
-            </p>
-        }
+ <pre>
+const int trigPin = 5;
+const int echoPin = 18;
+// Define sound speed in cm/uS
+const float SOUND_SPEED = 0.034;
+
+long duration;
+float distanceCm;
+
+void setup() {
+    Serial.begin(9600); // Start serial communication
+    pinMode(trigPin, OUTPUT); // Set trigPin as an output
+    pinMode(echoPin, INPUT); // Set echoPin as an input
+}
+
+void loop() {
+    // Clear trigPin
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    
+    // Set trigPin to HIGH state for 10 microseconds
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    
+    // Read echoPin, return sound wave travel time in microseconds
+    duration = pulseIn(echoPin, HIGH);
+    
+    // Calculate distance
+    distanceCm = (duration * SOUND_SPEED) / 2;
+    
+    // Print distance to Serial Monitor
+    Serial.print("Distance (cm): ");
+    Serial.println(distanceCm);
+    
+    delay(1000); // Wait for a second
+}
+
+ </pre>
 </div>
         <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR & OLED DISPLAY</p>
         <div class="cardBox shadow">
         </BR>
-            #include < Wire.h> <br>
-            #include < Adafruit_GFX.h> <br>
-            #include < Adafruit_SSD1306.h> <br>
-            #define OLED_ADDR   0x3C<br>
-            Adafruit_SSD1306 display(128, 64, &Wire, -1);<br>
-            const int trigPin = 5;<br>
-            const int echoPin = 18;<br>
-            // Define sound speed in cm/uS<br>
-            const float SOUND_SPEED = 0.034;<br>
-            long duration;<br>
-            float distanceCm;<br>
-            void setup() {
-               <P id="p0">
-                // Initialize serial communication<br>
-                Serial.begin(9600);
-                
-                // Initialize the OLED display<br>
-                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);<br>
-                display.clearDisplay();<br>
-                display.setTextColor(WHITE);<br>
-                display.setTextSize(2);
-                
-                // Initialize ultrasonic sensor pins<br>
-                pinMode(trigPin, OUTPUT);<br>
-                pinMode(echoPin, INPUT);
-            </P> 
-        }
-              </BR>
-            void loop() {<br>
-            <p id="p0">
-                // Clear trigPin<br>
-                    digitalWrite(trigPin, LOW);<br>
-                    delayMicroseconds(2);
-                    
-                    // Set trigPin to HIGH state for 10 microseconds<br>
-                    digitalWrite(trigPin, HIGH);<br>
-                    delayMicroseconds(10);<br>
-                    digitalWrite(trigPin, LOW);
-                    
-                    // Read echoPin, return sound wave travel time in microseconds<br>
-                    duration = pulseIn(echoPin, HIGH);
-                    
-                    // Calculate distance<br>
-                    distanceCm = (duration * SOUND_SPEED) / 2;
-                    
-                    // Print distance to Serial Monitor<br>
-                    Serial.print("Distance (cm): ");<br>
-                    Serial.println(distanceCm);
-                    
-                    // Display distance on OLED<br>
-                    display.clearDisplay();<br>
-                    display.setCursor(0, 20);<br>
-                    display.print("Distance: ");<br>
-                    display.print(distanceCm);<br>
-                    display.print(" cm");<br>
-                    display.display();<br>
-                    delay(1000); // Wait for a second
-                 </p>
-            }
-    </div>
+      <pre>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 
+#define OLED_ADDR 0x3C
+Adafruit_SSD1306 display(128, 64, &Wire, -1);
+
+const int trigPin = 5;
+const int echoPin = 18;
+// Define sound speed in cm/uS
+const float SOUND_SPEED = 0.034;
+
+long duration;
+float distanceCm;
+
+void setup() {
+    // Initialize serial communication
+    Serial.begin(9600);
+
+    // Initialize the OLED display
+    display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
+    display.clearDisplay();
+    display.setTextColor(WHITE);
+    display.setTextSize(2);
+
+    // Initialize ultrasonic sensor pins
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+}
+
+void loop() {
+    // Clear trigPin
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    
+    // Set trigPin to HIGH state for 10 microseconds
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    
+    // Read echoPin, return sound wave travel time in microseconds
+    duration = pulseIn(echoPin, HIGH);
+    
+    // Calculate distance
+    distanceCm = (duration * SOUND_SPEED) / 2;
+    
+    // Print distance to Serial Monitor
+    Serial.print("Distance (cm): ");
+    Serial.println(distanceCm);
+    
+    // Display distance on OLED
+    display.clearDisplay();
+    display.setCursor(0, 20);
+    display.print("Distance: ");
+    display.print(distanceCm);
+    display.print(" cm");
+    display.display();
+    delay(1000); // Wait for a second
+}
+
+      </pre>
+    </div>
       <p style="font-weight: bold; margin-bottom: -10px;">IOT WITH MOBILE APPLICATION</p>
       <div class="app cardBox shadow ">
         <div class="code">
         </BR>
         <pre>
-            #include &lt;WiFi.h&gt;
-            const char WiFiPassword[] = "1234567890";
-            const char AP_NameChar[] = "embedclub" ;
-            WiFiServer server(80);
-            String header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
-            String html_1 = "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;LED Control&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div id='main'&gt;&lt;h2&gt;LED Control&lt;/h2&gt;";
-            String html_2 = "&lt;form id='F1' action='LEDON'&gt;&lt;input class='button' type='submit' value='LED ON' &gt;&lt;/form&gt;&lt;br&gt;";
-            String html_3 = "&lt;form id='F2' action='LEDOFF'&gt;&lt;input class='button' type='submit' value='LED OFF' &gt;&lt;/form&gt;&lt;br&gt;";
-            String html_4 = "&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;";
-            String request = "";
-            int LED_Pin = 2; // Use GPIO2 for the LED on ESP32
-            void setup() {
-                // Initialize serial communication
-                Serial.begin(9600);
-                // Initialize the OLED display
-                display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
-                display.clearDisplay();
-                display.setTextColor(WHITE);
-                display.setTextSize(2);
-                // Initialize ultrasonic sensor pins
-                pinMode(trigPin, OUTPUT);
-                pinMode(echoPin, INPUT);
-            }
-            void loop() {
-                // Clear trigPin
-                digitalWrite(trigPin, LOW);
-                delayMicroseconds(2);
-                // Set trigPin to HIGH state for 10 microseconds
-                digitalWrite(trigPin, HIGH);
-                delayMicroseconds(10);
-                digitalWrite(trigPin, LOW);
-                // Read echoPin, return sound wave travel time in microseconds<br>
-                duration = pulseIn(echoPin, HIGH);
-                // Calculate distance
-                distanceCm = (duration * SOUND_SPEED) / 2;
-                // Print distance to Serial Monitor
-                Serial.print("Distance (cm): ");
-                Serial.println(distanceCm);
-                // Display distance on OLED
-                display.clearDisplay();
-                display.setCursor(0, 20);
-                display.print("Distance: ");
-                display.print(distanceCm);
-                display.print(" cm");
-                display.display();
-                delay(1000); // Wait for a second
-            }
+#include &lt;WiFi.h&gt;
+const char WiFiPassword[] = "1234567890";
+const char AP_NameChar[] = "embedclub" ;
+WiFiServer server(80);
+String header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
+String html_1 = "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;LED Control&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div id='main'&gt;&lt;h2&gt;LED Control&lt;/h2&gt;";
+String html_2 = "&lt;form id='F1' action='LEDON'&gt;&lt;input class='button' type='submit' value='LED ON' &gt;&lt;/form&gt;&lt;br&gt;";
+String html_3 = "&lt;form id='F2' action='LEDOFF'&gt;&lt;input class='button' type='submit' value='LED OFF' &gt;&lt;/form&gt;&lt;br&gt;";
+String html_4 = "&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;";
+ String request = "";
+int LED_Pin = 2; // Use GPIO2 for the LED on ESP32
+void setup() {
+                pinMode(LED_Pin, OUTPUT); 
+                digitalWrite(LED_Pin, HIGH); // Turn off LED initially (assuming active low)
+                boolean conn = WiFi.softAP(AP_NameChar, WiFiPassword);
+                server.begin();
+}
+void loop() {
+    // Check if a client has connected
+    WiFiClient client = server.available();
+    if (!client)  {  return;  }
+
+    // Read the first line of the request
+    request = client.readStringUntil('\r');
+
+    if (request.indexOf("LEDON") > 0)  { 
+        digitalWrite(LED_Pin, LOW);  // Turn the LED on (assuming active low)
+    } 
+    else if (request.indexOf("LEDOFF") > 0) { 
+        digitalWrite(LED_Pin, HIGH);  // Turn the LED off
+    }
+    client.flush();
+    client.print(header);
+    client.print(html_1);
+    client.print(html_2);
+    client.print(html_3);
+    client.print(html_4);
+    delay(5);
+    // The client will actually be disconnected when the function returns and 'client' object is destroyed
+}
             </pre>
       </div>
       <div class="appimage">
         <img src="./appiot.jpeg" alt="iot">
     </div>
       </div>
+      <p style="font-weight: bold; margin-bottom: -10px;">HOME AUTOMATION</p>
+      <div class="cardBox shadow">
+      <pre>
+  /*
+ * Simple example for how to use multiple SinricPro Switch device:
+ * - setup 4 switch devices
+ * - handle request using multiple callbacks
+ * 
+ * If you encounter any issues:
+ * - check the readme.md at https://github.com/sinricpro/esp8266-esp32-sdk/blob/master/README.md
+ * - ensure all dependent libraries are installed
+ *   - see https://github.com/sinricpro/esp8266-esp32-sdk/blob/master/README.md#arduinoide
+ *   - see https://github.com/sinricpro/esp8266-esp32-sdk/blob/master/README.md#dependencies
+ * - open serial monitor and check whats happening
+ * - check full user documentation at https://sinricpro.github.io/esp8266-esp32-sdk
+ * - visit https://github.com/sinricpro/esp8266-esp32-sdk/issues and check for existing issues or open a new one
+ */
+
+
+#ifdef ENABLE_DEBUG
+   #define DEBUG_ESP_PORT Serial
+   #define NODEBUG_WEBSOCKETS
+   #define NDEBUG
+#endif 
+
+#include <Arduino.h>
+#if defined(ESP8266)
+  #include <ESP8266WiFi.h>
+#elif defined(ESP32) || defined(ARDUINO_ARCH_RP2040)
+  #include <WiFi.h>
+#endif
+
+#include "SinricPro.h"
+#include "SinricProSwitch.h"
+
+#define WIFI_SSID         "Thameem"
+#define WIFI_PASS         "11111111"
+#define APP_KEY           "40da6700-a055-454c-83ac-a8dff244813c"
+#define APP_SECRET        "5a5671f1-7259-4b34-98a7-ef7d5af05b18-4fb59651-534f-4bd0-9d6d-f54fe0bf1e35"
+
+#define SWITCH_ID_1       "6496a856743f9120703ed6c6"
+#define RELAYPIN_1        25
+
+#define BAUD_RATE         115200                // Change baudrate to your need
+
+bool onPowerState1(const String &deviceId, bool &state) {
+  bool invertedState = !state;
+  Serial.printf("Device 1 turned %s", invertedState ? "on" : "off");
+  digitalWrite(RELAYPIN_1, invertedState ? HIGH : LOW);
+  return true; // request handled properly
+}
+
+// setup function for WiFi connection
+void setupWiFi() {
+  Serial.printf("\r\n[Wifi]: Connecting");
+
+  #if defined(ESP8266)
+    WiFi.setSleepMode(WIFI_NONE_SLEEP); 
+    WiFi.setAutoReconnect(true);
+  #elif defined(ESP32)
+    WiFi.setSleep(false); 
+    WiFi.setAutoReconnect(true);
+  #endif
+
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.printf(".");
+    delay(250);
+  }
+
+  Serial.printf("connected!\r\n[WiFi]: IP-Address is %s\r\n", WiFi.localIP().toString().c_str());
+}
+
+// setup function for SinricPro
+void setupSinricPro() {
+  // add devices and callbacks to SinricPro
+  pinMode(RELAYPIN_1, OUTPUT);
+    
+  SinricProSwitch& mySwitch1 = SinricPro[SWITCH_ID_1];
+  mySwitch1.onPowerState(onPowerState1);
+  
+  
+  // setup SinricPro
+  SinricPro.onConnected([](){ Serial.printf("Connected to SinricPro\r\n"); }); 
+  SinricPro.onDisconnected([](){ Serial.printf("Disconnected from SinricPro\r\n"); });
+   
+  SinricPro.begin(APP_KEY, APP_SECRET);
+}
+
+// main setup function
+void setup() {
+  Serial.begin(BAUD_RATE); Serial.printf("\r\n\r\n");
+  setupWiFi();
+  setupSinricPro();
+}
+
+void loop() {
+  SinricPro.handle();
+}
+      </pre>
+  </div>
         <div class="nothing"></div>
         <!-- ============ abomembersut start =================  -->
         
@@ -377,10 +494,10 @@
                                 <h5 class="widget-title">Quick Links<span></span></h5>
                                 <ul class="thumbnail-widget">
                                     <li>
-                                        <div class="thumb-content"><a href="./pages/events.html">&nbsp;Events</a></div>
+                                        <div class="thumb-content"><a href="../pages/events.html">&nbsp;Events</a></div>
                                     </li>
                                     <li>
-                                        <div class="thumb-content"><a href="./pages/members.html">&nbsp;Team</a></div>
+                                        <div class="thumb-content"><a href="../pages/members.html">&nbsp;Team</a></div>
                                     </li>
                                     <li>
                                 </ul>
@@ -424,7 +541,7 @@
         <!-- ======================footer end =============== -->
 
 
-    
+            </div>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
