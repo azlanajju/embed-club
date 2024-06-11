@@ -64,6 +64,35 @@
                 width: 100vw;
             }
 }
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+}
+
+button {
+    width: fit-content;
+    min-width: 70px;
+    height: 35px;
+    border-radius: 5px;
+    border: 2.5px solid #E0E1E4;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.2s ease-in-out 0ms;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: #F2F2F2;
+    box-shadow: 0px 0px 20px -18px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
 
     </style>
 </head>
@@ -141,28 +170,23 @@
                     <pre>
 
  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</pre>
-                    </div>
+           </div>
                 </div>
                 <p style="font-weight: bold; margin-bottom: -10px;">LED BLINK</p>
                 <div class="cardBox shadow">
                 </BR>
 <pre>
-/***
- * LED Blinking
- * Code Written by TechMartian
- */
-const int ledPin = 5;
-
 void setup() {
-    // setup pin 5 as a digital output pin
-    pinMode(ledPin, OUTPUT);
+        // initialize digital pin LED_BUILTIN as an output
+        pinMode(LED_BUILTIN, OUTPUT);
 }
-
+    
 void loop() {
-    digitalWrite(ledPin, HIGH);  // turn on the LED
-    delay(500);                  // wait for half a second or 500 milliseconds
-    digitalWrite(ledPin, LOW);   // turn off the LED
-    delay(500);                  // wait for half a second or 500 milliseconds
+        // the loop function runs over and over again forever
+        digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+        delay(1000);                      // wait for a second
+        digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+        delay(1000);                      // wait for a second
 }
 
 </pre>
@@ -171,28 +195,32 @@ void loop() {
             <div class="cardBox shadow">
             </BR>
 <pre>
-    void setup() {
-        // initialize digital pin LED_BUILTIN as an output
-        pinMode(LED_BUILTIN, OUTPUT);
-    }
-    
-    void loop() {
-        // the loop function runs over and over again forever
-        digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-        delay(1000);                      // wait for a second
-        digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-        delay(1000);                      // wait for a second
-    }
-    
+ /***
+* LED Blinking
+* Code Written by TechMartian
+*/
+const int ledPin = 5;
+   
+void setup() {
+    // setup pin 5 as a digital output pin
+    pinMode(ledPin, OUTPUT);
+}
+   
+void loop() {
+       digitalWrite(ledPin, HIGH);  // turn on the LED
+       delay(500);                  // wait for half a second or 500 milliseconds
+       digitalWrite(ledPin, LOW);   // turn off the LED
+       delay(500);                  // wait for half a second or 500 milliseconds
+   }
 </pre>
         </div>
         <p style="font-weight: bold; margin-bottom: -10px;">OLED</p>
         <div class="cardBox shadow">
         </BR>
 <pre>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_GFX.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
 #define OLED_ADDR 0x3C
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 
@@ -256,9 +284,9 @@ void loop() {
         <div class="cardBox shadow">
         </BR>
       <pre>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_GFX.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
 
 #define OLED_ADDR 0x3C
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
@@ -388,17 +416,17 @@ void loop() {
  */
 
 
-#ifdef ENABLE_DEBUG
-   #define DEBUG_ESP_PORT Serial
-   #define NODEBUG_WEBSOCKETS
-   #define NDEBUG
+ #ifdef ENABLE_DEBUG
+ #define DEBUG_ESP_PORT Serial
+ #define NODEBUG_WEBSOCKETS
+ #define NDEBUG
 #endif 
 
-#include <Arduino.h>
+#include &lt;Arduino.h&gt;
 #if defined(ESP8266)
-  #include <ESP8266WiFi.h>
+#include &lt;ESP8266WiFi.h&gt;
 #elif defined(ESP32) || defined(ARDUINO_ARCH_RP2040)
-  #include <WiFi.h>
+#include &lt;WiFi.h&gt;
 #endif
 
 #include "SinricPro.h"
@@ -556,7 +584,15 @@ void loop() {
         document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
         alert("Unauthorized changes detected! This website may not function properly.");
     }
-
+    function copyText(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            alert("Text copied to clipboard");
+        }
 </script>
 
 </html>
