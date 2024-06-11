@@ -64,6 +64,35 @@
                 width: 100vw;
             }
 }
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+}
+
+button {
+    width: fit-content;
+    min-width: 70px;
+    height: 35px;
+    border-radius: 5px;
+    border: 2.5px solid #E0E1E4;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.2s ease-in-out 0ms;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: #F2F2F2;
+    box-shadow: 0px 0px 20px -18px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
 
     </style>
 </head>
@@ -141,7 +170,7 @@
                     <pre>
 
  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</pre>
-                    </div>
+           </div>
                 </div>
                 <p style="font-weight: bold; margin-bottom: -10px;">LED BLINK</p>
                 <div class="cardBox shadow">
@@ -400,7 +429,6 @@ void loop() {
 #include &lt;WiFi.h&gt;
 #endif
 
-
 #include "SinricPro.h"
 #include "SinricProSwitch.h"
 
@@ -556,7 +584,15 @@ void loop() {
         document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
         alert("Unauthorized changes detected! This website may not function properly.");
     }
-
+    function copyText(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            alert("Text copied to clipboard");
+        }
 </script>
 
 </html>
