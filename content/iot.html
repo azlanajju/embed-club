@@ -7,93 +7,101 @@
     <title>Embed Club</title>
     <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
 
-
-    <!-- css -->
-    <link rel="stylesheet" href="../css/about.css">
-
+    <!-- CSS -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../responsive.css">
     <link rel="stylesheet" href="../css/event.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/members.css">
-    <link rel="stylesheet" href="../css/feedback.css">
-    <!-- aos animation -->
+    <!-- AOS animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- bootsrap  -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/resource.css">
-    <!-- font awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="./css/loader.css">
     <style>
-      .cardBox {
-            margin: 15px 0 15px 0;
-           padding: 0px 0px 10px 20px;
+        .cardBox {
+            margin: 15px 0;
+            padding: 0 0 10px 20px;
             width: 75vw;
             height: auto;
             background: white;
             border-radius: 10px;
             transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
+        }
 
-             .shadow {
-            box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
-                        0 0  0 2px rgb(190, 190, 190),
-                        0.3em 0.3em 1em rgba(0,0,0,0.3);
-            }
-            #p0 { padding-left: 10px; }
-          
-            .app img{
-                padding: 1vh 5vh 2vh 5vh;
-                height: 40vh;
-                width: 40vw;
-            }
-            @media (max-width: 414px) { 
+        .shadow {
+            box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                        0 0 0 2px rgb(190, 190, 190),
+                        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        }
+
+        #p0 {
+            padding-left: 10px;
+        }
+
+        .appimage img {
+            padding: 1vh 5vh 2vh 5vh;
+            height: 40vh;
+            width: 40vw;
+        }
+
+        @media (max-width: 600px) {
             .cardBox {
                 width: 85vw;
             }
-            .app img{
+
+            .appimage img {
                 margin-left: -40px;
                 height: 35vh;
                 width: 100vw;
             }
-}
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 20px; /* Adjust as needed */
-    margin-top: 10px; /* Adjust as needed */
-}
+        }
 
-button {
-    width: fit-content;
-    min-width: 70px;
-    height: 35px;
-    border-radius: 5px;
-    border: 2.5px solid #E0E1E4;
-    box-shadow: 0px 0px 20px -20px;
-    cursor: pointer;
-    background-color: white;
-    transition: all 0.2s ease-in-out 0ms;
-    user-select: none;
-    font-family: 'Poppins', sans-serif;
-}
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            margin-top: 5px;
+        }
 
-button:hover {
-    background-color: #F2F2F2;
-    box-shadow: 0px 0px 20px -18px;
-}
+        .button-container button {
+            width: fit-content;
+            min-width: 70px;
+            height: 35px;
+            border-radius: 5px;
+            border: 2.5px solid #E0E1E4;
+            box-shadow: 0px 0px 20px -20px;
+            cursor: pointer;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+            user-select: none;
+            font-family: 'Poppins', sans-serif;
+        }
 
-button:active {
-    transform: scale(0.95);
-}
+        .button-container button:hover {
+            background-color: #F2F2F2;
+            box-shadow: 0px 0px 20px -18px;
+        }
 
+        .button-container button:active {
+            transform: scale(0.95);
+        }
+
+        textarea {
+            overflow-y: scroll;
+            font-weight: bold;
+            padding: 15px;
+            height: 300px;
+            width: 100%;
+            display: block;
+            border: none;
+            resize: none;
+        }
     </style>
 </head>
 
@@ -116,7 +124,6 @@ button:active {
             <img src="../images/emedClub_logo.png" alt="">
         </div>
         <div class="searchBar">
-
             <form class="form-inline active-cyan-4">
                 <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
                 <i class="fas fa-search" aria-hidden="true"></i>
@@ -144,57 +151,73 @@ button:active {
 
     <div class="nothing"></div>
 
-
     <div class="mainContents">
         <div class="homeBg">
             <img src="../images/home-bg.jpg" alt="Homepage Background Image">
-            <div class="homeContent  homNavigation">
+            <div class="homeContent homNavigation">
                 <h1>Esp Wroom 32</h1>
-                <p>Home > Feedback</p>
+                <p>Home > ESP</p>
             </div>
         </div>
-        
-        <div class="container" data-aos="fade-up">
-            <div class="logo logo-left">
-                <i class="fa  fa-solid fa-microchip "></i>
-            </div>
-            <p class="title title-left">Esp Wroom 32</p>
-            <br>
-            <div class="text">
-                <div class="link">
-                    <br>
-                    <br>
-                    <h5>Installing ESP32 Add-on in Arduino IDE</h5>
-                    <p  style= "font-weight: bold; margin-bottom: -10px;">Enter the following into the “Additional Board Manager URLs” field:</p>
-                    <div class="cardBox shadow">
-                    <pre>
-
- https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</pre>
-           </div>
-                </div>
-                <p style="font-weight: bold; margin-bottom: -10px;">LED BLINK</p>
+        <!-- ============ PROGRAM start ================= -->
+        <section>
+            <ul data-aos="fade-up">
+                <p style="font-weight: bold; margin-bottom: -10px;">Driver Setup :</p>
                 <div class="cardBox shadow">
-                </BR>
-<pre>
+                    <br>
+                    <textarea id="myInput1" style="height: 100%;" readonly>https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
+</textarea>
+                 <div class="details button-container">
+                        <button class="texts-btn" id="copied1" onclick="myFunction1()">Copy</button>
+                 </div>
+                </div>
+            </ul> 
+            <!-- SETUP  -->
+            <ul data-aos="fade-up">
+                <p style="font-weight: bold; margin-bottom: -10px;">Enter the following into the “Additional Board Manager URLs” field :</p>
+                <div class="cardBox shadow">
+                    <br>
+                    <textarea id="myInput2" style="height: 100%;" readonly> https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+</textarea>
+                 <div class="details button-container">
+                        <button class="texts-btn" id="copied2" onclick="myFunction2()">Copy</button>
+                 </div>
+                </div>
+            </ul>
+     <!-- PROGRAM END  -->
+
+<!-- PROGRAM -->
+            <ul data-aos="fade-up">
+                <p style="font-weight: bold; margin-bottom: -10px;">LED BLINK :</p>
+                <div class="cardBox shadow">
+                    <br>
+                    <textarea id="myInput3" readonly>
 void setup() {
-        // initialize digital pin LED_BUILTIN as an output
-        pinMode(LED_BUILTIN, OUTPUT);
-}
-    
-void loop() {
-        // the loop function runs over and over again forever
-        digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-        delay(1000);                      // wait for a second
-        digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-        delay(1000);                      // wait for a second
+    // initialize digital pin LED_BUILTIN as an output
+    pinMode(LED_BUILTIN, OUTPUT);
 }
 
-</pre>
-            </div>
-            <p style="font-weight: bold; margin-bottom: -10px;">EXTERNAL LED BLINK</p>
-            <div class="cardBox shadow">
-            </BR>
-<pre>
+void loop() {
+    // the loop function runs over and over again forever
+    digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+    delay(1000);                      // wait for a second
+    digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+    delay(1000);                      // wait for a second
+}</textarea>
+                    <div class="details button-container">
+                        <button class="texts-btn" id="copied3" onclick="myFunction3()">Copy</button>
+                    </div>
+                </div>
+            </ul> 
+        <!-- PROGRAM END  -->
+
+
+        <!-- PROGRAM -->
+            <ul data-aos="fade-up">
+                <p style="font-weight: bold; margin-bottom: -10px;">EXTERNAL LED BLINK :</p>
+                <div class="cardBox shadow">
+                    <br>
+                    <textarea id="myInput4" readonly>
  /***
 * LED Blinking
 * Code Written by TechMartian
@@ -212,12 +235,20 @@ void loop() {
        digitalWrite(ledPin, LOW);   // turn off the LED
        delay(500);                  // wait for half a second or 500 milliseconds
    }
-</pre>
-        </div>
-        <p style="font-weight: bold; margin-bottom: -10px;">OLED</p>
-        <div class="cardBox shadow">
-        </BR>
-<pre>
+</textarea>
+                    <div class="details button-container">
+                        <button class="texts-btn" id="copied4" onclick="myFunction4()">Copy</button>
+                    </div>
+                </div>
+            </ul> 
+        <!-- PROGRAM END  -->
+
+ <!-- PROGRAM -->
+ <ul data-aos="fade-up">
+    <p style="font-weight: bold; margin-bottom: -10px;">OLED :</p>
+    <div class="cardBox shadow">
+        <br>
+        <textarea id="myInput5" readonly>
 #include &lt;Wire.h&gt;
 #include &lt;Adafruit_GFX.h&gt;
 #include &lt;Adafruit_SSD1306.h&gt;
@@ -235,55 +266,69 @@ void setup() {
 }
 
 void loop() {}
-
-</pre>
+</textarea>
+        <div class="details button-container">
+            <button class="texts-btn" id="copied5" onclick="myFunction5()">Copy</button>
+        </div>
     </div>
-    <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR</p>
+</ul> 
+<!-- PROGRAM END  -->
+
+<!-- PROGRAM -->
+<ul data-aos="fade-up">
+    <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR :</p>
     <div class="cardBox shadow">
- <pre>
+        <br>
+        <textarea id="myInput6" readonly>
 const int trigPin = 5;
 const int echoPin = 18;
 // Define sound speed in cm/uS
 const float SOUND_SPEED = 0.034;
-
+            
 long duration;
 float distanceCm;
-
+            
 void setup() {
     Serial.begin(9600); // Start serial communication
     pinMode(trigPin, OUTPUT); // Set trigPin as an output
     pinMode(echoPin, INPUT); // Set echoPin as an input
 }
-
+            
 void loop() {
     // Clear trigPin
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
-    
+                
     // Set trigPin to HIGH state for 10 microseconds
     digitalWrite(trigPin, HIGH);
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW);
-    
+                
     // Read echoPin, return sound wave travel time in microseconds
     duration = pulseIn(echoPin, HIGH);
-    
+                
     // Calculate distance
     distanceCm = (duration * SOUND_SPEED) / 2;
-    
+                
     // Print distance to Serial Monitor
     Serial.print("Distance (cm): ");
     Serial.println(distanceCm);
-    
+                
     delay(1000); // Wait for a second
-}
+}</textarea>
+        <div class="details button-container">
+            <button class="texts-btn" id="copied6" onclick="myFunction6()">Copy</button>
+        </div>
+    </div>
+</ul> 
+<!-- PROGRAM END  -->
 
- </pre>
-</div>
-        <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR & OLED DISPLAY</p>
-        <div class="cardBox shadow">
-        </BR>
-      <pre>
+  <!-- PROGRAM -->
+  <ul data-aos="fade-up">
+    <p style="font-weight: bold; margin-bottom: -10px;">ULTRA SONIC SENSOR & OLED DISPLAY :</p>
+    <div class="cardBox shadow">
+        <br>
+        <textarea id="myInput7" readonly>
 #include &lt;Wire.h&gt;
 #include &lt;Adafruit_GFX.h&gt;
 #include &lt;Adafruit_SSD1306.h&gt;
@@ -343,14 +388,20 @@ void loop() {
     display.display();
     delay(1000); // Wait for a second
 }
-
-      </pre>
+</textarea>
+        <div class="details button-container">
+            <button class="texts-btn" id="copied7" onclick="myFunction7()">Copy</button>
+        </div>
     </div>
-      <p style="font-weight: bold; margin-bottom: -10px;">IOT WITH MOBILE APPLICATION</p>
-      <div class="app cardBox shadow ">
-        <div class="code">
-        </BR>
-        <pre>
+</ul> 
+<!-- PROGRAM END  -->
+
+ <!-- PROGRAM -->
+ <ul data-aos="fade-up">
+    <p style="font-weight: bold; margin-bottom: -10px;">IOT WITH MOBILE APPLICATION :</p>
+    <div class="cardBox shadow">
+        <br>
+        <textarea id="myInput8" readonly>
 #include &lt;WiFi.h&gt;
 const char WiFiPassword[] = "1234567890";
 const char AP_NameChar[] = "embedclub" ;
@@ -391,16 +442,24 @@ void loop() {
     delay(5);
     // The client will actually be disconnected when the function returns and 'client' object is destroyed
 }
-            </pre>
-      </div>
-      <div class="appimage">
-        <img src="./appiot.jpeg" alt="iot">
+</textarea>
+        <div class="details button-container">
+            <button class="texts-btn" id="copied8" onclick="myFunction8()">Copy</button>
+        </div>
+        <div class="appimage">
+            <img src="./appiot.jpeg" alt="iot">
+        </div>
     </div>
-      </div>
-      <p style="font-weight: bold; margin-bottom: -10px;">HOME AUTOMATION</p>
-      <div class="cardBox shadow">
-      <pre>
-  /*
+</ul> 
+<!-- PROGRAM END  -->
+
+ <!-- PROGRAM -->
+ <ul data-aos="fade-up">
+    <p style="font-weight: bold; margin-bottom: -10px;">HOME AUTOMATION :</p>
+    <div class="cardBox shadow">
+        <br>
+        <textarea id="myInput9" readonly>
+/*
  * Simple example for how to use multiple SinricPro Switch device:
  * - setup 4 switch devices
  * - handle request using multiple callbacks
@@ -497,15 +556,17 @@ void setup() {
 void loop() {
   SinricPro.handle();
 }
-      </pre>
-  </div>
-        <div class="nothing"></div>
-        <!-- ============ abomembersut start =================  -->
-        
-        <!-- ============     about end ================= -->
+</textarea>
+        <div class="details button-container">
+            <button class="texts-btn" id="copied9" onclick="myFunction9()">Copy</button>
+        </div>
+    </div>
+</ul> 
+<!-- PROGRAM END  -->
+        </section>
+        <!-- ============ PROGRAM end ================= -->
 
         <!-- =================footer start ================ -->
-        </section>
         <footer id="footer" class="footer-1">
             <div class="main-footer widgets-dark typo-light">
                 <div class="container">
@@ -567,32 +628,47 @@ void loop() {
                 </div>
         </footer>
         <!-- ======================footer end =============== -->
-
-
-            </div>
+    </div>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+    <script>
+        function copyToClipboard(id, buttonId) {
+            const copyText = document.getElementById(id);
+            const button = document.getElementById(buttonId);
+            
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(copyText.value);
+            
+            button.innerHTML = "Copied!";
+            
+            setTimeout(() => {
+                button.innerHTML = "Copy";
+            }, 2000); // Reset the button text after 2 seconds
+        }
+        
+        // Functions for each textarea and button
+        function myFunction1() { copyToClipboard('myInput1', 'copied1'); }
+        function myFunction2() { copyToClipboard('myInput2', 'copied2'); }
+        function myFunction3() { copyToClipboard('myInput3', 'copied3'); }
+        function myFunction4() { copyToClipboard('myInput4', 'copied4'); }
+        function myFunction5() { copyToClipboard('myInput5', 'copied5'); }
+        function myFunction6() { copyToClipboard('myInput6', 'copied6'); }
+        function myFunction7() { copyToClipboard('myInput7', 'copied7'); }
+        function myFunction8() { copyToClipboard('myInput8', 'copied8'); }
+        function myFunction9() { copyToClipboard('myInput9', 'copied9'); }
+        </script>
+        
     <script>
         AOS.init();
 
+        function Unavailable() {
+            alert("This is currently unavailable.");
+        }
+
     </script>
 </body>
-<script>
-    const devCred = document.getElementById("devCred");
-    if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
-        document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
-        alert("Unauthorized changes detected! This website may not function properly.");
-    }
-    function copyText(text) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textArea);
-            alert("Text copied to clipboard");
-        }
-</script>
 
 </html>
