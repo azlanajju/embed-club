@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensor Data</title>
+  <script>
+    function fetchSensorData() {
+      fetch('http://192.168.149.93/distance')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sensorData').innerText = data + ' cm';
+        })
+        .catch(error => console.error('Error fetching sensor data:', error));
+    }
+
+    setInterval(fetchSensorData, 10000); // Fetch data every 10 seconds
+  </script>
+</head>
+<body>
+  <h1>Ultrasonic Sensor Data</h1>
+  <p>Distance: <span id="sensorData">Loading...</span></p>
+</body>
+</html>
