@@ -77,3 +77,30 @@ h3, h4 {
     text-decoration: none;
     border-radius: 5px;
 }
+@media (max-width: 780px) {
+    h1 {
+        font-size: 2.8em; 
+    }
+    .container {
+        margin-top: 50px; 
+        max-width: 90vw; 
+    }
+
+    .details {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .header1 img{
+        height: 40px;
+        width: 120px;
+    }
+
+    .btn {
+        width: 80%; 
+        text-align: center;
+        padding: 10px 0; 
+        font-size: 1em; 
+    }
+
+}
