@@ -49,14 +49,14 @@ body{
 }
 
 .topBar {
-    height: 60px;
-    width: 100vw;
-    background: #eeeeee;
-    display: flex;
-    align-items: center;
-    z-index: 9999999999;
-    position: fixed;
-    top: 0;
+height: 60px;
+width: 100vw;
+background: #eeeeee;
+display: flex;
+align-items: center;
+z-index: 9999999999;
+position: fixed;
+top: 0;
 
 }
 
