@@ -115,6 +115,7 @@
     }
     .card-1 .photo img{
         width: 100%;
+        height: auto;
         border-radius: 20px;
     }
 
@@ -123,7 +124,7 @@
         padding: 0;
     }
     .boxx .box{
-        margin: 20px;
+        margin: 60px;
     }
     .box .desc-1 h3{
         margin: 0;
