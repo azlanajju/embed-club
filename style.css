@@ -11,13 +11,14 @@
     padding: 0;
 }
 body{
+    background: #31363F !important;
     overflow-x: hidden;
 }
 
 .sideNav {
     width: 20vw;
     height: 100vh;
-    background: #eeeeee;
+    background: #222831;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -29,23 +30,42 @@ body{
 }
 
 .sideNav a {
+    position: relative;
     font-size: 16px;
     padding: 10px 20px;
     margin: 10px 0;
     width: 230px;
     border-radius: 25px;
-    color: black;
+    color: #EEEEEE;
     text-decoration: none;
     font-weight: bold;
 }
 
 .sideNav a:hover {
-    color: teal;
+    color: #76ABAE;
     text-decoration: none;
 }
 
+.sideNav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+
+.sideNav a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
 .active {
-    color: teal !important;
+    color:#76ABAE !important;
 }
 
 .topBar {
@@ -141,7 +161,7 @@ canvas{
     position: absolute;
     top: 150px;
     padding: 20px;
-    color: #fff;
+    color: #EEEEEE;
     text-align: center;
 
 }
@@ -166,13 +186,9 @@ canvas{
     margin-top: 10px;
     padding: 10px 20px;
     background-color: teal;
-    color: #fff;
+    color: #EEEEEE;
     text-decoration: none;
 }
-
-
-
-
 
 
 
@@ -180,38 +196,40 @@ canvas{
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    background-color: #f0f0f0;
 }
 
 .mission, .vision {
+    background-color: #222831;
     flex: 1;
     padding: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
+    /* color: #76ABAE; */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #eeeeee;
 }
 
 .mission h2, .vision h2 {
     font-size: 24px;
-    color: #333;
+
     
 }
 .mission p, .vision p {
     font-size: 16px;
-    color: #666;
+    color: #eeeeee;
     line-height: 1.5;
     
 }
 
 .about-us {
-    padding: 20px;
     flex: 1;
     padding: 20px;
-    background-color: #fff;
+    background-color: #31363F;
+    color: #EEEEEE;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .about-us p {
     font-size: 16px;
-    color: #666;
+    color: #EEEEEE;
     line-height: 1.5;
 }
 .about-us a {
@@ -219,7 +237,7 @@ canvas{
     margin-top: 10px;
     padding: 10px 20px;
     background-color: teal;
-    color: #fff;
+    color: #EEEEEE;
     text-decoration: none;
 }
 .menu-icon{
@@ -291,9 +309,22 @@ canvas{
           min-width: 200px;    
           min-height: 200px
     }
+    .sideNav a{
+        color: #222831;
+    }
+   
+      .active {
+          color:#26534b !important;
+      }
+      .sideNav a:hover {
+        color: #26534b;
+        text-decoration: none;
+    }
     
 }
 .counter-card {
+    background: #222831;
+    color: #76ABAE;
     text-align: center;
     padding: 2rem;
     margin-bottom: 1rem;
@@ -309,5 +340,5 @@ canvas{
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #343a40; 
+    color: #76ABAE; 
   }

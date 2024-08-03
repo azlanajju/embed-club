@@ -1,5 +1,6 @@
 
 .container {
+    /* background: #222831; */
     width: 70%;
     /* margin: auto; */
     position: relative;
@@ -72,12 +73,14 @@
     vertical-align: center !important;
 }
 .container .text p {
+    color: #EEEEEE;
     padding: 20px 10px;
     line-height: 1.5em;
     clear: both;
     text-align: justify;
 }
 .text{
+    color: #EEEEEE;
     text-align: justify;
 }
 .ulParagraph li{
