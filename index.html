@@ -62,13 +62,13 @@
     <div class="paceLogo">
       <img src="./images/emedClub_logo.png" alt="">
     </div>
-    <div class="searchBar">
+    <!-- <div class="searchBar">
 
       <form class="form-inline active-cyan-4">
         <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
         <i style="margin-top: -17px;" class="fas fa-search" aria-hidden="true"></i>
       </form>
-    </div>
+    </div> -->
   </div>
 
   <div id="menu-icon" class="menu-icon">
@@ -115,8 +115,16 @@
 
     <section>
       <div class="container ">
-        <h5 class="speacialSpan widget-title"> Gallery <span class="speacialSpan"></span></h5>
-        <div class="img_carousel">
+        <h5 class="speacialSpan widget-title" style="color: #eeeeee !important;"> Gallery <span class="speacialSpan"></span></h5>
+        <div class="img_carousel" style="background: #222831;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin-left: 1%;
+        ">
+
           <div><img src="./achievements-img/3d.jpeg"></div>
           <div><img src="./achievements-img/adc.jpeg"></div>
           <div><img src="./achievements-img/adcp.jpeg"></div>
@@ -136,7 +144,7 @@
           <div><img src="./achievements-img/sensor.jpeg"></div>
 
         </div>
-        <a href="./pages/gallery.html" style="background: teal;color: white;" class="btn ">View More</a>
+        <a href="./pages/gallery.html" style="background: rgb(4, 143, 143);color: white;" class="btn ">View More</a>
       </div>
     </section>
     <div class="nothing"></div>
@@ -330,28 +338,28 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.oncontextmenu = function() { return false; };
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   document.oncontextmenu = function() { return false; };
 
-    document.addEventListener("mousedown", function(e) {
-        if (e.button == 2) {
-            return false;
-        } else {
-            return true;
-        }
-    });
+  //   document.addEventListener("mousedown", function(e) {
+  //       if (e.button == 2) {
+  //           return false;
+  //       } else {
+  //           return true;
+  //       }
+  //   });
 
     
-    document.onkeydown = function(e) {
-        if ((e.ctrlKey && e.shiftKey && e.keyCode === 67)) {
-          document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1> <br><a style="background: teal;color: white;" class="btn btn-primary" href="">Give up</a></center>';
-            return false;
-        } else if ((e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 73 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 16 || e.keyCode === 117)) || (e.keyCode === 123)) {
-            document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1> <br><a style="background: teal;color: white;" class="btn btn-primary" href="">Give up</a></center>';
-            return false;
-        }
-    };
-});
+//     document.onkeydown = function(e) {
+//         if ((e.ctrlKey && e.shiftKey && e.keyCode === 67)) {
+//           document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1> <br><a style="background: teal;color: white;" class="btn btn-primary" href="">Give up</a></center>';
+//             return false;
+//         } else if ((e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 73 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 16 || e.keyCode === 117)) || (e.keyCode === 123)) {
+//             document.body.innerHTML = '<center><h1>Baap se Bakchodi Nahi</h1> <br><a style="background: teal;color: white;" class="btn btn-primary" href="">Give up</a></center>';
+//             return false;
+//         }
+//     };
+// });
 
 </script>
 <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
