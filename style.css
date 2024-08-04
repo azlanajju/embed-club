@@ -199,12 +199,13 @@ canvas{
 }
 
 .mission, .vision {
+    
     background-color: #222831;
     flex: 1;
     padding: 20px;
     /* background-color: #fff; */
     /* color: #76ABAE; */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
     color: #eeeeee;
 }
 
@@ -214,6 +215,7 @@ canvas{
     
 }
 .mission p, .vision p {
+    
     font-size: 16px;
     color: #eeeeee;
     line-height: 1.5;
@@ -299,15 +301,18 @@ canvas{
     .img_carousel{
         max-height: 200px;
         overflow: hidden;
+       
     }
     .img_carousel div  {
-      
         width: 100vw;
         position: relative;
         overflow: hidden;
           margin: 5px;
           min-width: 200px;    
           min-height: 200px
+    }
+    .img_carousel div img {
+        margin-top: 25px;
     }
     .sideNav a{
         color: #222831;

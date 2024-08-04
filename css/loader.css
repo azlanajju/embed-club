@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 50% 50%, #eee, #fff);
+    background: radial-gradient(circle at 50% 50%, #222831, #222831);
     position: fixed;
     z-index: 100000000000000000000000000000000000000000000000000;
     top: 0;
