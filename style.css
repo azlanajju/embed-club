@@ -14,7 +14,10 @@ body{
     background: #31363F !important;
     overflow-x: hidden;
 }
-
+body a:hover {
+    text-decoration: none;
+    color: #EEEEEE; 
+}
 .sideNav {
     width: 20vw;
     height: 100vh;
@@ -205,7 +208,7 @@ canvas{
     padding: 20px;
     /* background-color: #fff; */
     /* color: #76ABAE; */
-    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+    /* box-shadow: 0 0 5px #76ABAE; */
     color: #eeeeee;
 }
 
@@ -222,12 +225,21 @@ canvas{
     
 }
 
+
+.team a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #76ABAE;
+    color: #EEEEEE;
+    text-decoration: none;
+}
 .about-us {
     flex: 1;
     padding: 20px;
     background-color: #31363F;
     color: #EEEEEE;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px #76ABAE;
 }
 .about-us p {
     font-size: 16px;
@@ -329,11 +341,11 @@ canvas{
 }
 .counter-card {
     background: #222831;
-    color: #76ABAE;
+    color: #EEEEEE;
     text-align: center;
     padding: 2rem;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 #76ABAE;
     transition: all 0.3s ease-in-out;
   }
 
@@ -345,5 +357,5 @@ canvas{
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #76ABAE; 
+    color: teal; 
   }
