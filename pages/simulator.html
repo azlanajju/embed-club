@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Club</title>
+    <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootsrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/simulator.css">
+    <link rel="stylesheet" href="./css/loader.css">
+
+</head>
+
+<body>
+    <div class="loaderBody">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loaderBody');
+            loader.parentElement.classList.add('loaded');
+        });
+    </script>
+    <div class="topBar">
+        <div class="paceLogo">
+            <img src="../images/emedClub_logo.png" alt="">
+        </div>
+        <!-- <div class="searchBar">
+
+            <form class="form-inline active-cyan-4">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </form>
+        </div> -->
+    </div>
+
+    <div class="menu-icon">
+        <i id="menuBtn" class="fas fa-bars"></i>
+    </div>
+
+    <div id="sideNav" class="sideNav ">
+        <i id="closeBtn" class="fas fa-times closeIcon"></i>
+        <div style="height: 70px;"></div>
+        <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
+        <a href="./events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="./resource.html" class="item"><i class="fas fa-book"></i> Resource</a>
+        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="./members.html" class="item"><i class="fas fa-users"></i> Members</a>
+        <a href="./about.html" class="item"><i class="fas fa-info-circle"></i> About</a>
+        <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
+        <a href="./project.html" class="item"><i class="fas fa-lightbulb"></i> Project</a>
+        <a href="./simulator.html" class="item active"><i class="fas fa-microchip"></i> Simulator</a>
+        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+
+    <div class="nothing"></div>
+
+
+    <div class="mainContents">
+        <div class="homeBg">
+            <img src="../images/home-bg.jpg" alt="Homepage Background Image">
+            <div class="homeContent homNavigation">
+                <h1>Simulators</h1>
+                <p>Home > Simulators</p>
+            </div>
+        </div>
+
+        <!-- ============ simulators section ================= -->
+        <section class="container-fluid px-4 py-5">
+            <div class="row g-5">
+                <!-- Wokwi Card -->
+                <div class="col-md-6">
+                    <div class="card simulator-card h-100" data-aos="fade-up">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="simulator-img-wrapper">
+                                    <img src="../resources/wokwi.jpg" class="simulator-img" alt="Wokwi Simulator">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold mb-3">Wokwi</h3>
+                                    <p class="card-description">An online electronics simulator that supports Arduino, ESP32, and various sensors. Perfect for testing and prototyping IoT projects in your browser.</p>
+                                    <a href="https://wokwi.com" 
+                                       class="btn btn-primary" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       onclick="window.open(this.href, '_blank'); return false;">Try Simulator</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tinkercad Card -->
+                <div class="col-md-6">
+                    <div class="card simulator-card h-100" data-aos="fade-up">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="simulator-img-wrapper">
+                                    <img src="../resources/thinkerCad.png" class="simulator-img" alt="Tinkercad">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold mb-3">Tinkercad</h3>
+                                    <p class="card-description">A free, browser-based platform for circuit design and simulation. Ideal for beginners to learn electronics and Arduino programming.</p>
+                                    <a href="https://www.tinkercad.com/learn/circuits" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Try Simulator</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CPUlator Card -->
+                <div class="col-md-6">
+                    <div class="card simulator-card h-100" data-aos="fade-up">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="simulator-img-wrapper">
+                                    <img src="../resources/cpulator.png" class="simulator-img" alt="CPUlator">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold mb-3">CPUlator</h3>
+                                    <p class="card-description">A comprehensive ARM processor simulator for learning computer architecture and assembly programming. Features detailed CPU visualization and debugging tools.</p>
+                                    <a href="https://cpulator.01xz.net/?sys=arm-de1soc" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Try Simulator</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ultimaker Cura Card -->
+                <div class="col-md-6">
+                    <div class="card simulator-card h-100" data-aos="fade-up">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="simulator-img-wrapper">
+                                    <img src="../resources/cura.jpg" class="simulator-img" alt="Ultimaker Cura">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold mb-3">Ultimaker Cura</h3>
+                                    <p class="card-description">A powerful 3D printing slicer software that prepares your 3D models for printing. Features advanced settings and real-time preview for optimal print results.</p>
+                                    <a href="https://ultimaker.com/software/ultimaker-cura/" 
+                                       class="btn btn-primary" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       onclick="window.open(this.href, '_blank'); return false;">Try Software</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blender Card -->
+                <div class="col-md-6">
+                    <div class="card simulator-card h-100" data-aos="fade-up">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="simulator-img-wrapper">
+                                    <img src="../resources/blender.png" class="simulator-img" alt="Blender">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold mb-3">Blender</h3>
+                                    <p class="card-description">A free and open-source 3D creation suite. Perfect for modeling, animation, simulation, rendering, and game development. Industry-standard tools for 3D design.</p>
+                                    <a href="https://www.blender.org/download/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Try Software</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unity Card -->
+                <div class="col-md-6">
+                    <div class="card simulator-card h-100" data-aos="fade-up">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="simulator-img-wrapper">
+                                    <img src="../resources/unity.png" class="simulator-img" alt="Unity">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h3 class="card-title fw-bold mb-3">Unity</h3>
+                                    <p class="card-description">A powerful game development platform. Create 2D, 3D, AR & VR games and interactive experiences. Industry-standard engine with extensive learning resources.</p>
+                                    <a href="https://unity.com/download" 
+                                       class="btn btn-primary" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       onclick="window.open(this.href, '_blank'); return false;">Try Software</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============ simulators section end ================= -->
+
+        <!-- =================footer start ================ -->
+        </section>
+        <footer id="footer" class="footer-1">
+            <div class="main-footer widgets-dark typo-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget subscribe no-box">
+                                <h5 class="widget-title">Embed Club<span></span></h5>
+
+                                <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Quick Links<span></span></h5>
+                                <ul class="thumbnail-widget">
+                                    <li>
+                                        <div class="thumb-content"><a href="./pages/events.html">&nbsp;Events</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb-content"><a href="./pages/members.html">&nbsp;Team</a></div>
+                                    </li>
+                                    <li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Follow up<span></span></h5>
+                                <a href="https://www.instagram.com/embed_club/"> <i class="fa fa-instagram"> </i> </a>
+                                <a href="https://www.linkedin.com/in/embed-club-486124271/"> <i class="fa fa-linkedin"> </i> </a>
+                                <a href="https://github.com/embedclubpace"> <i class="fa fa-github"> </i> </a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title ">Developed By<span></span></h5>
+                                <p>
+                                <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
+                                <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. -->                                 </p>
+                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
+                                <div class="emailfield">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <!-- ======================footer end =============== -->
+
+
+    </div>
+    <script src="../main.js"></script>
+    <script src="../js/event.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function Unavailable() {
+            alert("This is currently unavailable.");
+        }
+    </script>
+</body>
+
+</html>
