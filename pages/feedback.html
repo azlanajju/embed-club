@@ -107,22 +107,137 @@
                 <i class="fa fa-comments fa-4x"></i>
             </div>
             <p class="title title-left">Feedback</p>
-            <div class="text POPtext">
-                <p>
-                
-                    <div class="POPtext"><strong>Section A <br></strong>
-                        <a href="https://forms.gle/oLLbgHRR7kXb9MkE9" >Click here to give your feedback</a>
-                    </div>
-                    <br>
-                    <div class="POPtext"> <strong>Section B <br></strong>
-                        <a href="https://forms.gle/oLLbgHRR7kXb9MkE9"  >Click here to give your feedback</a>
-
-                    </div>
-
-                
-                </p>
+            <div class="text POPtext" id="feedbackContainer">
+                <!-- Dynamic content will be inserted here by the script -->
             </div>
+        </div>
 
+        <script>
+            // Configuration for feedback forms
+            const feedbackForms = [
+                {
+                    id: "sectionA",
+                    title: "Section A",
+                    formLink: "https://forms.gle/oLLbgHRR7kXb9MkE9",
+                    isActive: false // Set to false to disable this form
+                },
+                {
+                    id: "sectionB",
+                    title: "Section B",
+                    formLink: "https://forms.gle/oLLbgHRR7kXb9MkE9",
+                    isActive: false // This form is disabled
+                }
+            ];
+
+            // Function to render feedback forms
+            function renderFeedbackForms() {
+                const container = document.getElementById('feedbackContainer');
+                let html = '';
+                
+                feedbackForms.forEach(form => {
+                    html += `<div class="feedback-section">`;
+                    html += `<strong>${form.title}</strong><br>`;
+                    
+                    if (form.isActive) {
+                        html += `<a href="${form.formLink}" target="_blank">Click here to give your feedback</a>`;
+                    } else {
+                        html += `<div class="form-closed"><i class="fas fa-lock"></i> This feedback form is currently closed</div>`;
+                    }
+                    
+                    html += `</div><br>`;
+                });
+                
+                // If all forms are inactive, show a message
+                if (feedbackForms.every(form => !form.isActive)) {
+                    html += `<div class="all-forms-closed">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <p>All feedback forms are currently closed. Please check back later.</p>
+                             </div>`;
+                }
+                
+                container.innerHTML = html;
+            }
+            
+            // Initialize when the document is loaded
+            document.addEventListener('DOMContentLoaded', renderFeedbackForms);
+        </script>
+
+        <style>
+            /* Styling for feedback sections */
+            .feedback-section {
+                padding: 15px 20px;
+                margin-bottom: 20px;
+                background-color: rgba(26, 35, 44, 0.8); /* Dark background matching site theme */
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            
+            .feedback-section strong {
+                color: #fff;
+                font-size: 18px;
+                display: block;
+                margin-bottom: 10px;
+            }
+            
+            .POPtext a {
+                color: white;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: inline-block;
+                padding: 8px 16px;
+                margin-top: 5px;
+                background-color: rgba(23, 162, 184, 0.7); /* Teal color matching theme */
+                border-radius: 5px;
+            }
+            
+            .POPtext a:hover {
+                color: #ffcc00;
+                transform: scale(1.05);
+                background-color: rgba(23, 162, 184, 0.9);
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            }
+            
+            .form-closed {
+                color: #ff6b6b;
+                font-style: italic;
+                padding: 8px 16px;
+                margin-top: 5px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+                display: inline-block;
+            }
+            
+            .all-forms-closed {
+                text-align: center;
+                padding: 30px 20px;
+                background-color: rgba(26, 35, 44, 0.7);
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+            
+            .all-forms-closed i {
+                font-size: 40px;
+                color: #ffd54f;
+                margin-bottom: 15px;
+            }
+            
+            .all-forms-closed p {
+                color: #e0e0e0;
+                font-size: 16px;
+            }
+            
+            /* Adaptive for mobile */
+            @media (max-width: 768px) {
+                .feedback-section {
+                    padding: 12px;
+                }
+                
+                .POPtext a, .form-closed {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        </style>
 
         <div class="nothing"></div>
         <!-- ============ abomembersut start =================  -->
