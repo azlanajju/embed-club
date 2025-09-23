@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Club</title>
+    <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/tutorials.css">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/members.css">
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- bootsrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/resource.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
+    
+
+</head>
+
+<body>
+    <div class="loaderBody">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loaderBody');
+            loader.parentElement.classList.add('loaded');
+        });
+    </script>
+    <div class="topBar">
+        <div class="paceLogo">
+            <img src="../images/emedClub_logo.png" alt="">
+        </div>
+        <!-- <div class="searchBar">
+
+            <form class="form-inline active-cyan-4">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </form>
+        </div> -->
+    </div>
+
+    <div class="menu-icon">
+        <i id="menuBtn" class="fas fa-bars"></i>
+    </div>
+
+    <div class="nothing"></div>
+
+
+    <div class="mainContents">
+        <div class="homeBg">
+            <img src="../images/home-bg.jpg" alt="Homepage Background Image">
+            <div class="homeContent  homNavigation">
+                <h1>NodeRED</h1>
+            </div>
+        </div>
+
+
+        <div class="nothing"></div>
+        <!-- ============ abomembersut start =================  -->
+        <section>
+            <!-- Blog-style content based on the YouTube tutorial -->
+            <div class="container" data-aos="fade-up">
+                <p class="title title-left">MQTT with ESP32 + DHT22 on Node‑RED (Wokwi)</p>
+                <div class="text">
+                    <p>
+                        In this quick hands‑on post, you’ll simulate an ESP32 with a DHT22 sensor in Wokwi, publish
+                        temperature and humidity via MQTT, and build a simple Node‑RED Dashboard to see live updates —
+                        inspired by the IoT Frontier video linked below.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container" data-aos="fade-up">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://www.youtube.com/embed/fbQRF_IKuo4"
+                        title="MQTT with ESP32 and DHT22 using Wokwi | Display on Node-Red Dashboard"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+
+            <div class="container" data-aos="fade-up">
+                <p class="title title-right">Overview</p>
+                <div class="text">
+                    <ul class="ulParagraph">
+                        <li>Simulate ESP32 + DHT22 entirely in <strong>Wokwi</strong>.</li>
+                        <li>Publish readings over <strong>MQTT</strong> (e.g., temperature and humidity topics).</li>
+                        <li>Subscribe in <strong>Node‑RED</strong> and visualize on a <strong>Dashboard</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container" data-aos="fade-up">
+                <p class="title title-left">Prerequisites</p>
+                <div class="text">
+                    <ul class="ulParagraph">
+                        <li>Wokwi account (free) to simulate ESP32 + DHT22</li>
+                        <li>Node‑RED installed locally (or hosted)</li>
+                        <li>An MQTT broker like <strong>Mosquitto</strong> (local or cloud)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container" data-aos="fade-up">
+                <p class="title title-right">Steps at a glance</p>
+                <div class="text">
+                    <ol>
+                        <li>
+                            <strong>Wokwi setup:</strong> Add ESP32 and DHT22. Connect data to a GPIO (e.g., <code>GPIO 15</code>),
+                            power to 3.3V, and ground to GND.
+                        </li>
+                        <li>
+                            <strong>Publish to MQTT:</strong> ESP32 sends JSON or plain text to topics like
+                            <code>home/dht22/temperature</code> and <code>home/dht22/humidity</code>.
+                        </li>
+                        <li>
+                            <strong>Subscribe in Node‑RED:</strong> Use MQTT‑in nodes for each topic and wire them to
+                            gauges/charts on the dashboard.
+                        </li>
+                        <li>
+                            <strong>View Dashboard:</strong> Open the Node‑RED dashboard to watch live updates from the
+                            simulator.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="container" data-aos="fade-up">
+                <p class="title title-left">Resources</p>
+                <div class="text">
+                    <ul class="ulParagraph">
+                        <li><a href="https://wokwi.com/" target="_blank" rel="noopener">Wokwi Simulator</a></li>
+                        <li><a href="https://nodered.org/docs/" target="_blank" rel="noopener">Node‑RED Docs</a></li>
+                        <li><a href="https://mosquitto.org/" target="_blank" rel="noopener">Eclipse Mosquitto</a></li>
+                        <li><a href="https://youtu.be/fbQRF_IKuo4" target="_blank" rel="noopener">Original video</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- ============     about end ================= -->
+
+        <section class="code-snippet-section" data-aos="fade-up">
+            <div class="container">
+                <div class="code-window">
+                    <div class="code-window__header">
+                        <p class="code-window__title">Code Snippet</p>
+                        <button class="copy-btn" type="button" data-target="#snippet-1">
+                            <i class="fa fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="code-window__body">
+                        <pre id="snippet-1" class="code-block" tabindex="0">npm install -g --unsafe-perm node-red</pre>
+                        <div class="copy-toast" aria-live="polite">Copied!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === Code Snippet Block (centered) === -->
+        <section class="code-snippet-section" data-aos="fade-up">
+            <div class="container">
+                <div class="code-window">
+                    <div class="code-window__header">
+                        <p class="code-window__title">Code Snippet</p>
+                        <button class="copy-btn" type="button" data-target="#snippet-1">
+                            <i class="fa fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="code-window__body">
+                        <pre id="snippet-1" class="code-block" tabindex="0">#include <WiFi.h>
+#include <PubSubClient.h>
+#include "DHTesp.h"
+
+const int DHT_PIN = 9;
+
+DHTesp dhtSensor;
+
+const char* ssid = "Wokwi-GUEST";
+const char* password = "";
+const char* mqtt_server = "broker.hivemq.com";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+unsigned long lastMsg = 0;
+#define MSG_BUFFER_SIZE  (50)
+float temp = 0;
+float hum = 0;
+int value = 0;
+
+void setup_wifi() {
+
+  delay(10);
+  // We start by connecting to a WiFi network
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  randomSeed(micros());
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+
+  // Switch on the LED if an 1 was received as first character
+  if ((char)payload[0] == '1') {
+    digitalWrite(2, LOW);   // Turn the LED on (Note that LOW is the voltage level
+    // but actually the LED is on; this is because
+    // it is active low on the ESP-01)
+  } else {
+    digitalWrite(2, HIGH);  // Turn the LED off by making the voltage HIGH
+  }
+
+}
+
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Create a random client ID
+    String clientId = "ESP8266Client-";
+    clientId += String(random(0xffff), HEX);
+    // Attempt to connect
+    if (client.connect(clientId.c_str())) {
+      Serial.println("Connected");
+      // Once connected, publish an announcement...
+      client.publish("iotfrontier/mqtt", "iotfrontier");
+      // ... and resubscribe
+      client.subscribe("iotfrontier/mqtt");
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
+
+void setup() {
+  pinMode(2, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
+  Serial.begin(115200);
+  setup_wifi();
+  client.setServer(mqtt_server, 1883);
+  client.setCallback(callback);
+  dhtSensor.setup(DHT_PIN, DHTesp::DHT22);
+}
+
+void loop() {
+
+  if (!client.connected()) {
+    reconnect();
+  }
+  client.loop();
+
+  unsigned long now = millis();
+  if (now - lastMsg > 2000) {
+    lastMsg = now;
+    TempAndHumidity  data = dhtSensor.getTempAndHumidity();
+
+    String temp = String(data.temperature, 2);
+    Serial.print("Temperature: ");
+    Serial.println(temp);
+    client.publish("iotfrontier/temperature", temp.c_str());
+    
+    String hum = String(data.humidity, 1);
+    Serial.print("Humidity: ");
+    Serial.println(hum);
+    client.publish("iotfrontier/humidity", hum.c_str());
+  }
+}
+                        </pre>
+                        <div class="copy-toast" aria-live="polite">Copied!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================footer start ================ -->
+        </section>
+    <footer id="footer" class="footer-1">
+            <div class="main-footer widgets-dark typo-light">
+                <div class="container aboutFooter">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget subscribe no-box">
+                                <h5 class="widget-title">Embed Club<span></span></h5>
+
+                                <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Quick Links<span></span></h5>
+                                <ul class="thumbnail-widget">
+                                    <li>
+                                        <div class="thumb-content"><a href="./pages/events.html">&nbsp;Events</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb-content"><a href="./pages/members.html">&nbsp;Team</a></div>
+                                    </li>
+                                    <li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Follow up<span></span></h5>
+                                <a href="https://www.instagram.com/embed_club/"> <i class="fa fa-instagram"> </i> </a>
+                                <a href="https://www.linkedin.com/in/embed-club-486124271/"> <i class="fa fa-linkedin"> </i> </a>
+                                <a href="https://github.com/embedclubpace"> <i class="fa fa-github"> </i> </a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title ">Developed By<span></span></h5>
+                                <p>
+                                <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
+                                <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. --> </p>
+                                </p>
+                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
+                                <div class="emailfield">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <!-- ======================footer end =============== -->
+
+
+    </div>
+    <script src="../main.js"></script>
+    <script src="../js/event.js"></script>
+    <script src="../js/tutorials.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+    </script>
+</body>
+<script>
+    const devCred = document.getElementById("devCred");
+    if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
+        document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
+        alert("Unauthorized changes detected! This website may not function properly.");
+    }
+
+</script>
+
+</html>
