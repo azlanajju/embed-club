@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi Guide - Embed Club</title>
+    <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/tutorials.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/members.css">
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- bootsrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/resource.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
+    <style>
+        /* Shadcn-inspired styling - Dark Mode */
+        :root {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 217.2 32.6% 12%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 25%;
+            --radius: 0.5rem;
+        }
+
+        /* Body background */
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+
+        .mainContents {
+            background-color: hsl(var(--background));
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+        }
+
+        /* Card Component */
+        .shadcn-card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .shadcn-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin: 0;
+        }
+
+        /* Badge Component */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-outline {
+            background: transparent;
+            border: 1px solid hsl(var(--border));
+            color: hsl(var(--foreground));
+        }
+
+        .badge-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .badge-warning {
+            background: #f59e0b;
+            color: white;
+        }
+
+        /* Alert Component */
+        .alert {
+            padding: 1rem;
+            border-radius: var(--radius);
+            border: 1px solid hsl(var(--border));
+            margin-bottom: 1.5rem;
+            background: hsl(var(--muted));
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+            color: #93c5fd;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #6ee7b7;
+        }
+
+        /* Tabs Component */
+        .tabs-container {
+            margin: 2rem 0;
+        }
+
+        .tabs-list {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid hsl(var(--border));
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-trigger {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-weight: 500;
+            color: hsl(var(--muted-foreground));
+            transition: all 0.2s;
+        }
+
+        .tab-trigger:hover {
+            color: hsl(var(--foreground));
+        }
+
+        .tab-trigger.active {
+            color: hsl(var(--primary));
+            border-bottom-color: hsl(var(--primary));
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius);
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card a {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Code Block Enhancement */
+        .code-window {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin: 1.5rem 0;
+        }
+
+        .code-window__header {
+            background: #1e293b;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-window__title {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #2563eb;
+        }
+
+        .code-window__body {
+            background: #0f172a;
+            position: relative;
+        }
+
+        .code-block {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            margin: 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .copy-toast {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+
+        .hero-gradient h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-gradient p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Step Cards */
+        .step-card {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            color: hsl(var(--foreground));
+        }
+
+        /* Responsive Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-gradient h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Gallery image styles */
+        .galImg img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body.card-color {
+            background-color: #31363F !important;
+            color: #EEEEEE !important;
+        }
+
+        .galImg .card {
+            background: #31363F;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="loaderBody">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loaderBody');
+            loader.parentElement.classList.add('loaded');
+        });
+    </script>
+    <div class="topBar">
+        <div class="paceLogo">
+            <img src="../images/emedClub_logo.png" alt="">
+        </div>
+    </div>
+
+    <div class="menu-icon">
+        <i id="menuBtn" class="fas fa-bars"></i>
+    </div>
+
+    <div class="nothing"></div>
+
+
+    <div class="mainContents">
+        <div class="homeBg">
+            <img src="../images/home-bg.jpg" alt="Homepage Background Image">
+            <div class="homeContent  homNavigation">
+                <h1>Raspberry Pi</h1>
+            </div>
+        </div>
+
+
+        <div class="nothing"></div>
+        
+        <!-- Hero Section -->
+        <section>
+            <div class="container" data-aos="fade-up">
+                <div class="hero-gradient">
+                    <h1><i class="fas fa-raspberry-pi"></i> Raspberry Pi Fundamentals & Automation Program</h1>
+                    <p>
+                        A hands-on, project-based learning path taking you from basic introduction to implementing 
+                        practical home automation projects using Raspberry Pi and Python.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Program Introduction -->
+            <div class="container" data-aos="fade-up">
+                <div class="alert alert-info">
+                    <h3 style="margin-top: 0;"><i class="fas fa-bullseye"></i> Program Overview</h3>
+                    <p style="margin-bottom: 0;">
+                        This comprehensive course covers everything from understanding Single Board Computers to building 
+                        web-controlled home automation systems. Each module builds on the previous one, ensuring you gain 
+                        practical skills through real-world projects.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Part 1: Raspberry Pi Setup (Imager + VNC) -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <h2 class="card-title">Part 1: Raspberry Pi — Imager & VNC Setup</h2>
+                    </div>
+                    <div class="text">
+                        <h4><i class="fas fa-download"></i> Download Raspberry Pi Imager</h4>
+                        <p>Open the official Raspberry Pi software download page and download the Raspberry Pi Imager for your OS:</p>
+                        <p><a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">https://www.raspberrypi.com/software/</a></p>
+
+                        <div style="margin: 1rem 0;">
+                            <img src="../events-img/2025/RaspDownloadPage.png" alt="Raspberry Pi Imager screenshot" style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+
+                        <h5><i class="fas fa-keyboard"></i> Step-by-step: Flash OS using Raspberry Pi Imager</h5>
+                        <div class="alert alert-info">
+                            <strong>⚠️ Crucial:</strong> The imaging step will erase the selected SD card. If you select the wrong drive, you may lose data and must start the process again. Double-check the target drive before writing.
+                        </div>
+
+                        <ol class="ulParagraph">
+                            <li>Run <strong>Raspberry Pi Imager</strong> you downloaded from the link above. You'll see three main buttons: <strong>CHOOSE DEVICE</strong>, <strong>CHOOSE OS</strong>, and <strong>CHOOSE STORAGE</strong>.
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspApplication.png" alt="Raspberry Pi Imager main interface" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>Raspberry Pi Imager - Initial Screen</em></p>
+                                </div>
+                            </li>
+                            
+                            <li>Click <strong>CHOOSE DEVICE</strong> → select <strong>RASPBERRY PI 4</strong> from the list.</li>
+                            
+                            <li>Click <strong>CHOOSE OS</strong> → select <strong>RASPBERRY PI OS (64-BIT)</strong>.</li>
+                            
+                            <li>Click <strong>CHOOSE STORAGE</strong> → select your MicroSD card. Make sure the size and label match the card you intend to flash.
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspApplicationAfterFilling.png" alt="After selecting device, OS, and storage" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                            
+                            <li>After selecting all three options, the <strong>NEXT</strong> button will become active. Click <strong>NEXT</strong>.
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspAppAfterClickingNext.png" alt="OS Customisation prompt" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                            
+                            <li>A dialog will appear asking "<strong>Would you like to apply OS customisation settings?</strong>" Click <strong>EDIT SETTINGS</strong> to configure:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li><strong>GENERAL tab:</strong> <div class="alert alert-info">
+                            <strong>⚠️ Crucial:</strong> This step requires you to carefully input the correct details for raspberry pi. If you made any mistake with the input and you are unable to login to raspberry pi, you will need to redo the entire formatting again with proper input.
+                        </div> 
+                                        <ul>
+                                            <li>Set hostname: Enter any name here but make sure to note this name down. Best to give a simple name.</li>
+                                            <li>Set username and password: Choose your username and password (Again give an easy name and password and note it down somewhere).</li>
+                                            <li>Configure wireless LAN: Enter your Wi-Fi SSID (network name) and password. Select your Wireless LAN country (e.g., "IN" for India)</li>
+                                        </ul>
+                                        <div style="margin: 0.75rem 0;">
+                                            <img src="../events-img/2025/RaspAppAfterChoosingEditSettings.png" alt="General settings tab" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>GENERAL Tab - Hostname, Username, and WiFi Configuration</em></p>
+                                        </div>
+                                    </li>
+                                    <li><strong>SERVICES tab:</strong>
+                                        <ul>
+                                            <li>Enable SSH</li>
+                                            <li>Select "Use password authentication" (recommended for beginners)</li>
+                                        </ul>
+                                        <div style="margin: 0.75rem 0;">
+                                            <img src="../events-img/2025/RaspSettingsForSSH.png" alt="Services tab - SSH settings" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                        </div>
+                                    </li>
+                                    <li><strong>OPTIONS tab:</strong> You can ignore this</li>
+                                </ul>
+                            </li>
+                            
+                            <li>Click <strong>SAVE</strong> at the bottom of the OS Customisation window.</li>
+                            
+                            <li>You'll return to the confirmation dialog. Click <strong>YES</strong> to apply the settings.</li>
+                            
+                            <li>Review settings carefully. When ready, click <strong>Write</strong> to start imaging. <strong>Warning:</strong> This will erase all data on the selected storage device! Wait until the process completes and shows success.</li>
+                            
+                            <li>When finished, safely eject/remove the SD card from your computer and insert it into the Raspberry Pi's SD card slot.</li>
+                            
+                            <li>Power up the Raspberry Pi by connecting the power supply. Wait approximately <strong>5 minutes</strong> for first-boot tasks to complete (OS expansion, network connection, and service initialization). The Pi will automatically connect to your Wi-Fi network. While waiting, continue with VNC setup below.</li>
+                        </ol>
+
+                        <h5><i class="fas fa-desktop"></i> VNC: Remote Desktop Access (RealVNC)</h5>
+                        <p>VNC allows you to access the Raspberry Pi's desktop remotely from your computer. We'll use RealVNC Viewer for this.</p>
+                        
+                        <h5><i class="fas fa-download"></i> Download RealVNC Viewer</h5>
+                        <p>Download RealVNC Viewer for Windows from the official website:</p>
+                        <p><a href="https://www.realvnc.com/en/connect/download/vnc/" target="_blank" rel="noopener">https://www.realvnc.com/en/connect/download/vnc/</a></p>
+
+                        <div style="margin: 1rem 0;">
+                            <img src="../events-img/2025/RealVNCDownload.png" alt="RealVNC Download Page" style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>RealVNC Download Page</em></p>
+                        </div>
+
+                        <h5><i class="fas fa-cog"></i> Install RealVNC Viewer</h5>
+                        <ol class="ulParagraph">
+                            <li>Run the downloaded RealVNC Viewer installer</li>
+                            <li>Follow the installation wizard and accept the license agreement</li>
+                            <li>Complete the installation and launch RealVNC Viewer</li>
+                        </ol>
+
+                        <h5><i class="fas fa-link"></i> Create New VNC Connection</h5>
+                        <ol class="ulParagraph">
+                            <li>Open RealVNC"
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RealVNCPage.png" alt="RealVNC Viewer - Blank Address Book" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                            
+                            <li>Click on <strong>File</strong> menu at the top → select <strong>New connection...</strong> (or press <code>Ctrl+N</code>)
+                                <div style="margin: 0.75rem 0; display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                                    <img src="../events-img/2025/RealVNCClickOnFile.png" alt="RealVNC File Menu" style="border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <img src="../events-img/2025/RealVNCNewConnection.png" alt="RealVNC New Connection Dialog" style="border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                </div>
+                                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                            </li>
+                            
+                            <li>A <strong>Properties</strong> dialog will appear. Fill in the connection details:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li><strong>Address:</strong> Enter the hostname you set in Raspberry Pi Imager (e.g., <code>name.local</code> or the Pi's IP address like <code>192.168.1.123</code>)</li>
+                                    <li><strong>Name:</strong> Give it a friendly identifier (e.g., "My Raspberry Pi" or "Pi 4")</li>
+                                    <li><strong>Labels:</strong> Optional - you can add labels to organize multiple connections</li>
+                                </ul>
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RealVNCAfterInputDetails.png" alt="VNC Properties Dialog" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                                
+                                <div class="alert alert-info" style="margin-top: 1rem;">
+                                    <strong><i class="fas fa-info-circle"></i> Important:</strong> The address must match exactly what you entered in the Raspberry Pi Imager settings:
+                                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                                        <li>If you set hostname as "raspberrypi", use: <code>raspberrypi.local</code></li>
+                                        <li>If you set hostname as "mypi", use: <code>mypi.local</code></li>
+                                        <li>Or use the IP address if you know it: <code>192.168.x.x</code></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                            <li>Click <strong>OK</strong> to save the connection. It will now appear in your Address book.</li>
+                            
+                            <li>To connect: Double-click the saved connection in the Address book. You'll be prompted for:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li><strong>Username:</strong> The username you set in Raspberry Pi Imager</li>
+                                    <li><strong>Password:</strong> The password you set in Raspberry Pi Imager</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <div class="alert alert-success" style="margin-top:1rem;">
+                            <strong><i class="fas fa-check-circle"></i> We will now move onto SSH so we can connect our RealVNC to Raspberry Pi</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SSH Configuration -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <h2 class="card-title">SSH Access to Raspberry Pi</h2>
+                    </div>
+                    <div class="text">
+                        <p>SSH (Secure Shell) allows you to access your Raspberry Pi's command line remotely. This is essential for troubleshooting, enabling services like VNC, and managing your Pi without a desktop interface.</p>
+
+                        <h5><i class="fas fa-terminal"></i> Connect via SSH from Windows Command Prompt</h5>
+                        <ol class="ulParagraph">
+                            <li>Open <strong>Command Prompt (CMD)</strong> on your Windows PC:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Press <code>Windows Key + R</code></li>
+                                    <li>Type <code>cmd</code> and press Enter</li>
+                                </ul>
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/SSHScreen.png" alt="Windows Command Prompt" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>Windows Command Prompt</em></p>
+                                </div>
+                            </li>
+                            
+                            <li>Type the SSH connection command using the hostname and username you set in Raspberry Pi Imager:
+                                <div class="code-window">
+                                    <div class="code-window__header">
+                                        <p class="code-window__title">SSH Connection Command</p>
+                                    </div>
+                                    <div class="code-window__body">
+                                        <pre class="code-block">ssh username@hostname.local
+
+# Example: if username is "pi" and hostname is "raspberrypi"
+ssh pi@raspberrypi.local
+
+# Or if you know the IP address:
+ssh username@192.168.1.123</pre>
+                                    </div>
+                                </div>
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/SSHBeforeConnect.png" alt="SSH Login Command" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+
+                            <li>When prompted with "Are you sure you want to continue connecting?", type <code>yes</code> and press Enter to accept the SSH fingerprint</li>
+                            
+                            <li>Enter the password you set in the Raspberry Pi Imager advanced settings
+                                <div class="alert alert-info" style="margin-top: 0.5rem;">
+                                    <strong><i class="fas fa-info-circle"></i> Note:</strong> When typing your password, you won't see any characters appear on screen (no asterisks or dots). This is normal for security reasons. Just type your password and press Enter.
+                                </div>
+                            </li>
+
+                            <li>Once logged in successfully, you'll see the Raspberry Pi command prompt:
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/SSHAfterConnecting.png" alt="Successfully connected to Raspberry Pi" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h5><i class="fas fa-cog"></i> Using raspi-config Tool</h5>
+                        <p>Now that you're connected via SSH, you can use the <code>raspi-config</code> tool to configure your Raspberry Pi.</p>
+                        
+                        <ol class="ulParagraph">
+                            <li>Run the Raspberry Pi configuration tool:
+                                <div class="code-window">
+                                    <div class="code-window__header">
+                                        <p class="code-window__title">Open raspi-config</p>
+                                    </div>
+                                    <div class="code-window__body">
+                                        <pre class="code-block">sudo raspi-config</pre>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>The Raspberry Pi Software Configuration Tool interface will open:
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspiPage.png" alt="raspi-config main menu" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+
+                            <li>Navigate to <strong>3 Interface Options</strong> and press Enter:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Use arrow keys (↑ ↓) to move up and down</li>
+                                    <li>Press Enter to select</li>
+                                    <li>Press Tab to move between Select/Finish buttons</li>
+                                </ul>
+                            </li>
+
+                            <li>Select <strong>P3 VNC</strong> to enable VNC server:
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspiVNCEnable.png" alt="Interface Options menu" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+
+                            <li>When asked "Would you like the VNC Server to be enabled?", select <strong>Yes</strong></li>
+
+                            <li>You'll see a confirmation message "The VNC Server is enabled". Press Enter to continue</li>
+
+                            <li>Press Tab to highlight <strong>&lt;Finish&gt;</strong> and press Enter to exit raspi-config</li>
+
+                            <li>If prompted to reboot, select <strong>Yes</strong>. Or manually reboot with:
+                                <div class="code-window">
+                                    <div class="code-window__header">
+                                        <p class="code-window__title">Reboot Raspberry Pi</p>
+                                    </div>
+                                    <div class="code-window__body">
+                                        <pre class="code-block">sudo reboot</pre>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>Wait 2-3 minutes for the Pi to restart, then try connecting via VNC Viewer</li>
+                        </ol>
+
+                        <div class="alert alert-success" style="margin-top:1rem;">
+                            <strong><i class="fas fa-check-circle"></i> Part 1 Complete!</strong> You now have Raspberry Pi OS flashed with pre-configured settings, VNC enabled for remote desktop access, and SSH access for command-line control. You can manage your Pi from anywhere on your local network without needing a monitor, keyboard, or mouse connected to it (headless setup).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: GPIO Programming -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h2 class="card-title">Part 2: The Programming Model & GPIO</h2>
+                    </div>
+                    <div class="text">
+                        <div class="alert alert-info">
+                            <strong><i class="fas fa-key"></i> Key Concept:</strong> This part is critical for understanding how the Raspberry Pi 
+                            interfaces with the real world using its General Purpose Input/Output (GPIO) pins.
+                        </div>
+
+                        <h4><i class="fas fa-book-open"></i> Topics Covered:</h4>
+
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Introduction to GPIO</h3>
+                                <ul class="ulParagraph">
+                                    <li>Understanding the 40-pin header layout</li>
+                                    <li>The difference between Digital and Analog signals</li>
+                                    <li>Voltage levels and current limitations (3.3V logic)</li>
+                                    <li>Protecting your Pi from electrical damage</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Pin Numbering Systems</h3>
+                                <ul class="ulParagraph">
+                                    <li><span class="badge">BOARD</span> Physical pin locations (1-40, easier for beginners)</li>
+                                    <li><span class="badge">BCM</span> Broadcom SOC channel numbering (preferred for programming)</li>
+                                    <li>When to use each numbering system</li>
+                                    <li>How to switch between numbering modes in code</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Digital Input and Output</h3>
+                                <ul class="ulParagraph">
+                                    <li>Setting pins to <strong>HIGH</strong> (3.3V) or <strong>LOW</strong> (0V)</li>
+                                    <li>Controlling LEDs, motors, and relays</li>
+                                    <li>Reading the state of buttons and switches (HIGH/LOW)</li>
+                                    <li>Debouncing input signals</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Internal Resistors</h3>
+                                <ul class="ulParagraph">
+                                    <li>Understanding <strong>Pull-up</strong> resistors (default HIGH)</li>
+                                    <li>Understanding <strong>Pull-down</strong> resistors (default LOW)</li>
+                                    <li>How to enable internal resistors in software</li>
+                                    <li>When external resistors are needed</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success" style="margin-top: 2rem;">
+                            <strong><i class="fas fa-thumbtack"></i> Pinout Reference:</strong> Always refer to the official Raspberry Pi pinout diagram. 
+                            Study the pin configuration, power rails (3.3V, 5V, GND), and reserved pins before connecting 
+                            any hardware.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 3: OS Installation -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h2 class="card-title">Part 3: Operating System Installation (Raspberry Pi OS)</h2>
+                    </div>
+                    <div class="text">
+                        <div class="tabs-container">
+                            <div class="tabs-list">
+                                <button class="tab-trigger active" data-tab="software">Getting Software</button>
+                                <button class="tab-trigger" data-tab="flashing">Flashing SD Card</button>
+                                <button class="tab-trigger" data-tab="setup">Initial Setup</button>
+                            </div>
+
+                            <div class="tab-content active" id="software">
+                                <h4><i class="fas fa-download"></i> Getting the Software</h4>
+                                <ul class="ulParagraph">
+                                    <li>Download the official <strong>Raspberry Pi Imager</strong> from raspberrypi.com</li>
+                                    <li>Select the appropriate operating system for your project:
+                                        <ul>
+                                            <li><span class="badge badge-success">Raspberry Pi OS Lite</span> - Command-line only, ideal for headless projects (no desktop GUI)</li>
+                                            <li><span class="badge badge-warning">Raspberry Pi OS (32-bit)</span> - Full desktop experience for general use</li>
+                                            <li><span class="badge">Raspberry Pi OS (64-bit)</span> - For Pi 4 and 5 with better performance</li>
+                                        </ul>
+                                    </li>
+                                    <li>Other options: Ubuntu, Home Assistant OS, RetroPie, etc.</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-content" id="flashing">
+                                <h4><i class="fas fa-sd-card"></i> Flashing the SD Card</h4>
+                                <ul class="ulParagraph">
+                                    <li>Insert your MicroSD card into your computer</li>
+                                    <li>Open Raspberry Pi Imager and select your OS</li>
+                                    <li>Click the <strong>gear icon <i class="fas fa-cog"></i></strong> to access advanced settings</li>
+                                    <li>Pre-configure essential settings:
+                                        <ul>
+                                            <li>Set hostname (e.g., raspberrypi.local)</li>
+                                            <li>Enable SSH (important for headless setup)</li>
+                                            <li>Set username and password</li>
+                                            <li>Configure WiFi (SSID and password)</li>
+                                            <li>Set locale settings</li>
+                                        </ul>
+                                    </li>
+                                    <li>Click "WRITE" and wait for the process to complete</li>
+                                </ul>
+                                <div class="alert alert-success">
+                                    <strong><i class="fas fa-lightbulb"></i> Pro Tip:</strong> Pre-configuring SSH and WiFi in Raspberry Pi Imager allows 
+                                    you to set up your Pi completely without a monitor (headless setup)!
+                                </div>
+                            </div>
+
+                            <div class="tab-content" id="setup">
+                                <h4><i class="fas fa-rocket"></i> Initial Boot and Setup</h4>
+                                <ul class="ulParagraph">
+                                    <li><strong>Physical Setup:</strong> Connect monitor, keyboard, mouse (or use SSH for headless)</li>
+                                    <li><strong>First Boot:</strong> Wait 1-2 minutes for initial expansion and setup</li>
+                                    <li><strong>SSH Connection:</strong> Use <code>ssh username@raspberrypi.local</code> from another computer</li>
+                                    <li><strong>Change Default Password:</strong> Use <code>passwd</code> command for security</li>
+                                    <li><strong>Update System:</strong> Run system updates to get the latest packages</li>
+                                </ul>
+                                <div class="code-window">
+                                    <div class="code-window__header">
+                                        <p class="code-window__title">Initial System Update</p>
+                                        <button class="copy-btn" onclick="copyCode(this, 'setup-code')">
+                                            <i class="fa fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <div class="code-window__body">
+                                        <pre id="setup-code" class="code-block"># Update package lists
+sudo apt update
+
+# Upgrade all installed packages
+sudo apt upgrade -y
+
+# Optional: Configure system settings
+sudo raspi-config</pre>
+                                        <div class="copy-toast">Copied!</div>
+                                    </div>
+                                </div>
+                                <ul class="ulParagraph">
+                                    <li><strong>Configure with raspi-config:</strong>
+                                        <ul>
+                                            <li>Expand filesystem (if not done automatically)</li>
+                                            <li>Set time zone and locale</li>
+                                            <li>Configure keyboard layout</li>
+                                            <li>Enable/disable interfaces (I2C, SPI, Serial, etc.)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 4: Python Programming Projects -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h2 class="card-title">Part 4: Fundamentals of Programming with Python</h2>
+                    </div>
+                    <div class="text">
+                        <p style="font-weight: 500; font-size: 1.1rem;">
+                            This module focuses on three core hands-on projects covering digital output, analog input, 
+                            and networking/input integration.
+                        </p>
+                        <div class="alert alert-info">
+                            <strong><i class="fas fa-book"></i> Required Library:</strong> RPi.GPIO or gpiozero (gpiozero recommended for beginners)
+                            <br><br>
+                            <strong>Installation:</strong> <code>sudo apt install python3-gpiozero python3-rpi.gpio</code>
+                        </div>
+
+                        <!-- Project 4A: LED Blinking -->
+                        <div class="shadcn-card" style="background: hsl(217.2 32.6% 15%); margin-top: 1.5rem;">
+                            <h3><span class="badge">Project 4.A</span> Blinking an LED (Digital Output)</h3>
+                            
+                            <div style="margin: 1rem 0;">
+                                <p><strong><i class="fas fa-bullseye"></i> Concept:</strong> Learn basic digital output control by turning an LED on and off</p>
+                                <p><strong><i class="fas fa-tools"></i> Hardware Required:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>1x LED (any color)</li>
+                                    <li>1x 330Ω Resistor (to limit current)</li>
+                                    <li>Jumper Wires (Male-to-Female)</li>
+                                    <li>Breadboard</li>
+                                </ul>
+                                <p><strong><i class="fas fa-plug"></i> Circuit Connection:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>Connect LED positive (longer leg) to GPIO pin via 330Ω resistor</li>
+                                    <li>Connect LED negative (shorter leg) to GND</li>
+                                </ul>
+                                <p><strong><i class="fas fa-clipboard-list"></i> Project Goals:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>Control GPIO output programmatically</li>
+                                    <li>Use timing functions to create patterns</li>
+                                    <li>Understand proper GPIO cleanup</li>
+                                </ul>
+                            </div>
+
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">led_blink.py - Code will be provided in workshop</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'led-code')">
+                                        <i class="fa fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="led-code" class="code-block"># LED Blinking Code - Placeholder
+# Detailed code will be provided during the workshop
+
+import RPi.GPIO as GPIO
+import time
+
+# GPIO Setup
+# - Set pin numbering mode (BCM or BOARD)
+# - Configure GPIO pin as output
+# - Set initial state
+
+# Main blinking loop
+# - Turn LED on
+# - Wait
+# - Turn LED off
+# - Wait
+# - Repeat
+
+# Cleanup GPIO pins on exit
+</pre>
+                                    <div class="copy-toast">Copied!</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4B: LDR -->
+                        <div class="shadcn-card" style="background: hsl(217.2 32.6% 15%); margin-top: 1.5rem;">
+                            <h3><span class="badge">Project 4.B</span> LDR with Raspberry Pi (Analog Input)</h3>
+                            
+                            <div style="margin: 1rem 0;">
+                                <p><strong><i class="fas fa-bullseye"></i> Concept:</strong> Reading analog light intensity values using an external ADC</p>
+                                <div class="alert alert-info">
+                                    <strong><i class="fas fa-exclamation-triangle"></i> Important:</strong> Raspberry Pi does NOT have built-in Analog-to-Digital Converter (ADC). 
+                                    This project requires an external ADC chip to read analog sensors.
+                                </div>
+                                <p><strong><i class="fas fa-tools"></i> Hardware Required:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>1x LDR (Light Dependent Resistor)</li>
+                                    <li>1x MCP3008 ADC Chip (8-channel, 10-bit ADC)</li>
+                                    <li>1x 10kΩ Resistor (voltage divider)</li>
+                                    <li>Jumper Wires</li>
+                                    <li>Breadboard</li>
+                                </ul>
+                                <p><strong><i class="fas fa-plug"></i> Circuit Connection:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>LDR + 10kΩ resistor form voltage divider</li>
+                                    <li>MCP3008 connects to Pi via SPI interface</li>
+                                    <li>Enable SPI in raspi-config first</li>
+                                </ul>
+                                <p><strong><i class="fas fa-clipboard-list"></i> Project Goals:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>Understand SPI communication protocol</li>
+                                    <li>Read analog values from ADC</li>
+                                    <li>Convert raw values to meaningful measurements</li>
+                                    <li>Display real-time sensor data</li>
+                                </ul>
+                            </div>
+
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">ldr_sensor.py - Code will be provided in workshop</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'ldr-code')">
+                                        <i class="fa fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="ldr-code" class="code-block"># LDR Sensor Reading Code - Placeholder
+# Detailed code will be provided during the workshop
+
+import spidev
+import time
+
+# Initialize SPI bus
+# - Open SPI connection
+# - Set SPI speed
+
+# Function to read from MCP3008
+# - Send command to ADC
+# - Receive 10-bit digital value
+# - Return converted value
+
+# Function to read LDR value
+# - Get raw value from ADC channel
+# - Calculate light percentage
+# - Return light intensity
+
+# Main loop
+# - Continuously read LDR
+# - Print light level
+# - Add delay between readings
+</pre>
+                                    <div class="copy-toast">Copied!</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4C: Email with Button -->
+                        <div class="shadcn-card" style="background: hsl(217.2 32.6% 15%); margin-top: 1.5rem;">
+                            <h3><span class="badge">Project 4.C</span> Sending Email with Button Press</h3>
+                            
+                            <div style="margin: 1rem 0;">
+                                <p><strong><i class="fas fa-bullseye"></i> Concept:</strong> Trigger network actions (email) in response to physical events (button press)</p>
+                                <p><strong><i class="fas fa-tools"></i> Hardware Required:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>1x Push Button (momentary switch)</li>
+                                    <li>Jumper Wires (Male-to-Female)</li>
+                                    <li>Breadboard (optional)</li>
+                                </ul>
+                                <p><strong><i class="fas fa-plug"></i> Circuit Connection:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>Connect one button terminal to GPIO pin</li>
+                                    <li>Connect other terminal to GND</li>
+                                    <li>Use internal pull-up resistor in code</li>
+                                </ul>
+                                <p><strong><i class="fas fa-laptop-code"></i> Software Requirements:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>Python's built-in <code>smtplib</code> library</li>
+                                    <li>Email account credentials (Gmail with App Password recommended)</li>
+                                    <li>Internet connection on Raspberry Pi</li>
+                                </ul>
+                                <p><strong><i class="fas fa-clipboard-list"></i> Project Goals:</strong></p>
+                                <ul class="ulParagraph">
+                                    <li>Implement event-driven programming with GPIO interrupts</li>
+                                    <li>Handle button debouncing properly</li>
+                                    <li>Send SMTP emails from Python</li>
+                                    <li>Create practical notification system</li>
+                                </ul>
+                            </div>
+
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">button_email.py - Code will be provided in workshop</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'email-code')">
+                                        <i class="fa fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="email-code" class="code-block"># Button Press Email Notification - Placeholder
+# Detailed code will be provided during the workshop
+
+import RPi.GPIO as GPIO
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+# Email configuration
+# - SMTP server settings
+# - Sender email and password
+# - Recipient email
+
+# GPIO setup for button
+# - Set pin mode
+# - Enable pull-up resistor
+# - Configure event detection
+
+# Callback function for button press
+# - Trigger on FALLING edge
+# - Debounce handling
+# - Call send_email function
+
+# Function to send email
+# - Create email message
+# - Connect to SMTP server
+# - Send email
+# - Handle errors
+
+# Main program
+# - Setup GPIO and email
+# - Wait for button events
+# - Cleanup on exit
+</pre>
+                                    <div class="copy-toast">Copied!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 5: Home Automation -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h2 class="card-title">Part 5: Home Automation Introduction</h2>
+                    </div>
+                    <div class="text">
+                        <p style="font-weight: 500; color: #667eea; font-size: 1.1rem;">
+                            Scale your GPIO skills to control high-power AC devices safely and create web-based remote interfaces 
+                            for complete home automation control.
+                        </p>
+
+                        <h4><i class="fas fa-book-open"></i> Topics Covered:</h4>
+
+                        <div class="shadcn-card" style="background: rgba(245, 158, 11, 0.1); border-color: #f59e0b; border-width: 2px;">
+                            <h4><i class="fas fa-exclamation-triangle" style="color: #f59e0b;"></i> Safety First: Interfacing with Relays</h4>
+                            <p><strong>Understanding Relays:</strong></p>
+                            <ul class="ulParagraph">
+                                <li>A relay is an electrically operated switch</li>
+                                <li>Uses low-voltage signal (3.3V) to control high-voltage circuit (120V/240V AC)</li>
+                                <li>Provides electrical isolation between Pi and AC power</li>
+                                <li>Common types: mechanical relays, solid-state relays (SSR)</li>
+                            </ul>
+                            <div style="background: rgba(220, 38, 38, 0.15); padding: 1rem; border-radius: 0.5rem; border: 2px solid #dc2626; margin-top: 1rem;">
+                                <p style="margin: 0; color: #fca5a5; font-weight: 600;">
+                                    <i class="fas fa-skull-crossbones"></i> <strong>CRITICAL SAFETY WARNING:</strong>
+                                </p>
+                                <ul class="ulParagraph" style="margin-top: 0.5rem; margin-bottom: 0;">
+                                    <li><strong>NEVER connect AC mains voltage directly to Raspberry Pi GPIO pins!</strong></li>
+                                    <li>Always use proper isolation with relay modules</li>
+                                    <li>Ensure relay is rated for your load (check current/voltage ratings)</li>
+                                    <li>Use optoisolated relay modules for extra protection</li>
+                                    <li>When in doubt, consult a qualified electrician</li>
+                                    <li>Work with AC power only if you understand electrical safety</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top: 2rem;"><i class="fas fa-globe" style="color: #3b82f6;"></i> Web-Based Control with Flask</h4>
+                        <p><strong>What is Flask?</strong></p>
+                        <ul class="ulParagraph">
+                            <li>Lightweight Python web framework</li>
+                            <li>Perfect for creating simple web interfaces for Pi projects</li>
+                            <li>Easy to learn and quick to deploy</li>
+                            <li>Built-in development server</li>
+                        </ul>
+                        <p><strong>Key Concepts:</strong></p>
+                        <ul class="ulParagraph">
+                            <li>Creating HTTP routes (URLs that trigger Python functions)</li>
+                            <li>Rendering HTML templates with dynamic content</li>
+                            <li>Handling form submissions and button clicks</li>
+                            <li>Creating RESTful APIs for device control</li>
+                            <li>Accessing the web interface from any device on your network</li>
+                        </ul>
+
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Install Flask</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'flask-install')">
+                                    <i class="fa fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="flask-install" class="code-block"># Install Flask on Raspberry Pi
+sudo apt update
+sudo apt install python3-flask
+
+# Or using pip
+pip3 install flask</pre>
+                                <div class="copy-toast">Copied!</div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top: 2rem;"><i class="fas fa-bullseye"></i> Final Project: Web-Controlled Light Switch</h4>
+                        <div class="shadcn-card" style="background: rgba(16, 185, 129, 0.1); border-color: #10b981; border-width: 2px;">
+                            <h4 style="margin-top: 0;">Project Overview</h4>
+                            <p><strong>Goal:</strong> Create a complete web-based home automation system that can control lights or appliances from any device on your network.</p>
+                            
+                            <p><strong>Features:</strong></p>
+                            <ul class="ulParagraph">
+                                <li><i class="fas fa-check"></i> Turn devices ON/OFF via web browser</li>
+                                <li><i class="fas fa-check"></i> Works on phones, tablets, and computers</li>
+                                <li><i class="fas fa-check"></i> Real-time status display</li>
+                                <li><i class="fas fa-check"></i> Multiple device control</li>
+                                <li><i class="fas fa-check"></i> Responsive web design</li>
+                            </ul>
+
+                            <p><strong>Hardware Required:</strong></p>
+                            <ul class="ulParagraph">
+                                <li>Raspberry Pi (any model with GPIO)</li>
+                                <li>Relay module (5V, optoisolated recommended)</li>
+                                <li>Lamp or device to control (or LED for testing)</li>
+                                <li>Jumper wires</li>
+                                <li>Power supply for relay (if needed)</li>
+                            </ul>
+
+                            <h5>Implementation Steps:</h5>
+                            <ol>
+                                <li><strong>Hardware Setup:</strong>
+                                    <ul>
+                                        <li>Connect relay module to GPIO pin (e.g., GPIO 17)</li>
+                                        <li>Connect relay VCC to 5V, GND to GND</li>
+                                        <li>Wire your load (lamp) through relay switch terminals</li>
+                                        <li>Test relay with simple GPIO script first</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Flask Web Server:</strong>
+                                    <ul>
+                                        <li>Create Flask app with routes for home page and control</li>
+                                        <li>Implement GPIO control functions</li>
+                                        <li>Add routes for ON, OFF, and status</li>
+                                    </ul>
+                                </li>
+                                <li><strong>HTML Interface:</strong>
+                                    <ul>
+                                        <li>Design clean, mobile-friendly interface</li>
+                                        <li>Create ON/OFF buttons with visual feedback</li>
+                                        <li>Add status indicators (green=ON, red=OFF)</li>
+                                        <li>Use CSS for styling and animations</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Network Access:</strong>
+                                    <ul>
+                                        <li>Run Flask server on Pi's local IP</li>
+                                        <li>Access from other devices: http://raspberrypi.local:5000</li>
+                                        <li>Configure firewall if needed</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Testing:</strong>
+                                    <ul>
+                                        <li>Test on phone, tablet, and computer</li>
+                                        <li>Verify relay switches correctly</li>
+                                        <li>Check error handling</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="code-window" style="margin-top: 1.5rem;">
+                            <div class="code-window__header">
+                                <p class="code-window__title">app.py - Flask Web Server (Code will be provided)</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'flask-code')">
+                                    <i class="fa fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="flask-code" class="code-block"># Flask Web Control Server - Placeholder
+# Complete code will be provided during the workshop
+
+from flask import Flask, render_template, request, jsonify
+import RPi.GPIO as GPIO
+
+# Flask app initialization
+app = Flask(__name__)
+
+# GPIO configuration
+# - Set pin numbering mode
+# - Define relay pin
+# - Set as output
+# - Initialize state
+
+# Routes
+# @app.route('/') - Main page
+# @app.route('/on') - Turn device ON
+# @app.route('/off') - Turn device OFF
+# @app.route('/status') - Get current status
+
+# Control functions
+# - turn_on()
+# - turn_off()
+# - get_status()
+
+# Cleanup on shutdown
+# - GPIO cleanup function
+
+# Run server
+# app.run(host='0.0.0.0', port=5000, debug=True)
+</pre>
+                                <div class="copy-toast">Copied!</div>
+                            </div>
+                        </div>
+
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">index.html - Web Interface (Code will be provided)</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'html-code')">
+                                    <i class="fa fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="html-code" class="code-block">&lt;!-- HTML Template - Placeholder --&gt;
+&lt;!-- Complete code will be provided during the workshop --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Home Automation Control&lt;/title&gt;
+    &lt;!-- CSS styling for buttons and layout --&gt;
+    &lt;!-- Responsive design --&gt;
+    &lt;!-- Status indicators --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Control panel interface --&gt;
+    &lt;!-- ON button --&gt;
+    &lt;!-- OFF button --&gt;
+    &lt;!-- Status display --&gt;
+    &lt;!-- JavaScript for AJAX calls --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                                <div class="copy-toast">Copied!</div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info" style="margin-top: 2rem;">
+                            <h4 style="margin-top: 0;"><i class="fas fa-rocket"></i> Next Steps & Advanced Topics</h4>
+                            <p><strong>After completing this program, explore these advanced topics:</strong></p>
+                            <ul class="ulParagraph" style="margin-bottom: 0;">
+                                <li><strong>MQTT Protocol:</strong> Lightweight messaging for IoT devices</li>
+                                <li><strong>Home Assistant:</strong> Open-source home automation platform</li>
+                                <li><strong>Voice Control:</strong> Integration with Alexa or Google Home</li>
+                                <li><strong>Mobile Apps:</strong> Build native or web apps for remote control</li>
+                                <li><strong>Sensor Networks:</strong> Multiple Raspberry Pis communicating</li>
+                                <li><strong>Database Integration:</strong> Log sensor data and create analytics</li>
+                                <li><strong>Security:</strong> Add authentication and HTTPS</li>
+                                <li><strong>Scheduling:</strong> Automate tasks with cron jobs or Python schedulers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photos from 2025 -->
+            <div class="container" data-aos="fade-up" style="margin-bottom: 3rem;">
+                <h5 style="margin-left: 10px; color: #EEEEEE;" class="speacialSpan widget-title"> Photos from 2025 <span class="speacialSpan"></span></h5>
+                <div class="row" style="margin-top: 2rem;">
+                    <div class="col-md-6 col-lg-4" style="margin-bottom: 2rem;">
+                        <div class="card border-0" style="background: #31363F;">
+                            <img src="../events-img/2025/RaspAppAfterChoosingEditSettings.png" alt="Raspberry Pi Imager - Edit Settings" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                            <div class="card-body" style="background-color: #31363F; color: #EEEEEE;">
+                                <h6>Raspberry Pi Imager - Edit Settings</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" style="margin-bottom: 2rem;">
+                        <div class="card border-0" style="background: #31363F;">
+                            <img src="../events-img/2025/RaspAppAfterClickingNext.png" alt="After Clicking Next" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                            <div class="card-body" style="background-color: #31363F; color: #EEEEEE;">
+                                <h6>After Clicking Next</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" style="margin-bottom: 2rem;">
+                        <div class="card border-0" style="background: #31363F;">
+                            <img src="../events-img/2025/RaspApplication.png" alt="Raspberry Pi Application" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                            <div class="card-body" style="background-color: #31363F; color: #EEEEEE;">
+                                <h6>Raspberry Pi Imager App</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" style="margin-bottom: 2rem;">
+                        <div class="card border-0" style="background: #31363F;">
+                            <img src="../events-img/2025/RaspApplicationAfterFilling.png" alt="After Filling Details" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                            <div class="card-body" style="background-color: #31363F; color: #EEEEEE;">
+                                <h6>After Filling Details</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" style="margin-bottom: 2rem;">
+                        <div class="card border-0" style="background: #31363F;">
+                            <img src="../events-img/2025/RaspDownloadPage.png" alt="Download Page" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                            <div class="card-body" style="background-color: #31363F; color: #EEEEEE;">
+                                <h6>Raspberry Pi Download Page</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" style="margin-bottom: 2rem;">
+                        <div class="card border-0" style="background: #31363F;">
+                            <img src="../events-img/2025/RaspSettingsForSSH.png" alt="SSH Settings" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                            <div class="card-body" style="background-color: #31363F; color: #EEEEEE;">
+                                <h6>SSH Configuration Settings</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h2 class="card-title">Additional Resources & Learning Materials</h2>
+                    </div>
+                    <div class="text">
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h3><i class="fas fa-book"></i> Official Documentation</h3>
+                                <p>Comprehensive Raspberry Pi documentation, tutorials, and getting started guides</p>
+                                <a href="https://www.raspberrypi.org/documentation/" target="_blank" style="color: white; text-decoration: underline;">Visit Documentation →</a>
+                            </div>
+                            <div class="feature-card">
+                                <h3><i class="fab fa-python"></i> Python GPIO Libraries</h3>
+                                <p>RPi.GPIO and gpiozero library references with examples and API documentation</p>
+                                <a href="https://gpiozero.readthedocs.io/" target="_blank" style="color: white; text-decoration: underline;">Visit gpiozero Docs →</a>
+                            </div>
+                            <div class="feature-card">
+                                <h3><i class="fas fa-lightbulb"></i> Project Ideas</h3>
+                                <p>Hundreds of free project tutorials from beginner to advanced levels</p>
+                                <a href="https://projects.raspberrypi.org/" target="_blank" style="color: white; text-decoration: underline;">Browse Projects →</a>
+                            </div>
+                            <div class="feature-card">
+                                <h3><i class="fas fa-users"></i> Community Forums</h3>
+                                <p>Get help, share projects, and connect with Raspberry Pi enthusiasts worldwide</p>
+                                <a href="https://forums.raspberrypi.com/" target="_blank" style="color: white; text-decoration: underline;">Join Community →</a>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top: 2rem;"><i class="fas fa-book-open"></i> Recommended Reading:</h4>
+                        <ul class="ulParagraph">
+                            <li><strong>Raspberry Pi Beginner's Guide:</strong> Official magazine from Raspberry Pi Foundation</li>
+                            <li><strong>Python Programming:</strong> Learn Python basics if you're new to programming</li>
+                            <li><strong>Electronics Fundamentals:</strong> Understanding basic circuits, resistors, and Ohm's Law</li>
+                            <li><strong>Linux Command Line:</strong> Essential terminal commands for Raspberry Pi OS</li>
+                        </ul>
+
+                        <h4><i class="fas fa-video"></i> Video Tutorials:</h4>
+                        <ul class="ulParagraph">
+                            <li>Raspberry Pi Foundation Official YouTube Channel</li>
+                            <li>The Raspberry Pi Guy</li>
+                            <li>ExplainingComputers</li>
+                            <li>NetworkChuck (Linux and Networking)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer-1">
+            <div class="main-footer widgets-dark typo-light">
+                <div class="container aboutFooter">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget subscribe no-box">
+                                <h5 class="widget-title">Embed Club<span></span></h5>
+                                <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Quick Links<span></span></h5>
+                                <ul class="thumbnail-widget">
+                                    <li>
+                                        <div class="thumb-content"><a href="./events.html">&nbsp;Events</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb-content"><a href="./members.html">&nbsp;Team</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Follow up<span></span></h5>
+                                <a href="https://www.instagram.com/embed_club/"> <i class="fa fa-instagram"> </i> </a>
+                                <a href="https://www.linkedin.com/in/embed-club-486124271/"> <i class="fa fa-linkedin"> </i> </a>
+                                <a href="https://github.com/embedclubpace"> <i class="fa fa-github"> </i> </a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title ">Developed By<span></span></h5>
+                                <p>
+                                <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
+                                </p>
+                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../main.js"></script>
+    <script src="../js/event.js"></script>
+    <script src="../js/tutorials.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Tab functionality
+        document.querySelectorAll('.tab-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const tab = this.getAttribute('data-tab');
+                const container = this.closest('.tabs-container');
+                
+                // Remove active class from all triggers and contents
+                container.querySelectorAll('.tab-trigger').forEach(t => t.classList.remove('active'));
+                container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked trigger and corresponding content
+                this.classList.add('active');
+                container.querySelector(`#${tab}`).classList.add('active');
+            });
+        });
+
+        // Copy code functionality
+        function copyCode(button, codeId) {
+            const codeBlock = document.getElementById(codeId);
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = button.closest('.code-window__body').querySelector('.copy-toast');
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2000);
+            });
+        }
+
+        // Add copy functionality to all copy buttons
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            if (!btn.hasAttribute('onclick')) {
+                btn.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    if (target) {
+                        const codeBlock = document.querySelector(target);
+                        if (codeBlock) {
+                            const text = codeBlock.textContent;
+                            navigator.clipboard.writeText(text).then(() => {
+                                const toast = this.closest('.code-window__body').querySelector('.copy-toast');
+                                if (toast) {
+                                    toast.classList.add('show');
+                                    setTimeout(() => {
+                                        toast.classList.remove('show');
+                                    }, 2000);
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        const devCred = document.getElementById("devCred");
+        if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
+            document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
+            alert("Unauthorized changes detected! This website may not function properly.");
+        }
+    </script>
+</body>
+
+</html>
