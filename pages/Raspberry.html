@@ -1319,11 +1319,11 @@ except KeyboardInterrupt:
                         <div class="code-window">
                             <div class="code-window__header">
                                 <p class="code-window__title">Create project folder</p>
-                                <button class="copy-btn" onclick="copyCode(this, 'auto-step1')"><i class="fa fa-copy"></i> Copy</button>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-step1-ldrled')"><i class="fa fa-copy"></i> Copy</button>
                             </div>
                             <div class="code-window__body">
-                                <pre id="auto-step1" class="code-block">mkdir automation
-cd automation</pre>
+                                <pre id="auto-step1-ldrled" class="code-block">mkdir pi_led
+cd pi_led</pre>
                             </div>
                         </div>
 
@@ -1366,9 +1366,29 @@ sudo systemctl disable --now pigpiod || true</pre>
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-file-code"></i> 6) Update <code>pi_web/settings.py</code></h4>
                         <p>Open the file and replace/add these sections exactly:</p>
+                        <p>You can use nano or thonny</p>
+                        <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">Edit with nano</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'nano-pi_web')"><i class="fa fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="nano-pi_web" class="code-block">nano pi_web/settings.py</pre>
+                                </div>
+                            </div>
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">Edit with thonny</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'thonny-thonny')"><i class="fa fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="thonny-thonny" class="code-block">thonny</pre>
+                                </div>
+                            </div>
+                            <p>Then open file pi_web/settings.py in file&gt;open</p>
                         <div class="code-window">
                             <div class="code-window__header">
-                                <p class="code-window__title">settings.py (snippet)</p>
+                                <p class="code-window__title">settings.py</p>
                                 <button class="copy-btn" onclick="copyCode(this, 'auto-settings')"><i class="fa fa-copy"></i> Copy</button>
                             </div>
                             <div class="code-window__body">
@@ -1415,6 +1435,7 @@ STATICFILES_DIRS = [ BASE_DIR / 'control' / 'static' ]</pre>
                         </div>
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-link"></i> 7) Configure URLs</h4>
+                        <p>Using your preferred editor, open pi_web/urls.py and edit</p>
                         <div class="code-window">
                             <div class="code-window__header">
                                 <p class="code-window__title">pi_web/urls.py</p>
@@ -1430,13 +1451,28 @@ urlpatterns = [
                         </div>
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-link"></i> 8) Create <code>control/urls.py</code></h4>
+                        <p>Using your preferred editor, create control/urls.py and edit</p>
+
                         <div class="code-window">
                             <div class="code-window__header">
                                 <p class="code-window__title">control/urls.py</p>
                                 <button class="copy-btn" onclick="copyCode(this, 'auto-control-urls')"><i class="fa fa-copy"></i> Copy</button>
                             </div>
                             <div class="code-window__body">
-                                <pre id="auto-control-urls" class="code-block">from django.urls import path
+                                <pre id="auto-control-urls" class="code-block">cd ~/pi_led/control
+nano urls.py
+or
+thonny
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/urls.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-control-urls-code')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-control-urls-code" class="code-block">from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -1450,6 +1486,21 @@ urlpatterns = [
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-hdd"></i> 9) Create GPIO hardware file</h4>
                         <p>(Inverted LDR logic example)</p>
+                        <p>Using your preferred editor, create control/gpio_hw.py and edit</p>
+
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/urls.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-control-gpio')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-control-gpio" class="code-block">cd ~/pi_led/control
+nano gpio_hw.py
+or
+thonny
+                                </pre>
+                            </div>
+                        </div>
                         <div class="code-window">
                             <div class="code-window__header">
                                 <p class="code-window__title">control/gpio_hw.py</p>
@@ -1504,7 +1555,22 @@ def get_state():
                         </div>
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-eye"></i> 10) Create views</h4>
+                        <p>Using your preferred editor, create control/views.py and edit</p>
+
                         <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/views.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-control-views')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-control-views" class="code-block">cd ~/pi_led/control
+nano views.py
+or
+thonny
+                                </pre>
+                            </div>
+                        </div>
+                       <div class="code-window">
                             <div class="code-window__header">
                                 <p class="code-window__title">control/views.py</p>
                                 <button class="copy-btn" onclick="copyCode(this, 'auto-views')"><i class="fa fa-copy"></i> Copy</button>
@@ -1539,20 +1605,32 @@ def api_auto(request):
                         </div>
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-file"></i> 11) Create template</h4>
+                        <p>Using your preferred editor, create control/template/control/index.html and edit</p>
+
                         <div class="code-window">
                             <div class="code-window__header">
-                                <p class="code-window__title">control/templates/control/index.html</p>
-                                <button class="copy-btn" onclick="copyCode(this, 'auto-template')"><i class="fa fa-copy"></i> Copy</button>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-control-urls')"><i class="fa fa-copy"></i> Copy</button>
                             </div>
                             <div class="code-window__body">
-                                <pre id="auto-views" class="code-block"> Please click the copy button to get the code
+                                <pre id="auto-control-urls" class="code-block">cd ~/pi_led/control/templates/control
+nano templates/control/index.html
+or
+thonny
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-html')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-html" class="code-block"> 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Pi LED Control&lt;/title&gt;
 
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Pi LED Control</title>
-
-  <style>
+  &lt;style&gt;
     body {
       font-family: Arial, sans-serif;
       background: #f3f4f6;
@@ -1575,7 +1653,6 @@ def api_auto(request):
       margin: 18px 0 10px;
     }
 
-    /* Buttons */
     button {
       padding: 10px 18px;
       margin: 4px;
@@ -1587,7 +1664,6 @@ def api_auto(request):
       transition: 0.2s ease;
     }
 
-    /* LED Buttons */
     button[onclick*="on"] {
       background: #10b981;
       color: white;
@@ -1604,7 +1680,6 @@ def api_auto(request):
       background: #c73232;
     }
 
-    /* Auto Mode Buttons */
     button[onclick*="autoMode('on')"] {
       background: #3b82f6;
       color: white;
@@ -1621,7 +1696,6 @@ def api_auto(request):
       background: #d97706;
     }
 
-    /* LED and Auto status text */
     #led, #auto, #ldr {
       font-weight: bold;
       color: #111827;
@@ -1629,31 +1703,47 @@ def api_auto(request):
       background: #e5e7eb;
       border-radius: 4px;
     }
-  </style>
-</head>
+  &lt;/style&gt;
+&lt;/head&gt;
 
-<body>
-  <h1>Pi LED + LDR</h1>
+&lt;body&gt;
+  &lt;h1&gt;Pi LED + LDR&lt;/h1&gt;
 
-  <p>LED: <span id="led">...</span></p>
-  <button onclick="led('on')">ON</button>
-  <button onclick="led('off')">OFF</button>
+  &lt;p&gt;LED: &lt;span id="led"&gt;...&lt;/span&gt;&lt;/p&gt;
+  &lt;button onclick="led('on')"&gt;ON&lt;/button&gt;
+  &lt;button onclick="led('off')"&gt;OFF&lt;/button&gt;
 
-  <p>Auto Mode: <span id="auto">...</span></p>
-  <button onclick="autoMode('on')">Enable</button>
-  <button onclick="autoMode('off')">Disable</button>
+  &lt;p&gt;Auto Mode: &lt;span id="auto"&gt;...&lt;/span&gt;&lt;/p&gt;
+  &lt;button onclick="autoMode('on')"&gt;Enable&lt;/button&gt;
+  &lt;button onclick="autoMode('off')"&gt;Disable&lt;/button&gt;
 
-  <p>LDR D0: <span id="ldr">...</span> (1 = DARK)</p>
+  &lt;p&gt;LDR D0: &lt;span id="ldr"&gt;...&lt;/span&gt; (1 = DARK)&lt;/p&gt;
 
-  <script src="/static/control/control.js"></script>
-</body>
-</html> -->
+  &lt;script src="/static/control/control.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 
 </pre>
 </div>
 </div>
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-file-code"></i> 12) Create static JS</h4>
+                        <p>Using your preferred editor, create control/static/control/control.js and edit</p>
+
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/static/control/control.js</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-control-control')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-control-control" class="code-block">mkdir -p control/static/control
+cd control/static/control
+nano control.js
+or
+thonny
+                                </pre>
+                            </div>
+                        </div>
                         <div class="code-window">
                             <div class="code-window__header">
                                 <p class="code-window__title">control/static/control/control.js</p>
@@ -1677,6 +1767,7 @@ state();</pre>
                         </div>
 
                         <h4 style="margin-top:1rem;"><i class="fas fa-database"></i> 13) Migrate DB</h4>
+                        
                         <div class="code-window">
                             <div class="code-window__header">
                                 <p class="code-window__title">Migrate</p>
