@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi Guide - Embed Club</title>
+    <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/tutorials.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/members.css">
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- bootsrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/resource.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
+    <style>
+        /* Shadcn-inspired styling - Dark Mode */
+        :root {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 217.2 32.6% 12%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 25%;
+            --radius: 0.5rem;
+        }
+
+        /* Body background */
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+
+        .mainContents {
+            background-color: hsl(var(--background));
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+        }
+
+        /* Card Component */
+        .shadcn-card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .shadcn-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Ensure card headings and badges are readable on the dark card background */
+        .shadcn-card h3,
+        .shadcn-card h2,
+        .shadcn-card h3 .badge,
+        .shadcn-card .badge,
+        .shadcn-card p {
+            color: #ffffff !important;
+        }
+
+        /* Make the card h3 title slightly larger and bold for clarity */
+        .shadcn-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin: 0;
+        }
+
+        /* Badge Component */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-outline {
+            background: transparent;
+            border: 1px solid hsl(var(--border));
+            color: hsl(var(--foreground));
+        }
+
+        .badge-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .badge-warning {
+            background: #f59e0b;
+            color: white;
+        }
+
+        /* Alert Component */
+        .alert {
+            padding: 1rem;
+            border-radius: var(--radius);
+            border: 1px solid hsl(var(--border));
+            margin-bottom: 1.5rem;
+            background: hsl(var(--muted));
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+            color: #93c5fd;
+        }
+
+        /* Scoped nicer background for the Program Overview alert */
+        .program-overview {
+            background: linear-gradient(135deg, rgba(6, 10, 22, 0.68), rgba(59,130,246,0.06));
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+            backdrop-filter: blur(6px) saturate(120%);
+            -webkit-backdrop-filter: blur(6px) saturate(120%);
+            color: #dbeafe;
+            padding: 1.25rem;
+        }
+
+        .program-overview h3,
+        .program-overview p {
+            color: #e6f2ff !important;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #6ee7b7;
+        }
+
+        /* Tabs Component */
+        .tabs-container {
+            margin: 2rem 0;
+        }
+
+        .tabs-list {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid hsl(var(--border));
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-trigger {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-weight: 500;
+            color: hsl(var(--muted-foreground));
+            transition: all 0.2s;
+        }
+
+        .tab-trigger:hover {
+            color: hsl(var(--foreground));
+        }
+
+        .tab-trigger.active {
+            color: hsl(var(--primary));
+            border-bottom-color: hsl(var(--primary));
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius);
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card a {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Code Block Enhancement */
+        .code-window {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin: 1.5rem 0;
+            width: 100%;
+            max-width: 100% !important;
+        }
+
+        .code-window__header {
+            background: #0f172a !important;
+            padding: 0.75rem 1rem !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            border-bottom: 1px solid rgba(255,255,255,0.03) !important;
+        }
+
+        .code-window__title {
+            color: #e2e8f0 !important;
+            font-size: 0.95rem !important;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #2563eb;
+        }
+
+        .copy-btn.copied {
+            background: #10b981 !important;
+            color: white !important;
+        }
+
+        .copy-btn.copied i {
+            margin-right: 0.4rem;
+        }
+
+        .code-window__body {
+            background: #0f172a;
+            position: relative;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .code-block {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            margin: 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            display: block;
+            width: 100% !important;
+            box-sizing: border-box;
+            white-space: pre;
+            max-width: 100% !important;
+        }
+
+        /* Force header and code text to be visible even if other styles override */
+        .code-window__header,
+        .code-window__header p,
+        .code-window__header .code-window__title,
+        .code-window__header .copy-btn {
+            color: #e2e8f0 !important;
+        }
+
+        .code-window__title {
+            color: #e2e8f0 !important;
+        }
+
+        /* Ensure the code content uses the bright foreground and dark background */
+        .code-window__body .code-block,
+        .code-window__body pre,
+        .code-window__body code {
+            color: #e2e8f0 !important;
+            background: #0f172a !important;
+        }
+
+        /* Make sure copy button text/icon stays readable */
+        .copy-btn {
+            color: #fff !important;
+        }
+
+        /* Ensure header elements don't shrink the code area */
+        .code-window__header {
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+        }
+
+        /* copy-toast removed: replaced by inline 'Copied' button state */
+
+        /* Hero Section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+
+        /* Make hero full-width-friendly and responsive */
+        .hero-gradient {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 3rem 1rem;
+        }
+
+        .breadcrumb-center {
+            text-align: center;
+            padding: 0.5rem 0;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb-center a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 0.25rem;
+        }
+
+        .breadcrumb-center .crumb-current {
+            color: #e2e8f0;
+            font-weight: 600;
+            margin-left: 0.25rem;
+        }
+
+        /* Centered page inner wrapper to keep content centered on all viewports */
+        .page-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* Ensure cards and main sections occupy full available width inside the centered wrapper */
+        .page-inner .shadcn-card,
+        .page-inner .alert,
+        .page-inner .hero-gradient {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        /* Ensure mainContents centers its inner column horizontally */
+        .mainContents {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Make the homeBg banner responsive */
+        .homeBg img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        /* Centered hero variant constrained to the content column */
+        .centered-hero {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+
+        .centered-hero .homeContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        /* Allow interactive elements inside the centered homeContent to receive pointer events */
+        .centered-hero .homeContent a,
+        .centered-hero .homeContent .item {
+            pointer-events: auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .centered-hero .homeContent h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+        }
+
+        @media (min-width: 992px) {
+            .centered-hero .homeContent h1 { font-size: 2rem; }
+        }
+
+        /* Reduce topBar footprint on small screens */
+        .topBar {
+            padding: 6px 0 !important;
+        }
+
+        @media (max-width: 480px) {
+            .hero-gradient h1 { font-size: 1.25rem !important; }
+            .hero-gradient p { font-size: 0.95rem !important; }
+            .homeBg img { height: 120px; }
+        }
+
+        .hero-gradient h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-gradient p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Step Cards */
+        .step-card {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            color: hsl(var(--foreground));
+        }
+
+        /* Responsive Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-gradient h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Gallery image styles */
+        .galImg img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body.card-color {
+            background-color: #31363F !important;
+            color: #EEEEEE !important;
+        }
+
+        .galImg .card {
+            background: #31363F;
+        }
+
+        /* Mobile-specific improvements for readability and touch targets */
+        @media (max-width: 768px) {
+            /* Stack header elements in code windows so titles and buttons wrap nicely */
+            .code-window__header {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 0.5rem !important;
+                padding: 0.5rem !important;
+            }
+
+            .code-window__header .code-window__title {
+                font-size: 1rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* Make copy buttons full width on mobile for easier tapping */
+            .code-window__header .copy-btn,
+            .copy-btn {
+                width: 100% !important;
+                padding: 0.75rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            /* Slightly smaller code font on narrow screens, but keep readable */
+            .code-block {
+                font-size: 0.85rem !important;
+                padding: 1rem !important;
+                white-space: pre-wrap !important;
+            }
+
+            /* Reduce card padding to fit smaller screens */
+            .shadcn-card {
+                padding: 1rem !important;
+            }
+
+            /* Badges smaller and wrap-friendly */
+            .badge {
+                padding: 0.2rem 0.5rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            /* Ensure images scale down gracefully */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            /* Slightly reduce container side padding */
+            .container {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="loaderBody">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loaderBody');
+            loader.parentElement.classList.add('loaded');
+        });
+    </script>
+
+
+
+        <div class="page-inner">
+            <div class="homeBg centered-hero">
+                <img src="../images/home-bg.jpg" style="width:100%; height:auto; display:block;" alt="Homepage Background Image">
+                <div class="homeContent homNavigation">
+                <h1 style="color: white;">Gallery</h1>
+                <a href="./index.html" class="item">Home</a> > <a href="./resource.html" class="item">Resources</a> > <a href="./Raspberry.html">Raspberry Pi </a>
+            </div>
+        </div>
+
+            <!-- Program Introduction -->
+            <div class="container" data-aos="fade-up">
+                <div class="alert alert-info program-overview">
+                    <h3 style="margin-top: 0;"><i class="fas fa-bullseye"></i> Program Overview</h3>
+                    <p style="margin-bottom: 0;">
+                        This comprehensive course covers everything from understanding Single Board Computers to building 
+                        web-controlled home automation systems. Each module builds on the previous one, ensuring you gain 
+                        practical skills through real-world projects.
+                    </p>
+                    <p style="margin-top:0.75rem; margin-bottom:0; color: #dbeafe;">
+                        Project roadmap: we'll start with a simple <strong>LED blink</strong> project, then move to an <strong>LDR (light sensor) digital test</strong>, and finish with a small <strong>Automation</strong> project using <strong>Django</strong> to build a web interface and control logic.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Part 1: Raspberry Pi Setup (Imager + VNC) -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <h2 class="card-title">Part 1: Raspberry Pi — Imager & VNC Setup</h2>
+                    </div>
+                    <div class="text">
+                        <h4><i class="fas fa-download"></i> Download Raspberry Pi Imager</h4>
+                        <p>Open the official Raspberry Pi software download page and download the Raspberry Pi Imager for your OS:</p>
+                        <p><a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">https://www.raspberrypi.com/software/</a></p>
+
+                        <div style="margin: 1rem 0;">
+                            <img src="../events-img/2025/RaspDownloadPage.png" alt="Raspberry Pi Imager screenshot" style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+
+                        <h5><i class="fas fa-keyboard"></i> Step-by-step: Flash OS using Raspberry Pi Imager</h5>
+                        <div class="alert alert-info">
+                            <strong>⚠️ Crucial:</strong> The imaging step will erase the selected SD card. If you select the wrong drive, you may lose data and must start the process again. Double-check the target drive before writing.
+                        </div>
+
+                        <ol class="ulParagraph">
+                            <li>Run <strong>Raspberry Pi Imager</strong> you downloaded from the link above. You'll see three main buttons: <strong>CHOOSE DEVICE</strong>, <strong>CHOOSE OS</strong>, and <strong>CHOOSE STORAGE</strong>.
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspApplication.png" alt="Raspberry Pi Imager main interface" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>Raspberry Pi Imager - Initial Screen</em></p>
+                                </div>
+                            </li>
+                            
+                            <li>Click <strong>CHOOSE DEVICE</strong> → select <strong>RASPBERRY PI 4</strong> from the list.</li>
+                            
+                            <li>Click <strong>CHOOSE OS</strong> → select <strong>RASPBERRY PI OS (64-BIT)</strong>.</li>
+                            
+                            <li>Click <strong>CHOOSE STORAGE</strong> → select your MicroSD card. Make sure the size and label match the card you intend to flash.
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspApplicationAfterFilling.png" alt="After selecting device, OS, and storage" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                            
+                            <li>After selecting all three options, the <strong>NEXT</strong> button will become active. Click <strong>NEXT</strong>.
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RaspAppAfterClickingNext.png" alt="OS Customisation prompt" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                            
+                            <li>A dialog will appear asking "<strong>Would you like to apply OS customisation settings?</strong>" Click <strong>EDIT SETTINGS</strong> to configure:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li><strong>GENERAL tab:</strong> <div class="alert alert-info">
+                            <strong>⚠️ Crucial:</strong> This step requires you to carefully input the correct details for raspberry pi. If you made any mistake with the input and you are unable to login to raspberry pi, you will need to redo the entire formatting again with proper input.
+                        </div> 
+                                        <ul>
+                                            <li>Set hostname: Enter any name here but make sure to note this name down. Best to give a simple name.</li>
+                                            <li>Set username and password: Choose your username and password (Again give an easy name and password and note it down somewhere).</li>
+                                            <li>Configure wireless LAN: Enter your Wi-Fi SSID (network name) and password. Select your Wireless LAN country (e.g., "IN" for India)</li>
+                                        </ul>
+                                        <div style="margin: 0.75rem 0;">
+                                            <img src="../events-img/2025/RaspAppAfterChoosingEditSettings.png" alt="General settings tab" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>GENERAL Tab - Hostname, Username, and WiFi Configuration</em></p>
+                                        </div>
+                                    </li>
+                                    <li><strong>SERVICES tab:</strong>
+                                        <ul>
+                                            <li>Enable SSH</li>
+                                            <li>Select "Use password authentication" (recommended for beginners)</li>
+                                        </ul>
+                                        <div style="margin: 0.75rem 0;">
+                                            <img src="../events-img/2025/RaspSettingsForSSH.png" alt="Services tab - SSH settings" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                        </div>
+                                    </li>
+                                    <li><strong>OPTIONS tab:</strong> You can ignore this</li>
+                                </ul>
+                            </li>
+                            
+                            <li>Click <strong>SAVE</strong> at the bottom of the OS Customisation window.</li>
+                            
+                            <li>You'll return to the confirmation dialog. Click <strong>YES</strong> to apply the settings.</li>
+                            
+                            <li>Review settings carefully. When ready, click <strong>Write</strong> to start imaging. <strong>Warning:</strong> This will erase all data on the selected storage device! Wait until the process completes and shows success.</li>
+                            
+                            <li>When finished, safely eject/remove the SD card from your computer and insert it into the Raspberry Pi's SD card slot.</li>
+                            
+                            <li>Power up the Raspberry Pi by connecting the power supply. Wait approximately <strong>5 minutes</strong> for first-boot tasks to complete (OS expansion, network connection, and service initialization). The Pi will automatically connect to your Wi-Fi network. While waiting, continue with VNC setup below.</li>
+                        </ol>
+
+                        <h5><i class="fas fa-desktop"></i> VNC: Remote Desktop Access (RealVNC)</h5>
+                        <p>VNC allows you to access the Raspberry Pi's desktop remotely from your computer. We'll use RealVNC Viewer for this.</p>
+                        
+                        <h5><i class="fas fa-download"></i> Download RealVNC Viewer</h5>
+                        <p>Download RealVNC Viewer for Windows from the official website:</p>
+                        <p><a href="https://www.realvnc.com/en/connect/download/vnc/" target="_blank" rel="noopener">https://www.realvnc.com/en/connect/download/vnc/</a></p>
+
+                        <div style="margin: 1rem 0;">
+                            <img src="../events-img/2025/RealVNCDownload.png" alt="RealVNC Download Page" style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>RealVNC Download Page</em></p>
+                        </div>
+
+                        <h5><i class="fas fa-cog"></i> Install RealVNC Viewer</h5>
+                        <ol class="ulParagraph">
+                            <li>Run the downloaded RealVNC Viewer installer</li>
+                            <li>Follow the installation wizard and accept the license agreement</li>
+                            <li>Complete the installation and launch RealVNC Viewer</li>
+                        </ol>
+
+                        <h5><i class="fas fa-link"></i> Create New VNC Connection</h5>
+                        <ol class="ulParagraph">
+                            <li>Open RealVNC"
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RealVNCPage.png" alt="RealVNC Viewer - Blank Address Book" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                            
+                            <li>Click on <strong>File</strong> menu at the top → select <strong>New connection...</strong> (or press <code>Ctrl+N</code>)
+                                <div style="margin: 0.75rem 0; display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                                    <img src="../events-img/2025/RealVNCClickOnFile.png" alt="RealVNC File Menu" style="border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <img src="../events-img/2025/RealVNCNewConnection.png" alt="RealVNC New Connection Dialog" style="border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                </div>
+                                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                            </li>
+                            
+                            <li>A <strong>Properties</strong> dialog will appear. Fill in the connection details:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li><strong>Address:</strong> Enter the hostname you set in Raspberry Pi Imager (e.g., <code>name.local</code> or the Pi's IP address like <code>192.168.1.123</code>)</li>
+                                    <li><strong>Name:</strong> Give it a friendly identifier (e.g., "My Raspberry Pi" or "Pi 4")</li>
+                                    <li><strong>Labels:</strong> Optional - you can add labels to organize multiple connections</li>
+                                </ul>
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/RealVNCAfterInputDetails.png" alt="VNC Properties Dialog" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                                
+                                <div class="alert alert-info" style="margin-top: 1rem;">
+                                    <strong><i class="fas fa-info-circle"></i> Important:</strong> The address must match exactly what you entered in the Raspberry Pi Imager settings:
+                                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                                        <li>If you set hostname as "raspberrypi", use: <code>raspberrypi.local</code></li>
+                                        <li>If you set hostname as "mypi", use: <code>mypi.local</code></li>
+                                        <li>Or use the IP address if you know it: <code>192.168.x.x</code></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                            <li>Click <strong>OK</strong> to save the connection. It will now appear in your Address book.</li>
+                            
+                            <li>To connect: Double-click the saved connection in the Address book. You'll be prompted for:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li><strong>Username:</strong> The username you set in Raspberry Pi Imager</li>
+                                    <li><strong>Password:</strong> The password you set in Raspberry Pi Imager</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <div class="alert alert-success" style="margin-top:1rem;">
+                            <strong><i class="fas fa-check-circle"></i> We will now move onto SSH so we can connect our RealVNC to Raspberry Pi</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SSH Configuration -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <h2 class="card-title">SSH Access to Raspberry Pi</h2>
+                    </div>
+                    <div class="text">
+                        <p>SSH (Secure Shell) allows you to access your Raspberry Pi's command line remotely. This is essential for troubleshooting, enabling services like VNC, and managing your Pi without a desktop interface.</p>
+
+                        <h5><i class="fas fa-terminal"></i> Connect via SSH from Windows Command Prompt</h5>
+                        <ol class="ulParagraph">
+                            <li>Open <strong>Command Prompt (CMD)</strong> on your Windows PC:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Press <code>Windows Key + R</code></li>
+                                    <li>Type <code>cmd</code> and press Enter</li>
+                                </ul>
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/SSHScreen.png" alt="Windows Command Prompt" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"><em>Windows Command Prompt</em></p>
+                                </div>
+                            </li>
+                            
+                            <li>Type the SSH connection command using the hostname and username you set in Raspberry Pi Imager:
+                                <div class="code-window">
+                                    <div class="code-window__header">
+                                        <p class="code-window__title">SSH Connection Command</p>
+                                    </div>
+                                    <div class="code-window__body">
+                                        <pre class="code-block">ssh username@hostname.local
+
+# Example: if username is "pi" and hostname is "raspberrypi"
+ssh pi@raspberrypi.local
+
+# Or if you know the IP address:
+ssh username@192.168.1.123</pre>
+                                    </div>
+                                </div>
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/SSHBeforeConnect.png" alt="SSH Login Command" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+
+                            <li>When prompted with "Are you sure you want to continue connecting?", type <code>yes</code> and press Enter to accept the SSH fingerprint</li>
+                            
+                            <li>Enter the password you set in the Raspberry Pi Imager advanced settings
+                                <div class="alert alert-info" style="margin-top: 0.5rem;">
+                                    <strong><i class="fas fa-info-circle"></i> Note:</strong> When typing your password, you won't see any characters appear on screen (no asterisks or dots). This is normal for security reasons. Just type your password and press Enter.
+                                </div>
+                            </li>
+
+                            <li>Once logged in successfully, you'll see the Raspberry Pi command prompt:
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/SSHAfterConnecting.png" alt="Successfully connected to Raspberry Pi" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h5><i class="fas fa-cog"></i> Using raspi-config Tool</h5>
+                        <p>Now that you're connected via SSH, you can use the <code>raspi-config</code> tool to configure your Raspberry Pi.</p>
+                        
+                        <ol class="ulParagraph">
+                            <li>Run the Raspberry Pi configuration tool:
+                                <div class="code-window">
+                                    <div class="code-window__header">
+                                        <p class="code-window__title">Open raspi-config</p>
+                                    </div>
+                                    <div class="code-window__body">
+                                        <pre class="code-block">sudo raspi-config</pre>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>The Raspberry Pi Software Configuration Tool interface will open:
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/sudoRaspiInterface.png" alt="raspi-config main menu" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+
+                            <li>Navigate to <strong>3 Interface Options</strong> and press Enter:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Use arrow keys (↑ ↓) to move up and down</li>
+                                    <li>Press Enter to select</li>
+                                    <li>Press Tab to move between Select/Finish buttons</li>
+                                </ul>
+                            </li>
+
+                            <li>Select <strong>VNC</strong> to enable VNC server:
+                                <div style="margin: 0.75rem 0;">
+                                    <img src="../events-img/2025/sudoRaspiVNC.png" alt="Saved VNC profile in Address Book" style="max-width:48%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            <img src="../events-img/2025/sudoRaspiVNCEnable.png" alt="VNC Identity Check dialog" style="max-width:48%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                    <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem;"></p>
+                                </div>
+                            </li>
+
+                            <li>When asked "Would you like the VNC Server to be enabled?", select <strong>Yes</strong></li>
+
+                            <li>You'll see a confirmation message "The VNC Server is enabled". Press Enter to continue</li>
+
+                            <li>Press Tab to highlight <strong>&lt;Finish&gt;</strong> and press Enter to exit raspi-config</li>
+
+                        </ol>
+
+                        <!-- Open saved VNC profile and connect -->
+                        <h5><i class="fas fa-folder-open"></i> Open the saved VNC profile and connect</h5>
+                        <p>After enabling the VNC interface on the Pi and waiting for it to boot, open <strong>RealVNC Viewer</strong> and double-click the connection you saved earlier.</p>
+                        <div style="margin: 0.75rem 0; display:flex; gap:1rem; align-items:center; justify-content:center; flex-wrap:wrap;">
+                            <img src="../events-img/2025/RealVNCProfileOpen.png" alt="Saved VNC profile in Address Book" style="max-width:48%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            <img src="../events-img/2025/RealVNCLogin.png" alt="VNC Identity Check dialog" style="max-width:48%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+
+                        <ol class="ulParagraph">
+                            <li>Double-click the saved profile in RealVNC Viewer.</li>
+                            <li>If the <strong>Identity Check</strong> dialog appears ("Device not recognized"), review the catchphrase/signature and click <strong>Continue</strong> to trust this device. This only appears the first time you connect.</li>
+                            <li>When prompted, enter the <strong>username</strong> and <strong>password</strong> you configured in Raspberry Pi Imager, then click <strong>OK</strong> or <strong>Sign in</strong>.</li>
+                            <li>After authentication, the Raspberry Pi desktop will appear in the VNC Viewer window.</li>
+                        </ol>
+
+                        <div style="margin: 0.75rem 0;">
+                            <img src="../events-img/2025/RaspberryPIOSScreen.png" alt="VNC Identity Check dialog" style="max-width:48%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+
+                        <h5><i class="fas fa-folder-open"></i> Open the terminal</h5>
+                        <p>Open the Raspberry Pi terminal (or SSH into the Pi). If using the desktop, press <code>Ctrl+Alt+T</code> or open <em>Terminal</em> from the menu.</p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/Terminal.png" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <br>
+                        <h5><i class="fas fa-folder-open"></i> Update the system packages</h5>
+                        <p>Update package lists and upgrade installed packages before starting the project:</p>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">System Update</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'update-code')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="update-code" class="code-block">sudo apt update
+sudo apt upgrade -y
+# Optional: install Thonny (recommended for beginners)
+sudo apt install thonny -y
+# Install GPIO helper libraries
+sudo apt install python3-gpiozero python3-rpi.gpio -y</pre>
+                                
+                            </div>
+                        </div>
+                        <!-- Quick (nano) copy/paste notice moved here for visibility -->
+                        <div class="alert alert-info" style="padding:0.5rem 0.75rem; margin-bottom:0.75rem; background: rgba(30,41,59,0.6); border-color: rgba(255,255,255,0.04);">
+                            <div style="display:flex; align-items:center; gap:0.75rem;">
+                                <strong style="color:#94a3b8; font-size:0.95rem;">Note</strong>
+                            </div>
+                            <div style="margin-top:0.5rem;">
+                                <div class="alert alert-success" style="margin-top:1rem;">
+                            In order to paste codes into raspberry pi, use <strong>ctrl+shift+v</strong> to paste the code.
+                        </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: LED Blynk Project -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h2 class="card-title">Part 2: LED Blynk Project</h2>
+                    </div>
+                    <div class="text">
+                        <br>
+                        <h4><i class="fas fa-terminal"></i> 1) Open the Terminal</h4>
+                        <p>Open the Raspberry Pi terminal (or SSH into the Pi). If using the desktop, press <code>Ctrl+Alt+T</code> or open <em>Terminal</em> from the menu.</p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/Terminal.png" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+<br>
+                        <h4><i class="fas fa-folder-plus"></i> 2) Create project folder</h4>
+                        <p>Create a folder for the LED project and change into it:</p>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Create Project Directory</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'project-dir')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="project-dir" class="code-block">mkdir -p ~/LED_Blink
+cd ~/LED_Blink</pre>
+                                
+                            </div>
+                        </div>
+<br>
+                        <h4><i class="fas fa-edit"></i> 3) Choose an editor</h4>
+                        <p>For beginners we recommend <strong>Thonny</strong> (a simple Python IDE that ships with Raspberry Pi OS). If you prefer the terminal, you can use <strong>nano</strong>. Both options are shown below:</p>
+
+                        <div class="shadcn-card" style="background: hsl(217.2 32.6% 15%); margin-top: 1rem;">
+                            <h3><span class="badge">Option A</span> Thonny (recommended)</h3>
+                            <p>Open Thonny from the desktop menu or run:</p>
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">Open Thonny</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'thonny-open')"><i class="fa fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="thonny-open" class="code-block">thonny</pre>
+                                </div>
+                            </div>
+                            <p>Use Thonny to create a new Python file called <code>led_blink.py</code> and paste the placeholder code below.</p>
+                        </div>
+
+                        <div class="shadcn-card" style="background: hsl(217.2 32.6% 15%); margin-top: 1rem;">
+                            <h3><span class="badge">Option B</span> nano (terminal editor)</h3>
+                            <p>From the terminal you can use <code>nano</code> to create the script:</p>
+                            
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">Create file with nano</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'nano-create')"><i class="fa fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="nano-create" class="code-block">nano led_blink.py</pre>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-code"></i> 4) LED Blynk Code</h4>
+                        <p>Paste or write the following code into <code>led_blink.py</code></p>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">led_blink.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'led-placeholder')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="led-placeholder" class="code-block"># LED blink
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+LED_PIN = 17  # BCM 17
+
+# Set up the pin as output
+GPIO.setup(LED_PIN, GPIO.OUT)
+
+try:
+    while True:
+        GPIO.output(LED_PIN, GPIO.HIGH)  # Turn LED ON
+        time.sleep(1)
+        GPIO.output(LED_PIN, GPIO.LOW)   # Turn LED OFF
+        time.sleep(1)
+except KeyboardInterrupt:
+    pass
+finally:
+    GPIO.cleanup()
+</pre>
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card-header">
+                        <h2 class="card-title">Raspberry Pi 4B - Connections</h2>
+                    </div>
+                        <h4> 1) Pin Connections</h4>
+                        <p></p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/RaspberryPiPins.png" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <br>
+                        <h4> 2) LED Connection</h4>
+                        <p>Connect LED positive (longer leg) to GPIO17 through a resistor, and the negative leg to ground.</p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/RaspberryPILED.jpeg" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <br>
+                        <div class="card-header">
+                        <h2 class="card-title">Run the code</h2>
+                    </div>
+                    <h5>Method 1 — nano (terminal)</h5>
+                            <ol>
+                                <li>Open a terminal on the Pi (or SSH into it).</li>
+                                <li>Change to your project folder: <code>cd ~/LED_Blink</code> (create it if needed).</li>
+                                <li>Create/open the file in nano: <code>nano led_blink.py</code></li>
+                                <li>Paste the code from the clipboard into the nano editor: <strong>Ctrl+Shift+V</strong> or right-click &gt; Paste. In some terminals you can use <code>Shift+Insert</code> or right-click.</li>
+                                <li>Save the file: press <strong>Ctrl+O</strong>, then Enter to confirm the filename.</li>
+                                <li>Exit nano: press <strong>Ctrl+X</strong>.</li>
+                                <li>Run the script: <code>python3 led_blink.py</code></li>
+                            </ol>
+
+                            <h5>Method 2 — Thonny (graphical)</h5>
+                            <ol>
+                                <li>Open Thonny from the desktop menu or run <code>thonny</code> in terminal.</li>
+                                <li>Create a new file: <strong>File &gt; New</strong>.</li>
+                                <li>Paste the code with <strong>Ctrl+V</strong> or right-click &gt; Paste.</li>
+                                <li>Save the file: <strong>File &gt; Save as</strong> → choose <code>/home/pi/LED_Blink/led_blink.py</code>.</li>
+                                <li>Run the script with <strong>Run &gt; Run current script</strong> or press <strong>F5</strong>.</li>
+                            </ol>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+        <!-- Footer -->
+            <!-- Part 3: LDR Sensor (Digital Test) -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h2 class="card-title">Part 3: LDR Sensor</h2>
+                    </div>
+                    <div class="text">
+
+                        <h4><i class="fas fa-terminal"></i> 1) Open the Terminal</h4>
+                        <p>Open the Raspberry Pi terminal (or SSH into the Pi). If using the desktop, press <code>Ctrl+Alt+T</code> or open <em>Terminal</em> from the menu.</p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/Terminal.png" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-folder-plus"></i> 2) Create project folder</h4>
+                        <p>Create a dedicated folder for LDR tests so files are organized:</p>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Create Project Directory</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'ldr-project-dir')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="ldr-project-dir" class="code-block">mkdir -p ~/LDR
+cd ~/LDR</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-edit"></i> 3) Choose an editor</h4>
+                        <p>Use <strong>Thonny</strong> for a graphical workflow or <strong>nano</strong> in the terminal. Both commands are shown below.</p>
+
+                        <div class="shadcn-card" style="background: hsl(217.2 32.6% 15%); margin-top: 1rem;">
+                            <h3><span class="badge">Option A</span> Thonny (recommended)</h3>
+                            <p>Open Thonny from the desktop menu or run:</p>
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">Open Thonny</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'thonny-open-ldr')"><i class="fa fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="thonny-open-ldr" class="code-block">thonny</pre>
+                                </div>
+                            </div>
+                            <p>In Thonny: <strong>File &gt; New</strong>, paste the code, then <strong>File &gt; Save as</strong> → <code>/home/pi/LDR/ldr.py</code>.</p>
+                        </div>
+
+                        <div class="shadcn-card" style="background: hsl(217.2 32.6% 15%); margin-top: 1rem;">
+                            <h3><span class="badge">Option B</span> nano (terminal editor)</h3>
+                            <p>From the terminal you can create the script with nano:</p>
+                            <div class="code-window">
+                                <div class="code-window__header">
+                                    <p class="code-window__title">Create file with nano</p>
+                                    <button class="copy-btn" onclick="copyCode(this, 'nano-create-ldr')"><i class="fa fa-copy"></i> Copy</button>
+                                </div>
+                                <div class="code-window__body">
+                                    <pre id="nano-create-ldr" class="code-block">nano ldr.py</pre>
+                                </div>
+                            </div>
+                            <p>Paste the code into nano (<strong>Ctrl+Shift+V</strong> via RealVNC) then save with <strong>Ctrl+O</strong> and exit <strong>Ctrl+X</strong>.</p>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-code"></i> 4) LDR code</h4>
+
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">ldr.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'ldr-code')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="ldr-code" class="code-block">#!/usr/bin/env python3
+import RPi.GPIO as GPIO
+import time
+
+LDR_PIN = 27   # D0 of LDR module to GPIO27
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(LDR_PIN, GPIO.IN)   # module drives the pin, no pull-ups
+
+print("LDR DIGITAL TEST -- Cover/Uncover the sensor")
+print("Ctrl+C to stop\n")
+
+try:
+    while True:
+        val = GPIO.input(LDR_PIN)
+        if val == 1:
+            print("BRIGHT (D0 = 1)")
+        else:
+            print("DARK   (D0 = 0)")
+        time.sleep(0.3)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+    print("Exiting...")</pre>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card-header">
+                        <h2 class="card-title">Raspberry pi 4B - Pin Connections</h2>
+                        </div>
+                        <h4> 1) Pin Connections</h4>
+                        <p></p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/RaspberryPiPins.png" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <br>
+                        <h4> 2) LDR Connection</h4>
+                        <p>Connect LDR module digital output (D0) to GPIO27, VCC to 3.3V, and GND to ground.</p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/RaspberryPiLDR.jpeg" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <br>
+
+                        <div class="card-header">
+                        <h2 class="card-title">Run the code</h2>
+                        </div>
+                        <ol>
+                            <li>After saving the code using your respective editor, open terminal and navigate to LDR Directory with <code>cd LDR</code></li>
+                            <li>Run the script: <code>python3 ldr.py</code></li>
+                            <li>Cover and uncover the LDR sensor — observe the terminal printing <strong>BRIGHT</strong> or <strong>DARK</strong>.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 4: Automation — Django Pi LED + LDR -->
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h2 class="card-title">Part 4: Automation (Django)</h2>
+                    </div>
+                    <div class="text">
+                        <p>We'll create a small Django app to control the LED and read the LDR. Follow the steps below on your Raspberry Pi inside the project folder.</p>
+
+                        <h4><i class="fas fa-terminal"></i> 1) Open the Terminal</h4>
+                        <p>Open the Raspberry Pi terminal (or SSH into the Pi). If using the desktop, press <code>Ctrl+Alt+T</code> or open <em>Terminal</em> from the menu.</p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/Terminal.png" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <h4 style="margin-top:1rem;"><i class="fas fa-rocket"></i> 2) Create project folder</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Create project folder</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-step1')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-step1" class="code-block">mkdir automation
+cd automation</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-download"></i> 3) Install Django</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Install packages</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-step4')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-step4" class="code-block">pip install "Django>=4.2"
+sudo systemctl stop pigpiod || true
+sudo systemctl disable --now pigpiod || true</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-folder-plus"></i> 4) Create Django project</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Start project</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-step5')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-step5" class="code-block">django-admin startproject pi_web .
+
+# (Make sure the dot "." is included)</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-plus-square"></i> 5) Create Django app</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Start app</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-step6')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-step6" class="code-block">python manage.py startapp control</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-file-code"></i> 6) Update <code>pi_web/settings.py</code></h4>
+                        <p>Open the file and replace/add these sections exactly:</p>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">settings.py (snippet)</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-settings')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-settings" class="code-block">from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = 'abc123'
+DEBUG = True
+ALLOWED_HOSTS = ['*']
+
+INSTALLED_APPS = [
+    'django.contrib.staticfiles',
+    'control',
+]
+
+MIDDLEWARE = [
+    'django.middleware.common.CommonMiddleware',
+]
+
+ROOT_URLCONF = 'pi_web.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [ BASE_DIR / 'control' / 'templates' ],
+        'APP_DIRS': True,
+        'OPTIONS': {},
+    },
+]
+
+WSGI_APPLICATION = 'pi_web.wsgi.application'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ BASE_DIR / 'control' / 'static' ]</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-link"></i> 7) Configure URLs</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">pi_web/urls.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-urls')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-urls" class="code-block">from django.urls import path, include
+
+urlpatterns = [
+    path('', include('control.urls')),
+]</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-link"></i> 8) Create <code>control/urls.py</code></h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/urls.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-control-urls')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-control-urls" class="code-block">from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('api/state/', views.api_state),
+    path('api/led/', views.api_led),
+    path('api/auto/', views.api_auto),
+]</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-hdd"></i> 9) Create GPIO hardware file</h4>
+                        <p>(Inverted LDR logic example)</p>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/gpio_hw.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-gpio')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-gpio" class="code-block">import threading, time
+import RPi.GPIO as GPIO
+
+LED_PIN = 17
+LDR_PIN = 27
+
+_state = {
+    'led_on': False,
+    'auto': False,
+    'ldr_d0': 1,
+    'stop': False
+}
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(LDR_PIN, GPIO.IN)
+GPIO.setup(LED_PIN, GPIO.OUT)
+GPIO.output(LED_PIN, GPIO.LOW)
+
+def poll():
+    while not _state['stop']:
+        d0 = GPIO.input(LDR_PIN)   # YOUR MODULE: 1 = DARK, 0 = BRIGHT
+        _state['ldr_d0'] = d0
+
+        if _state['auto']:
+            if d0 == 1:  # DARK → LED ON
+                GPIO.output(LED_PIN, GPIO.HIGH)
+                _state['led_on'] = True
+            else:
+                GPIO.output(LED_PIN, GPIO.LOW)
+                _state['led_on'] = False
+        
+        time.sleep(0.2)
+
+threading.Thread(target=poll, daemon=True).start()
+
+def set_led(on):
+    GPIO.output(LED_PIN, GPIO.HIGH if on else GPIO.LOW)
+    _state['led_on'] = on
+
+def set_auto(on):
+    _state['auto'] = on
+
+def get_state():
+    return _state</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-eye"></i> 10) Create views</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/views.py</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-views')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-views" class="code-block">from django.shortcuts import render
+from django.http import JsonResponse
+from . import gpio_hw
+
+def index(request):
+    return render(request, 'control/index.html')
+
+def api_state(request):
+    return JsonResponse(gpio_hw.get_state())
+
+def api_led(request):
+    action = request.GET.get('action')
+    if action == 'on':
+        gpio_hw.set_led(True)
+    elif action == 'off':
+        gpio_hw.set_led(False)
+    return JsonResponse(gpio_hw.get_state())
+
+def api_auto(request):
+    mode = request.GET.get('mode')
+    if mode == 'on':
+        gpio_hw.set_auto(True)
+    elif mode == 'off':
+        gpio_hw.set_auto(False)
+    return JsonResponse(gpio_hw.get_state())</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-file"></i> 11) Create template</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/templates/control/index.html</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-template')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-views" class="code-block"> Please click the copy button to get the code
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Pi LED Control</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #1f2937;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #374151;
+      margin: 18px 0 10px;
+    }
+
+    /* Buttons */
+    button {
+      padding: 10px 18px;
+      margin: 4px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    /* LED Buttons */
+    button[onclick*="on"] {
+      background: #10b981;
+      color: white;
+    }
+    button[onclick*="on"]:hover {
+      background: #0a8f62;
+    }
+
+    button[onclick*="off"] {
+      background: #ef4444;
+      color: white;
+    }
+    button[onclick*="off"]:hover {
+      background: #c73232;
+    }
+
+    /* Auto Mode Buttons */
+    button[onclick*="autoMode('on')"] {
+      background: #3b82f6;
+      color: white;
+    }
+    button[onclick*="autoMode('on')"]:hover {
+      background: #2563eb;
+    }
+
+    button[onclick*="autoMode('off')"] {
+      background: #f59e0b;
+      color: white;
+    }
+    button[onclick*="autoMode('off')"]:hover {
+      background: #d97706;
+    }
+
+    /* LED and Auto status text */
+    #led, #auto, #ldr {
+      font-weight: bold;
+      color: #111827;
+      padding: 3px 6px;
+      background: #e5e7eb;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Pi LED + LDR</h1>
+
+  <p>LED: <span id="led">...</span></p>
+  <button onclick="led('on')">ON</button>
+  <button onclick="led('off')">OFF</button>
+
+  <p>Auto Mode: <span id="auto">...</span></p>
+  <button onclick="autoMode('on')">Enable</button>
+  <button onclick="autoMode('off')">Disable</button>
+
+  <p>LDR D0: <span id="ldr">...</span> (1 = DARK)</p>
+
+  <script src="/static/control/control.js"></script>
+</body>
+</html> -->
+
+</pre>
+</div>
+</div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-file-code"></i> 12) Create static JS</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">control/static/control/control.js</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-static-js')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-static-js" class="code-block">async function state(){
+  let r = await fetch('/api/state/');
+  let s = await r.json();
+  document.getElementById('led').innerText = s.led_on ? "ON" : "OFF";
+  document.getElementById('auto').innerText = s.auto ? "ON" : "OFF";
+  document.getElementById('ldr').innerText = s.ldr_d0;
+}
+
+async function led(a){ await fetch('/api/led/?action='+a); state(); }
+async function autoMode(a){ await fetch('/api/auto/?mode='+a); state(); }
+
+setInterval(state, 500);
+state();</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-database"></i> 13) Migrate DB</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Migrate</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-migrate')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-migrate" class="code-block">python manage.py migrate</pre>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top:1rem;"><i class="fas fa-play"></i> STEP 15 — Run Django</h4>
+                        <div class="code-window">
+                            <div class="code-window__header">
+                                <p class="code-window__title">Runserver</p>
+                                <button class="copy-btn" onclick="copyCode(this, 'auto-run')"><i class="fa fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="code-window__body">
+                                <pre id="auto-run" class="code-block">python manage.py runserver 0.0.0.0:8000
+
+# Visit: http://your-pi-ip:8000/</pre>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info" style="margin-top:1rem;">
+                            <strong>Note:</strong> The example above uses <code>python3-rpi.gpio</code> and accesses GPIO directly. Run the Django server under a user with permission to access the GPIO pins (usually the default "pi" user). On some systems you may prefer to run the gpio poller as a system service.
+                        </div>
+                        <br>
+                        <div class="card-header">
+                        <h2 class="card-title">Raspberry pi 4B - Pin Connections</h2>
+                        </div>
+                        <h4> 1) Pin Connections</h4>
+                        <p></p>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/RaspberryPiPins.png" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <br>
+                        <h4> 2) LDR and LED Connection</h4>
+                        <ol>
+                        <li>Connect LDR module digital output (D0) to GPIO27, VCC to 3.3V, and GND to ground.</li>
+                        <li>Connect LED long leg (positive) to GPIO17 and short leg (negative) to GND.</li>
+                        </ol>
+                        <div style="margin:0.75rem 0;">
+                            <img src="../events-img/2025/RaspberryPiAuto.jpeg" alt="Open Terminal" style="max-width:100%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                        </div>
+                        <br>
+
+                        <div class="card-header">
+                        <h1 class="card-title">Run the code</h1>
+                        </div>
+                            <h5>After doing the Connections, run your server and have fun with automation with Django!</h5>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container" data-aos="fade-up">
+                <div class="shadcn-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <h2 class="card-title">A special thanks to</h2>
+                    
+                    </div>
+                    <h2 style="text-align: center;">Coordinators, Audience, and Everyone Who Helped Make This Session Possible</h2>
+            </div>
+
+
+<!-- footer -->
+        <footer id="footer" class="footer-1">
+            <div class="main-footer widgets-dark typo-light">
+                <div class="container aboutFooter">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget subscribe no-box">
+                                <h5 class="widget-title">Embed Club<span></span></h5>
+                                <p style="text-align: justify; font-size: 13px;">Embed Club fosters innovation in embedded systems and IoT, empowering students to explore, create, and shape the future of technology. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Quick Links<span></span></h5>
+                                <ul class="thumbnail-widget">
+                                    <li>
+                                        <div class="thumb-content"><a href="./events.html">&nbsp;Events</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb-content"><a href="./members.html">&nbsp;Team</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title">Follow up<span></span></h5>
+                                <a href="https://www.instagram.com/embed_club/"> <i class="fa fa-instagram"> </i> </a>
+                                <a href="https://www.linkedin.com/in/embed-club-486124271/"> <i class="fa fa-linkedin"> </i> </a>
+                                <a href="https://github.com/embedclubpace"> <i class="fa fa-github"> </i> </a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title ">Developed By<span></span></h5>
+                                <p>
+                                <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
+                                </p>
+                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../main.js"></script>
+    <script src="../js/event.js"></script>
+    <script src="../js/tutorials.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Tab functionality
+        document.querySelectorAll('.tab-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const tab = this.getAttribute('data-tab');
+                const container = this.closest('.tabs-container');
+                
+                // Remove active class from all triggers and contents
+                container.querySelectorAll('.tab-trigger').forEach(t => t.classList.remove('active'));
+                container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked trigger and corresponding content
+                this.classList.add('active');
+                container.querySelector(`#${tab}`).classList.add('active');
+            });
+        });
+
+        // Copy code functionality
+        function setCopiedState(btn) {
+            try {
+                if (!btn) return;
+                if (!btn.getAttribute('data-prev')) btn.setAttribute('data-prev', btn.innerHTML);
+                btn.classList.add('copied');
+                btn.innerHTML = '<i class="fa fa-check"></i> Copied';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    const prev = btn.getAttribute('data-prev') || 'Copy';
+                    btn.innerHTML = prev;
+                    btn.removeAttribute('data-prev');
+                }, 2000);
+            } catch (e) { /* ignore */ }
+        }
+
+        function copyCode(button, codeId) {
+            const codeBlock = document.getElementById(codeId);
+            if (!codeBlock) return;
+            const text = codeBlock.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                setCopiedState(button);
+            }).catch(() => {
+                // Fallback: still show copied state
+                setCopiedState(button);
+            });
+        }
+
+        // Add copy functionality to all copy buttons
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            if (!btn.hasAttribute('onclick')) {
+                btn.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    if (target) {
+                        const codeBlock = document.querySelector(target);
+                        if (codeBlock) {
+                            const text = codeBlock.textContent;
+                            navigator.clipboard.writeText(text).then(() => {
+                                setCopiedState(this);
+                            }).catch(() => {
+                                setCopiedState(this);
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        const devCred = document.getElementById("devCred");
+        if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
+            document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
+            alert("Unauthorized changes detected! This website may not function properly.");
+        }
+    </script>
+</body>
+
+</html>
