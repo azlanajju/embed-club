@@ -1364,27 +1364,24 @@ finally:
 import RPi.GPIO as GPIO
 import time
 
-LDR_PIN = 27      # D0 output from LDR module
-LED_PIN = 17      # LED pin
+LDR_PIN = 27
+LED_PIN = 17
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LDR_PIN, GPIO.IN)
 GPIO.setup(LED_PIN, GPIO.OUT)
 
-print("Using inverted LDR logic (your module type)")
-print(" -> BRIGHT  = D0=0")
-print(" -> DARK    = D0=1")
-print("LED will turn ON in DARK\n")
+print("Mode: DARK → LED ON, BRIGHT → LED OFF\n")
 
 try:
     while True:
         d0 = GPIO.input(LDR_PIN)
 
-        if d0 == 1:   # DARK for your module
-            print("DARK  (D0=1) -> LED ON")
+        if d0 == 1:   # DARK
+            print("DARK  -> LED ON")
             GPIO.output(LED_PIN, GPIO.HIGH)
         else:         # BRIGHT
-            print("BRIGHT (D0=0) -> LED OFF")
+            print("BRIGHT -> LED OFF")
             GPIO.output(LED_PIN, GPIO.LOW)
 
         time.sleep(0.2)
@@ -1569,16 +1566,6 @@ except KeyboardInterrupt:
                         </div>
                         <div class="code-window__body">
                             <pre id="step6-install" class="code-block">sudo apt install -y python3-rpi.gpio</pre>
-                        </div>
-                    </div>
-                    <div class="code-window">
-                        <div class="code-window__header">
-                            <p class="code-window__title">Install RPI</p>
-                            <button class="copy-btn" onclick="copyCode(this, 'step6-rpi')"><i class="fa fa-copy"></i>
-                                Copy</button>
-                        </div>
-                        <div class="code-window__body">
-                            <pre id="step6-rpi" class="code-block">python install RPI.gpio</pre>
                         </div>
                     </div>
 
@@ -2152,7 +2139,20 @@ state();</pre>
                             </ol>
                     </div>
 
-                    <h4 style="margin-top:1rem;"><i class="fas fa-database"></i> 16) Migrate DB</h4>
+                    <h4 style="margin-top:1rem;"><i class="fas fa-download"></i> 16) pip install RPI</h4>
+
+                    <div class="code-window">
+                        <div class="code-window__header">
+                            <p class="code-window__title">RPI.gpio</p>
+                            <button class="copy-btn" onclick="copyCode(this, 'step-16-pip')"><i class="fa fa-copy"></i>
+                                Copy</button>
+                        </div>
+                        <div class="code-window__body">
+                            <pre id="step-16-pip" class="code-block">pip install RPI.gpio</pre>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top:1rem;"><i class="fas fa-database"></i> 17) Migrate DB</h4>
 
                     <div class="code-window">
                         <div class="code-window__header">
@@ -2165,7 +2165,7 @@ state();</pre>
                         </div>
                     </div>
 
-                    <h4 style="margin-top:1rem;"><i class="fas fa-play"></i> 17) Run Django</h4>
+                    <h4 style="margin-top:1rem;"><i class="fas fa-play"></i> 18) Run Django</h4>
                     <div class="code-window">
                         <div class="code-window__header">
                             <p class="code-window__title">Runserver</p>
