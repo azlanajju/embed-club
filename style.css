@@ -80,7 +80,8 @@ align-items: center;
 z-index: 9999999999;
 position: fixed;
 top: 0;
-
+margin-left: 20vw;
+width: calc(100vw - 20vw);
 }
 
 .topBar p {
