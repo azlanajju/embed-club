@@ -1,237 +1,254 @@
+/* --- MODERN MEMBERS PAGE STYLING --- */
 
-.all {
-    width: 80vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+:root {
+  --bg-dark: #222831;
+  --card-bg: rgba(57, 62, 70, 0.6);
+  --accent: #00adb5; /* Teal Neon */
+  --text-light: #eeeeee;
+  --text-dim: #b2b2b2;
 }
-.all .container{
-    background-color:#31363F;
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    border-radius: 30px;
+
+body {
+  background-color: var(--bg-dark) !important;
+  font-family: "Poppins", sans-serif !important;
+  color: var(--text-light);
+  overflow-x: hidden;
 }
-.container .card-1{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    justify-content: flex-end;
+
+/* --- Page Title & Breadcrumbs --- */
+.homeBg {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
 }
-.card-1 img{
-    padding: 10px;
-    width: 175px;
-    border-radius: 35px;
-    height: 200px;
-    object-fit: cover;
-    background-color: rgba(172, 172, 172, 0.329);
+
+.homeBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
 }
-.container .card-2{
-    width: 100%;
-    display: flex;
+
+.homeContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.homeContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(0, 173, 181, 0.5);
+}
+
+.homeContent p {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* --- Section Dividers --- */
+.widget-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 50px 0 30px 0;
+  border-left: 5px solid var(--accent);
+  padding-left: 15px;
+  color: var(--text-light);
+  display: inline-block;
+}
+
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.memYear {
+  text-align: center;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 40px auto 20px auto;
+  background: #2d333b;
+  padding: 8px 30px;
+  border-radius: 50px;
+  width: fit-content;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 10px rgba(0, 173, 181, 0.2);
+}
+
+.line_hr {
+  border-color: var(--accent);
+  opacity: 0.2;
+  margin: 50px 0;
+}
+
+/* --- GRID SYSTEM --- */
+.members-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* --- MEMBER CARD --- */
+.member-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  height: 236px;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 173, 181, 0.15);
+  border-color: var(--accent);
+}
+
+/* Left Side: Photo */
+.card-img-wrapper {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.member-card:hover .card-img-wrapper img {
+  transform: scale(1.1);
+}
+
+/* Right Side: Details */
+.card-details {
+  width: 60%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.card-details h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--text-light);
+  line-height: 1.3;
+}
+
+.card-details h2 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Social Icons */
+.social-box {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Icon Specific Hover Colors */
+.social-icon.linkedin:hover {
+  background: #0077b5;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 119, 181, 0.5);
+}
+.social-icon.instagram:hover {
+  background: #e1306c;
+  color: white;
+  box-shadow: 0 0 15px rgba(225, 48, 108, 0.5);
+}
+.social-icon.github:hover {
+  background: #333;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+.social-icon.phone:hover {
+  background: #25d366;
+  color: white;
+}
+
+/* Hidden Labels (Keep your HTML logic but hide text) */
+.social-container h3 {
+  display: none;
+}
+
+.fa {
+  background-color: transparent;
+}
+
+/* --- RESPONSIVE --- */
+@media only screen and (max-width: 768px) {
+  .members-grid {
     flex-direction: column;
-    justify-content: center;
-    row-gap: 10px;
-    color: #EEEEEE;
-    padding: 20px;
-}
-.card-2 h1{
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    font-weight: bold;
-}
-.card-2 h2{
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
-}
-.card-2 .boxx{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.box{
-    display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
-    background-color: rgba(172, 172, 172, 0.329);
-    padding: 20px;
-    border-radius: 20px;
-}
-.box .desc-1{
-    display: flex;
+  }
+
+  .member-card {
     flex-direction: column;
-    justify-content: center;
-}
-.desc-1 h1{
-    margin-top: 10px;
-    font-size: 15px;
-    font-weight: 0;
-    cursor: pointer;
-
-
-}
-.box .desc-1 h3{
-    color: #EEEEEE;
-    margin: 0;
-    padding: 0;
-    font-size: 10px;
-    margin: 0px 10px;
+    max-width: 350px;
     text-align: center;
-}
-.click{
+    height: 430px;
+  }
+
+  .card-img-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.click .chat{
-    padding: 10px 60px;
-    border-radius: 10px;
-    border: black solid 1px;
-    font-size: 12px;
-    background-color: transparent;
-}
-.click .follow{
-    padding: 10px 60px;
-    border-radius: 10px;
-    border: none;
-    background-color: blue;
-    color: white;
-    font-size: 12px;
-}
+    height: 300px;
+  }
 
+  .card-details {
+    width: 100%;
+    align-items: center;
+  }
 
-@media only screen and (max-width: 870px){
-    .all .container{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .container .card-1 .photo{
-        width: 100%;
-        padding: 20px;
-    }
-    .card-1 .photo img{
-        width: 100%;
-        height: 100% !important;
-        border-radius: 20px;
-    }
+  .card-details h1 {
+    font-size: 1.4rem;
+  }
 
-    .container .card-2{
-        text-align: center;
-        padding: 0;
-    }
-    .boxx .box{
-        margin: 60px;
-    }
-    .box .desc-1 h3{
-        margin: 0;
-        padding: 0;
-    }
-    .button{
-        display: flex;
-        padding-bottom: 20px;
-    }
-    .click{
-        justify-content: space-evenly;
-    }
-    .click .chat{
-        padding: 20px 100px;
-        font-size: 12px;
-    }
-    .click .follow{
-        padding: 20px 100px;
-    }
-}
-@media only screen and (max-width: 600px){
-    .click .chat{
-        padding: 20px 80px;
-        font-size: 12px;
-    }
-    .click .follow{
-        padding: 20px 80px;
-        font-size: 12px;
-    }
-    .newBorder {
-        border: 1px solid;
-        margin-bottom: 10px;
-        margin-left: 25px!important;
-
-    }
-    
-}
-@media only screen and (max-width: 500px){
-    .click .chat{
-        padding: 20px 60px;
-        font-size: 12px;
-    }
-    .click .follow{
-        padding: 20px 60px;
-        font-size: 12px;
-    }
-}
-@media only screen and (max-width: 400px){
-    .click .chat{
-        padding: 15px 50px;
-        font-size: 12px;
-    }
-    .click .follow{
-        padding: 15px 50px;
-        font-size: 12px;
-    }
-    .boxx .box{
-        display: flex;
-        justify-content: space-between;
-    }
-    .box .desc-1 h1{
-        font-size: 15px;
-    }
-}
-@media only screen and (max-width: 375px){
-    .click .chat{
-        padding: 15px 40px;
-        font-size: 12px;
-    }
-    .click .follow{
-        padding: 15px 40px;
-        font-size: 12px;
-    }
-    .boxx .box{
-        display: flex;
-        justify-content: space-between;
-    }
-    .box .desc-1 h1{
-        font-size: 15px;
-    }
-    .box .desc-1 h3{
-        font-size: 12px;
-    }
-    .button{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .card-1 img{
-        height: 250px !important;
-        
-    }
-}
-.memYear{
-    text-align: center;
-    color: #EEEEEE;
-}
-.memYear::before{
-    content: "";
-    height: 5px;
-    width: 65px;
-    position: absolute;
-    border-top:5px dotted teal;
-    margin-top: -5px;
-
-}
-.line_hr{
-    color:#76ABAE;
+  .social-box {
+    justify-content: center;
+  }
 }
