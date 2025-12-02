@@ -310,6 +310,25 @@ canvas{
 
 }
 
+
+
+.paceLogo {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+.paceLogo img {
+    height: 55px; 
+}
+
+.clubName {
+    font-size: 24px;
+    font-weight: 600;
+    color: #222831;  
+}
+
+
 @media (max-width:780px) {
     .img_carousel{
         max-height: 200px;
@@ -360,3 +379,4 @@ canvas{
     margin-bottom: 1rem;
     color: teal; 
   }
+  
