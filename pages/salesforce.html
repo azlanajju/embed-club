@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Path - Embed Club</title>
+    <link rel="icon" href="../images/embedClubLogo.png" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/tutorials.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/members.css">
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- bootsrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/resource.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
+    <style>
+        /* Shadcn-inspired styling - Dark Mode */
+        :root {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 217.2 32.6% 12%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 25%;
+            --radius: 0.5rem;
+        }
+
+        /* Body background */
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+
+        .mainContents {
+            background-color: hsl(var(--background));
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+        }
+
+        /* Card Component */
+        .shadcn-card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .shadcn-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Ensure card headings and badges are readable on the dark card background */
+        .shadcn-card h3,
+        .shadcn-card h2,
+        .shadcn-card h3 .badge,
+        .shadcn-card .badge,
+        .shadcn-card p {
+            color: #ffffff !important;
+        }
+
+        /* Make the card h3 title slightly larger and bold for clarity */
+        .shadcn-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin: 0;
+        }
+
+        /* Badge Component */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-outline {
+            background: transparent;
+            border: 1px solid hsl(var(--border));
+            color: hsl(var(--foreground));
+        }
+
+        .badge-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .badge-warning {
+            background: #f59e0b;
+            color: white;
+        }
+
+        /* Alert Component */
+        .alert {
+            padding: 1rem;
+            border-radius: var(--radius);
+            border: 1px solid hsl(var(--border));
+            margin-bottom: 1.5rem;
+            background: hsl(var(--muted));
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+            color: #93c5fd;
+        }
+
+        /* Scoped nicer background for the Program Overview alert */
+        .program-overview {
+            background: linear-gradient(135deg, rgba(6, 10, 22, 0.68), rgba(59, 130, 246, 0.06));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+            backdrop-filter: blur(6px) saturate(120%);
+            -webkit-backdrop-filter: blur(6px) saturate(120%);
+            color: #dbeafe;
+            padding: 1.25rem;
+        }
+
+        .program-overview h3,
+        .program-overview p {
+            color: #e6f2ff !important;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #6ee7b7;
+        }
+
+
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius);
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card a {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Code Block Enhancement */
+        .code-window {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin: 1.5rem 0;
+            width: 100%;
+            max-width: 100% !important;
+        }
+
+        .code-window__header {
+            background: #0f172a !important;
+            padding: 0.75rem 1rem !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+        }
+
+        .code-window__title {
+            color: #e2e8f0 !important;
+            font-size: 0.95rem !important;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #2563eb;
+        }
+
+        .copy-btn.copied {
+            background: #10b981 !important;
+            color: white !important;
+        }
+
+        .copy-btn.copied i {
+            margin-right: 0.4rem;
+        }
+
+        .code-window__body {
+            background: #0f172a;
+            position: relative;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .code-block {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            margin: 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            display: block;
+            width: 100% !important;
+            box-sizing: border-box;
+            white-space: pre;
+            max-width: 100% !important;
+        }
+
+        /* Force header and code text to be visible even if other styles override */
+        .code-window__header,
+        .code-window__header p,
+        .code-window__header .code-window__title,
+        .code-window__header .copy-btn {
+            color: #e2e8f0 !important;
+        }
+
+        .code-window__title {
+            color: #e2e8f0 !important;
+        }
+
+        /* Ensure the code content uses the bright foreground and dark background */
+        .code-window__body .code-block,
+        .code-window__body pre,
+        .code-window__body code {
+            color: #e2e8f0 !important;
+            background: #0f172a !important;
+        }
+
+        /* Make sure copy button text/icon stays readable */
+        .copy-btn {
+            color: #fff !important;
+        }
+
+        /* Ensure header elements don't shrink the code area */
+        .code-window__header {
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+        }
+
+        /* copy-toast removed: replaced by inline 'Copied' button state */
+
+        /* Hero Section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+
+        /* Make hero full-width-friendly and responsive */
+        .hero-gradient {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 3rem 1rem;
+        }
+
+        .breadcrumb-center {
+            text-align: center;
+            padding: 0.5rem 0;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb-center a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 0.25rem;
+        }
+
+        .breadcrumb-center .crumb-current {
+            color: #e2e8f0;
+            font-weight: 600;
+            margin-left: 0.25rem;
+        }
+
+        /* Centered page inner wrapper to keep content centered on all viewports */
+        .page-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* Ensure cards and main sections occupy full available width inside the centered wrapper */
+        .page-inner .shadcn-card,
+        .page-inner .alert,
+        .page-inner .hero-gradient {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        /* Ensure mainContents centers its inner column horizontally */
+        .mainContents {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Make the homeBg banner responsive */
+        .homeBg img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        /* Centered hero variant constrained to the content column */
+        .centered-hero {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+
+        .centered-hero .homeContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        /* Allow interactive elements inside the centered homeContent to receive pointer events */
+        .centered-hero .homeContent a,
+        .centered-hero .homeContent .item {
+            pointer-events: auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .centered-hero .homeContent h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        @media (min-width: 992px) {
+            .centered-hero .homeContent h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Reduce topBar footprint on small screens */
+        .topBar {
+            padding: 6px 0 !important;
+        }
+
+        @media (max-width: 480px) {
+            .hero-gradient h1 {
+                font-size: 1.25rem !important;
+            }
+
+            .hero-gradient p {
+                font-size: 0.95rem !important;
+            }
+
+            .homeBg img {
+                height: 120px;
+            }
+        }
+
+        .hero-gradient h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-gradient p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Step Cards */
+        .step-card {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            color: hsl(var(--foreground));
+        }
+
+        /* Responsive Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-gradient h1 {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Gallery image styles */
+        .galImg img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body.card-color {
+            background-color: #31363F !important;
+            color: #EEEEEE !important;
+        }
+
+        .galImg .card {
+            background: #31363F;
+        }
+
+        /* Mobile-specific improvements for readability and touch targets */
+        @media (max-width: 768px) {
+
+            /* Stack header elements in code windows so titles and buttons wrap nicely */
+            .code-window__header {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 0.5rem !important;
+                padding: 0.5rem !important;
+            }
+
+            .code-window__header .code-window__title {
+                font-size: 1rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* Make copy buttons full width on mobile for easier tapping */
+            .code-window__header .copy-btn,
+            .copy-btn {
+                width: 100% !important;
+                padding: 0.75rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            /* Slightly smaller code font on narrow screens, but keep readable */
+            .code-block {
+                font-size: 0.85rem !important;
+                padding: 1rem !important;
+                white-space: pre-wrap !important;
+            }
+
+            /* Reduce card padding to fit smaller screens */
+            .shadcn-card {
+                padding: 1rem !important;
+            }
+
+            /* Badges smaller and wrap-friendly */
+            .badge {
+                padding: 0.2rem 0.5rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            /* Ensure images scale down gracefully */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            /* Slightly reduce container side padding */
+            .container {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="loaderBody">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loaderBody');
+            loader.parentElement.classList.add('loaded');
+        });
+    </script>
+
+
+
+    <div class="page-inner">
+        <div class="homeBg centered-hero">
+            <img src="../images/home-bg.jpg" style="width:100%; height:auto; display:block;"
+                alt="Homepage Background Image">
+            <div class="homeContent homNavigation">
+                <h1 style="color: white;">Salesforce Path</h1>
+                <a href="./index.html" class="item">Home</a> > <a href="./resource.html" class="item">Resources</a> > <a
+                    href="./salesforce.html">Salesforce Path </a>
+            </div>
+        </div>
+
+        <!-- Program Introduction -->
+        <div class="container" data-aos="fade-up">
+            <div class="alert alert-info program-overview">
+                <h3 style="margin-top: 0;"><i class="fas fa-bullseye"></i> Your Agentforce Learning Path: Step-by-Step Guide</h3>
+                <p style="margin-bottom: 0;">
+                    This isn’t just another online course. It’s a movement. A chance to skill up, stand out, and spark change in a world powered by intelligent agents. Whether you dream of launching a startup, joining a tech giant, or solving global challenges—Agentforce equips you with the mindset, tools, and community to make it happen.
+                </p>
+            </div>
+        </div>
+
+        <!-- Salesforce Content -->
+        <div class="container" data-aos="fade-up">
+            <div class="shadcn-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h2 class="card-title">Agentforce Learning Path</h2>
+                </div>
+                <div class="text">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Register on Salesforce Trailhead</h3>
+                            <p>Continue With Google - Preferred College Email ID</p>
+                            <div style="display: flex; gap: 1rem; margin: 1rem 0;">
+                                <img src="../events-img/2025/salesforce1.png" alt="Salesforce Registration 1"
+                                    style="width: 32%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                <img src="../events-img/2025/salesforce2.png" alt="Salesforce Registration 2"
+                                    style="width: 32%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                <img src="../events-img/2025/salesforce3.png" alt="Salesforce Registration 3"
+                                    style="width: 32%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            </div>
+                            <a href="https://trailhead.salesforce.com/" target="_blank" rel="noopener" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Update Your Profile Settings</h3>
+                            <p>Click your profile picture (top right) → Settings. Set Profile Privacy to Public. Copy the Email ID associated with your Trailhead account.</p>
+                            <div style="display: flex; gap: 1rem; margin: 1rem 0;">
+                                <img src="../events-img/2025/salesforce4.png" alt="Profile Settings 1"
+                                    style="width: 48%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                <img src="../events-img/2025/salesforce5.png" alt="Profile Settings 2"
+                                    style="width: 48%; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Find Your Trailhead ID</h3>
+                            <p>Click profile picture → Profile → Copy your Trailhead ID.</p>
+                            <div style="margin: 1rem 0;">
+                                <img src="../events-img/2025/salesforce6.png" alt="Trailhead ID"
+                                    style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Visit the Agentblazer Homepage</h3>
+                            <p>Track your progress and explore learning levels.</p>
+                            <div style="margin: 1rem 0;">
+                                <img src="../events-img/2025/salesforce7.png" alt="Agentblazer Homepage"
+                                    style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            </div>
+                            <a href="https://trailhead.salesforce.com/agentblazer" target="_blank" rel="noopener" class="btn btn-primary">Visit Agentblazer</a>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Level I – Agentblazer Champion</h3>
+                            <p>Become a Champion (~7 hours of learning). Earn your Champion Badge and Workshop Completion Certificate.</p>
+                            <div style="margin: 1rem 0;">
+                                <img src="../events-img/2025/salesforce8.png" alt="Agentblazer Champion"
+                                    style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            </div>
+                            <a href="https://trailhead.salesforce.com/content/learn/trails/become-an-agentblazer-champion" target="_blank" rel="noopener" class="btn btn-primary">Start Level I</a>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>Level II – Agentblazer Innovator</h3>
+                            <p>Unlock the Innovator Badge and deepen your AI expertise.</p>
+                            <div style="margin: 1rem 0;">
+                                <img src="../events-img/2025/salesforce9.png" alt="Agentblazer Innovator"
+                                    style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            </div>
+                            <a href="https://trailhead.salesforce.com/content/learn/trails/become-an-agentblazer-innovator" target="_blank" rel="noopener" class="btn btn-primary">Start Level II</a>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h3>Agentforce Specialist Certification</h3>
+                            <p>Take the Exam. Earn a Global Certificate to showcase your mastery.</p>
+                            <div style="margin: 1rem 0;">
+                                <img src="../events-img/2025/salesforce10.png" alt="Specialist Certification"
+                                    style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                            </div>
+                            <a href="https://trailheadacademy.salesforce.com/certificate/exam-agentforce-specialist---AI-201" target="_blank" rel="noopener" class="btn btn-primary">Take the Exam</a>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">8</div>
+                                                <div class="step-content">
+                                                    <h3>Level III – Agentblazer Legend</h3>
+                                                    <p>Unlock the Legend Badge and deepen your AI expertise.</p>
+                                                    <div style="margin: 1rem 0;">
+                                                        <img src="../events-img/2025/salesforce11.png" alt="Agentblazer Legend"
+                                                            style="max-width:100%;border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                                                    </div>
+                                                    <a href="https://trailhead.salesforce.com/content/learn/trails/become-an-agentblazer-legend" target="_blank" rel="noopener" class="btn btn-primary">Start Level III</a>
+                                                </div>                    </div>
+                    <div class="alert alert-info">
+                        <strong>What to Submit:</strong> Once the students complete Steps 1–4, please fill in the learner details in the provided template. Requesting the Training / Placement officer or SPOC to share the learners details email it directly to srebello@salesforce.com to track your progress of each institution's students
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Scripts -->
+        <script src="../main.js"></script>
+        <script src="../js/event.js"></script>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+
+
+
+            // Copy code functionality
+            function setCopiedState(btn) {
+                try {
+                    if (!btn) return;
+                    if (!btn.hasAttribute('data-prev')) btn.setAttribute('data-prev', btn.innerHTML);
+                    btn.classList.add('copied');
+                    btn.innerHTML = '<i class="fa fa-check"></i> Copied';
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                        const prev = btn.getAttribute('data-prev') || 'Copy';
+                        btn.innerHTML = prev;
+                        btn.removeAttribute('data-prev');
+                    }, 2000);
+                } catch (e) { /* ignore */ }
+            }
+
+            function copyCode(button, codeId) {
+                const codeBlock = document.getElementById(codeId);
+                if (!codeBlock) return;
+                const text = codeBlock.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    setCopiedState(button);
+                }).catch(() => {
+                    // Fallback: still show copied state
+                    setCopiedState(button);
+                });
+            }
+
+            // Add copy functionality to all copy buttons
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                if (!btn.hasAttribute('onclick')) {
+                    btn.addEventListener('click', function () {
+                        const target = this.getAttribute('data-target');
+                        if (target) {
+                            const codeBlock = document.querySelector(target);
+                            if (codeBlock) {
+                                const text = codeBlock.textContent;
+                                navigator.clipboard.writeText(text).then(() => {
+                                    setCopiedState(this);
+                                }).catch(() => {
+                                    setCopiedState(this);
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
+        <script>
+            const devCred = document.getElementById("devCred");
+            if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
+                document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
+                alert("Unauthorized changes detected! This website may not function properly.");
+            }
+        </script>
+</body>
+
+</html>
