@@ -62,11 +62,7 @@
 
 <body>
     <div class="loaderBody">
-        <div class="loader">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <div class="loader" aria-label="Loading"></div>
       </div>
       <script>
         window.addEventListener('load', function() {
@@ -92,21 +88,7 @@
         <i id="menuBtn" class="fas fa-bars"></i>
     </div>
 
-    <div id="sideNav" class="sideNav ">
-        <i id="closeBtn" class="fas fa-times closeIcon"></i>
-        <div style="height: 70px;"></div>
-        <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
-        <a href="./events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="./resource.html" class="item"><i class="fas fa-book"></i> Resource</a>
-        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="./members.html" class="item"><i class="fas fa-users"></i> Members</a>
-        <a href="./about.html" class="item"><i class="fas fa-info-circle"></i> About</a>
-        <a href="./gallery.html" class="item active"><i class="fas fa-image"></i> Gallery</a>
-        <a href="./project.html" class="item"><i class="fas fa-lightbulb"></i> Project</a>
-        <a href="./simulator.html" class="item"><i class="fas fa-microchip"></i> Simulator</a>
-        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
-        <!-- <a href="./feedback.html" class="item"><i class="fas fa-comments"></i> FeedBack</a> -->
-    </div>
+    <div id="sideNav" class="sideNav"></div>
 
     <div class="nothing"></div>
 
@@ -464,8 +446,7 @@
                                 <p>
                                 <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
                                 <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. -->                                 </p>
-                                <a href="https://codewizy.in"> <img style="filter: invert(100%);height: 50px;" src="../images/codewizycredits.png" alt=""></a>
-                                <div class="emailfield">
+<div class="emailfield">
                                     </form>
                                 </div>
                             </div>
@@ -476,7 +457,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                                <p>Copyright Embed Club © 2026. All rights reserved.</p>
+                <p class="footer-last-updated">Last updated on 26 May 2026</p>
                             </div>
                         </div>
                     </div>
@@ -496,6 +478,7 @@
     </script>
 
 
+    <script src="../js/sidenav.js"></script>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

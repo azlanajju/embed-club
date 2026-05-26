@@ -1,168 +1,229 @@
-.simulator-card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
-                0 5px 15px rgba(0, 173, 181, 0.2),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-                0 0 40px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    overflow: hidden;
-    background: #222831;
-    margin: 0 auto;
-    max-height: 200px;
-    width: 100%;
-    position: relative;
+:root {
+  --sim-bg: #222831;
+  --sim-card: rgba(57, 62, 70, 0.65);
+  --sim-accent: #00adb5;
+  --sim-text: #eeeeee;
+  --sim-muted: #aab4c0;
 }
 
-.simulator-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5),
-                0 8px 20px rgba(0, 173, 181, 0.3),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.2),
-                0 0 50px rgba(0, 0, 0, 0.4);
+.simulators-page {
+  width: min(1100px, 100%);
+  margin: 0 auto 48px;
+  padding: 24px 20px 0;
+  box-sizing: border-box;
+}
+
+.simulators-intro {
+  margin-bottom: 28px;
+}
+
+.simulators-intro h2 {
+  color: var(--sim-text);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  border-left: 5px solid var(--sim-accent);
+  padding-left: 14px;
+}
+
+.simulators-intro p {
+  color: var(--sim-muted);
+  margin: 0;
+  padding-left: 19px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.simulators-page .simulators-grid {
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 1.25rem;
+}
+
+.simulator-card {
+  border: 1px solid rgba(118, 171, 174, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  background: var(--sim-card);
+  margin: 0;
+  max-height: none;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.simulator-card::after {
+  display: none;
 }
 
 .simulator-img-wrapper {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-    box-shadow: inset -6px 0 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  height: 100%;
+  min-height: 180px;
+  overflow: hidden;
+  background: #1a1f26;
+  box-shadow: none;
 }
 
 .simulator-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  object-fit: cover;
 }
 
-.card-body {
-    padding: 1.5rem;
-    background: #222831;
-    height: 100%;
-    display: flex;
+.simulator-card .card-body {
+  padding: 1.25rem 1.35rem;
+  background: transparent;
+  height: auto;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: none;
+  z-index: 1;
+}
+
+.simulator-card .card-title {
+  color: var(--sim-text);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: none;
+  width: 100%;
+}
+
+.simulator-card .card-description {
+  color: var(--sim-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  opacity: 1;
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  text-shadow: none;
+  width: 100%;
+}
+
+.simulator-card .btn-primary {
+  background-color: var(--sim-accent);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-top: auto;
+  box-shadow: none;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.simulator-card .btn-primary:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .simulator-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--sim-accent);
+    box-shadow: 0 10px 24px rgba(0, 173, 181, 0.12);
+  }
+
+  .simulator-card .btn-primary:hover {
+    background-color: #00959e;
+    transform: scale(1.02);
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .mainContents .homeBg {
+    height: 200px;
+  }
+
+  .mainContents .homeContent h1 {
+    font-size: 2rem;
+  }
+
+  .simulators-page {
+    padding: 16px 16px 0;
+    margin-bottom: 32px;
+  }
+
+  .simulators-intro h2 {
+    font-size: 1.35rem;
+  }
+
+  .simulators-intro p {
+    font-size: 0.9rem;
+    padding-left: 14px;
+  }
+
+  .simulators-page .simulators-grid {
+    --bs-gutter-x: 0.875rem;
+    --bs-gutter-y: 0.875rem;
+  }
+
+  .simulator-card .row.g-0 {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-}
+  }
 
-.card-title {
-    color: #EEEEEE;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.card-description {
-    color: #EEEEEE;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin-bottom: 0.8rem;
-    opacity: 0.8;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.btn-primary {
-    background-color: #00ADB5;
-    color: #EEEEEE;
-    border: none;
-    padding: 0.5rem 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-    box-shadow: 0 6px 15px rgba(0, 173, 181, 0.4),
-                0 2px 5px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    pointer-events: auto !important;
-    cursor: pointer !important;
-}
-
-.btn-primary:hover {
-    background-color: #00959E;
-    transform: scale(1.05);
-    color: #FFFFFF;
-    box-shadow: 0 8px 20px rgba(0, 173, 181, 0.5),
-                0 4px 10px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .simulator-card .col-md-4,
+  .simulator-card .col-md-8 {
     width: 100%;
-    height: 100%;
-    background: rgba(34, 40, 49, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+  }
+
+  .simulator-img-wrapper {
+    min-height: 0;
+    height: auto;
+  }
+
+  .simulator-img {
+    min-height: 0;
+    height: auto;
+    max-height: 200px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .simulator-card .card-body {
+    min-height: 0;
+    padding: 16px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .simulator-card .card-title {
+    font-size: 1.1rem;
+  }
+
+  .simulator-card .card-description {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+  }
+
+  .simulator-card .btn-primary {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
-.simulator-card:hover .overlay {
-    opacity: 1;
-}
+@media only screen and (max-width: 400px) {
+  .simulators-page {
+    padding: 12px 12px 0;
+  }
 
-/* Enhanced glow effect on hover */
-.simulator-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 173, 181, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.simulator-card:hover::after {
-    opacity: 1;
-}
-
-/* Add container max-width for larger screens */
-@media (min-width: 1400px) {
-    .container-fluid {
-        max-width: 1800px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .simulator-card {
-        max-height: none;
-    }
-
-    .simulator-img-wrapper {
-        height: 140px;
-    }
-
-    .card-body {
-        padding: 1rem;
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .card-description {
-        font-size: 0.85rem;
-        -webkit-line-clamp: 3;
-    }
-
-    .btn-primary {
-        padding: 0.4rem 1.2rem;
-    }
+  .simulator-img {
+    max-height: 170px;
+  }
 }

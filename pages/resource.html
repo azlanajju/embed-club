@@ -23,17 +23,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/resource.css">
-    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="../css/loader.css">
 
 </head>
 
 <body>
     <div class="loaderBody">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="loader" aria-label="Loading"></div>
     </div>
     <script>
         window.addEventListener('load', function () {
@@ -59,21 +55,7 @@
         <i id="menuBtn" class="fas fa-bars"></i>
     </div>
 
-    <div id="sideNav" class="sideNav ">
-        <i id="closeBtn" class="fas fa-times closeIcon"></i>
-        <div style="height: 70px;"></div>
-        <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
-        <a href="./events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="#" class="item active"><i class="fas fa-book"></i> Resource</a>
-        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="./members.html" class="item"><i class="fas fa-users"></i> Members</a>
-        <a href="./about.html" class="item"><i class="fas fa-info-circle"></i> About</a>
-        <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
-        <a href="./project.html" class="item"><i class="fas fa-lightbulb"></i> Project</a>
-        <a href="./simulator.html" class="item"><i class="fas fa-microchip"></i> Simulator</a>
-        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
-        <!-- <a href="#" class="item"><i class="fas fa-comments"></i> FeedBack</a> -->
-    </div>
+    <div id="sideNav" class="sideNav"></div>
 
     <div class="nothing"></div>
 
@@ -180,7 +162,7 @@
             <!-- resource   -->
             <ul data-aos="fade-up">
                 <li class="resCard">
-                    <div style="min-width: 250px;" class="featured-image">
+                    <div class="featured-image">
                         <img src="../resources/serverless.jpg" alt="" >
                     </div>
                     <article class="resCard-body">
@@ -442,8 +424,7 @@
                                 <p>
                                 <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
                                 <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. -->                                 </p>
-                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
-                                <div class="emailfield">
+<div class="emailfield">
                                     </form>
                                 </div>
                             </div>
@@ -454,7 +435,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                                <p>Copyright Embed Club © 2026. All rights reserved.</p>
+                <p class="footer-last-updated">Last updated on 26 May 2026</p>
                             </div>
                         </div>
                     </div>
@@ -464,6 +446,7 @@
 
 
     </div>
+    <script src="../js/sidenav.js"></script>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

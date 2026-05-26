@@ -56,6 +56,13 @@ footer ul {
     margin: 2px 0 0;
 }
 
+.footer-copyright .footer-last-updated {
+    font-size: 10px;
+    color: #6b6b6b;
+    margin: 4px 0 0;
+    letter-spacing: 0.02em;
+}
+
 /* Footer Top */
 .footer-top {
     background: #252525;

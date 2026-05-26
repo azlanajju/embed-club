@@ -35,12 +35,6 @@
   </style>
 
   <style>
-    #dynamic-content {
-      z-index: 99999;
-      position: fixed;
-      transition: 2s;
-    }
-
     .fb-trigger {
       position: fixed;
       bottom: 28px;
@@ -59,6 +53,7 @@
       box-shadow: 0 4px 16px rgba(4, 143, 143, 0.35);
       z-index: 9999;
       transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
     }
 
     .fb-trigger:hover {
@@ -195,11 +190,7 @@
 
 <body>
   <div class="loaderBody">
-    <div class="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <div class="loader" aria-label="Loading"></div>
   </div>
   <script>
     window.addEventListener('load', function () {
@@ -207,10 +198,9 @@
       loader.parentElement.classList.add('loaded');
     });
   </script>
-  <div id="dynamic-content"></div>
   <div class="topBar">
     <div class="paceLogo">
-        <img src="../images/embedClubLogo.png" alt="">
+        <img src="./images/embedClubLogo.png" alt="">
         <span class="clubName">Embed Club</span>
     </div>
 </div>
@@ -227,23 +217,7 @@
     <i id="menuBtn" class="fas fa-bars"></i>
   </div>
 
-  <div id="sideNav" class="sideNav ">
-    <i id="closeBtn" class="fas fa-times closeIcon"></i>
-    <div style="height: 70px;"></div>
-    <a href="#" class="item active"><i class="fas fa-home"></i> Home</a>
-    <a href="./pages/events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
-    <a href="./pages/resource.html" class="item"><i class="fas fa-book"></i> Resource</a>
-    <a href="./pages/achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-    <a href="./pages/salesforce.html" class="item"><i class="fas fa-rocket"></i> Agent Blazer Club</a>
-    <a href="./pages/members.html" class="item"><i class="fas fa-users"></i> Members</a>
-    <a href="./pages/about.html" class="item"><i class="fas fa-info-circle"></i> About</a>
-    <a href="./pages/gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
-    <a href="./pages/project.html" class="item"><i class="fas fa-lightbulb"></i> Project</a>
-    <a href="./pages/simulator.html" class="item"><i class="fas fa-microchip"></i> Simulator</a>
-    <a href="./pages/contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
-    <!-- <a href="./pages/EmbedThon.html" class="item"><i class="fas fa-microchip"></i> Embedthon</a> -->
-    <!-- <a href="./pages/feedback.html" class="item"><i class="fas fa-comments"></i> FeedBack</a> -->
-  </div>
+  <div id="sideNav" class="sideNav"></div>
 
   <div class="nothing"></div>
 
@@ -428,8 +402,7 @@
                 <p>
                 <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
                 <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. --> </p>
-                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="./images/codewizycredits.png" alt=""></a>
-                <div class="emailfield">
+<div class="emailfield">
                   </form>
                 </div>
               </div>
@@ -440,7 +413,8 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 text-center copyright-footer">
-                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                <p>Copyright Embed Club © 2026. All rights reserved.</p>
+                <p class="footer-last-updated">Last updated on 26 May 2026</p>
               </div>
             </div>
           </div>
@@ -458,16 +432,16 @@
       </div>
       <h2>IoT Application Design</h2>
       <p>We'd love your feedback on our IoT Application Design. Share your thoughts and help us build better embedded experiences!</p>
-      <a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvJc2Hem4fvW8Kax_65sb4k3fUC30rAgFIzxf0GztjVWAxGg/viewform?usp=sharing&ouid=112343350609327532860" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt" style="font-size:13px;"></i> Open Feedback Form
+      <a class="fb-btn" href="./pages/feedback.html#sectionA" id="fbGoFeedback">
+        <i class="fas fa-arrow-right" style="font-size:13px;"></i> Go to Feedback Page
       </a>
       <button class="fb-skip" type="button" id="fbSkip">Maybe later</button>
     </div>
   </div>
 
-  <button class="fb-trigger fb-pulse" type="button" id="fbTrigger" aria-label="Open feedback form">
+  <a class="fb-trigger fb-pulse" href="./pages/feedback.html#sectionA" id="fbTrigger" aria-label="Go to feedback page">
     <i class="fas fa-comments"></i> Feedback
-  </button>
+  </a>
 
   <script>
     // const devCred = document.getElementById("devCred");
@@ -482,6 +456,7 @@
   <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
 
   <!-- ========================links ==================================== -->
+  <script src="./js/sidenav.js"></script>
   <script src="./main.js"></script>
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -573,18 +548,6 @@
 // });
 
 </script>
-<!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
-<script>
-  $(document).ready(function () {
-    $.get("./intro.html", function (data) {
-      $("#dynamic-content").html(data);
-      setTimeout(function () {
-        $("#dynamic-content").empty();
-      }, 1500);
-    });
-  });
-</script>
-
 <script>
   (function () {
     var overlay = document.getElementById('fbOverlay');
@@ -611,7 +574,9 @@
     document.getElementById('fbSkip').addEventListener('click', function () {
       closeFeedback(true);
     });
-    trigger.addEventListener('click', openFeedback);
+    document.getElementById('fbGoFeedback').addEventListener('click', function () {
+      closeFeedback(true);
+    });
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) {
         closeFeedback(false);

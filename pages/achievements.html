@@ -9,13 +9,10 @@
 
 
     <!-- css -->
-    <link rel="stylesheet" href="../css/about.css">
-
     <link rel="stylesheet" href="../style.css?v=20">
     <link rel="stylesheet" href="../responsive.css?v=20">
     <link rel="stylesheet" href="../css/event.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/members.css">
     <!-- aos animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -23,7 +20,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../css/resource.css">
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,11 +31,7 @@
 
 <body>
     <div class="loaderBody">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="loader" aria-label="Loading"></div>
     </div>
     <script>
         window.addEventListener('load', function () {
@@ -65,21 +57,7 @@
         <i id="menuBtn" class="fas fa-bars"></i>
     </div>
 
-    <div id="sideNav" class="sideNav ">
-        <i id="closeBtn" class="fas fa-times closeIcon"></i>
-        <div style="height: 70px;"></div>
-        <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
-        <a href="./events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="./resource.html" class="item"><i class="fas fa-book"></i> Resource</a>
-        <a href="#" class="item active"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="./members.html" class="item"><i class="fas fa-users"></i> Members</a>
-        <a href="./about.html" class="item"><i class="fas fa-info-circle"></i> About</a>
-        <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
-        <a href="./project.html" class="item"><i class="fas fa-lightbulb"></i> Project</a>
-        <a href="./simulator.html" class="item"><i class="fas fa-microchip"></i> Simulator</a>
-        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
-        <!-- <a href="./feedback.html" class="item"><i class="fas fa-comments"></i> FeedBack</a> -->
-    </div>
+    <div id="sideNav" class="sideNav"></div>
 
     <div class="nothing"></div>
 
@@ -94,18 +72,17 @@
         </div>
 
 
-        <!-- <div class="nothing"></div> -->
         <!-- ============ achievements start =================  -->
-        <section>
+        <section class="achievements-page">
+            <div class="achievements-intro" data-aos="fade-up">
+                <h2>Our Milestones</h2>
+                <p>Grants, competitions, partnerships, and recognition earned by Embed Club.</p>
+            </div>
 
-
-
-
-            <div>
-                <div class="timeline">
-                    <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type2">
-
-                        <div class="timeline__event__content ">
+            <div class="timeline">
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
+                        <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Arm Lab in a Box Kit
                             </div>
@@ -116,9 +93,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type2">
-
-                        <div class="timeline__event__content ">
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
+                        <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Micro:bit Outreach Program
                             </div>
@@ -127,9 +104,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type2">
-
-                        <div class="timeline__event__content ">
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
+                        <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 KTech Grants for Three Projects
                             </div>
@@ -138,9 +115,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type2">
-
-                        <div class="timeline__event__content ">
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
+                        <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Coordination of Nvidia Event
                             </div>
@@ -151,9 +128,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type2">
-
-                        <div class="timeline__event__content ">
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
+                        <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Publication of Book Chapter
                             </div>
@@ -166,8 +143,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
-
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
                         <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Best Projects in Department (2019-2023)
@@ -177,8 +154,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline__event animated fadeInUp delay-1s timeline__event--type2">
-
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
                         <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 KSCST Grants for Consecutive Years
@@ -189,8 +166,8 @@
 
                         </div>
                     </div>
-                    <div class="timeline__event animated fadeInUp timeline__event--type2">
-
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
                         <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Participation in ADC and Qualification for Finals:
@@ -200,8 +177,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline__event animated fadeInUp timeline__event--type2">
-
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
                         <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Winners of ADC 2023
@@ -212,8 +189,8 @@
                         </div>
                     </div>
 
-                    <div class="timeline__event animated fadeInUp timeline__event--type2">
-
+                    <div class="timeline__event timeline__event--type2" data-aos="fade-up">
+                        <span class="timeline__event__marker" aria-hidden="true"></span>
                         <div class="timeline__event__content">
                             <div class="timeline__event__title">
                                 Recognition at National Competitions
@@ -242,16 +219,13 @@
 
 
 
-                </div>
-
             </div>
-
-
         </section>
         <!-- ============     achievemtns end ================= -->
 
+        <div class="nothing"></div>
+
         <!-- =================footer start ================ -->
-        </section>
         <footer id="footer" class="footer-1">
             <div class="main-footer widgets-dark typo-light">
                 <div class="container">
@@ -293,8 +267,7 @@
                                 <p>
                                 <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
                                 <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. --> </p>
-                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
-                                <div class="emailfield">
+<div class="emailfield">
                                     </form>
                                 </div>
                             </div>
@@ -305,7 +278,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                                <p>Copyright Embed Club © 2026. All rights reserved.</p>
+                <p class="footer-last-updated">Last updated on 26 May 2026</p>
                             </div>
                         </div>
                     </div>
@@ -315,6 +289,7 @@
 
 
     </div>
+    <script src="../js/sidenav.js"></script>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

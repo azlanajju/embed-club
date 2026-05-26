@@ -9,8 +9,6 @@
 
 
     <!-- css -->
-    <link rel="stylesheet" href="../css/about.css">
-
     <link rel="stylesheet" href="../style.css?v=20">
     <link rel="stylesheet" href="../responsive.css?v=20">
     <link rel="stylesheet" href="../css/event.css">
@@ -31,27 +29,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/loader.css">
-    <style>
-    .POPtext a{
-        color: white; /* Link color */
-  text-decoration: none; /* Remove underline */
-  transition: all 0.3s ease;
-    }
-    .POPtext a:hover {
-  color: #ffcc00; /* Change color on hover */
-  transform: scale(1.1); /* Slightly increase the size */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Add shadow to the text */
-}
-    </style>
 </head>
 
 <body>
     <div class="loaderBody">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="loader" aria-label="Loading"></div>
     </div>
     <script>
         window.addEventListener('load', function () {
@@ -77,19 +59,7 @@
         <i id="menuBtn" class="fas fa-bars"></i>
     </div>
 
-    <div id="sideNav" class="sideNav ">
-        <i id="closeBtn" class="fas fa-times closeIcon"></i>
-        <div style="height: 70px;"></div>
-        <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
-        <a href="./events.html" class="item "><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="./resource.html" class="item "><i class="fas fa-book"></i> Resource</a>
-        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="./members.html" class="item "><i class="fas fa-users"></i> Members</a>
-        <a href="./about.html" ><i class="fas fa-info-circle"></i> About</a>
-        <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
-        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
-        <a href="#" class="item active" class="item"><i class="fas fa-comments"></i> FeedBack</a>
-    </div>
+    <div id="sideNav" class="sideNav"></div>
 
     <div class="nothing"></div>
 
@@ -103,49 +73,55 @@
             </div>
         </div>
         
-        <div class="container" data-aos="fade-up">
-            <div class="logo logo-left">
-                <i class="fa fa-comments fa-4x"></i>
+        <section class="feedback-page">
+            <div class="feedback-page-intro" data-aos="fade-up">
+                <h2>Feedback Forms</h2>
+                <p>Choose a section below to share your thoughts with Embed Club.</p>
             </div>
-            <p class="title title-left">Feedback</p>
-            <div class="text POPtext" id="feedbackContainer">
-                <!-- Dynamic content will be inserted here by the script -->
-            </div>
-        </div>
+            <div class="feedback-list" id="feedbackContainer" data-aos="fade-up"></div>
+        </section>
 
         <script>
             // Configuration for feedback forms
             const feedbackForms = [
                 {
                     id: "sectionA",
-                    title: "Section A",
-                    formLink: "https://forms.gle/oLLbgHRR7kXb9MkE9",
-                    isActive: false // Set to false to disable this form
+                    title: "Section A — IoT Application Design",
+                    description:
+                        "We'd love your feedback on our IoT Application Design. Share your thoughts and help us build better embedded experiences!",
+                    formLink:
+                        "https://docs.google.com/forms/d/e/1FAIpQLScvJc2Hem4fvW8Kax_65sb4k3fUC30rAgFIzxf0GztjVWAxGg/viewform?usp=sharing&ouid=112343350609327532860",
+                    isActive: true
                 },
                 {
                     id: "sectionB",
                     title: "Section B",
                     formLink: "https://forms.gle/oLLbgHRR7kXb9MkE9",
-                    isActive: false // This form is disabled
+                    isActive: false
                 }
             ];
 
-            // Function to render feedback forms
             function renderFeedbackForms() {
                 const container = document.getElementById('feedbackContainer');
                 let html = '';
                 
                 feedbackForms.forEach(form => {
-                    html += `<div class="feedback-section">`;
-                    html += `<strong>${form.title}</strong><br>`;
+                    html += `<article class="feedback-section" id="${form.id}">`;
+                    html += `<div class="feedback-section__header">`;
+                    html += `<div class="feedback-section__icon"><i class="fas fa-comments"></i></div>`;
+                    html += `<h3 class="feedback-section__title">${form.title}</h3>`;
+                    html += `</div>`;
+                    if (form.description) {
+                        html += `<p class="feedback-desc">${form.description}</p>`;
+                    }
                     
                     if (form.isActive) {
-                        html += `<a href="${form.formLink}" target="_blank">Click here to give your feedback</a>`;
+                        html += `<a class="feedback-btn" href="${form.formLink}" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Open Feedback Form</a>`;
                     } else {
                         html += `<div class="form-closed"><i class="fas fa-lock"></i> This feedback form is currently closed</div>`;
                     }
                     
-                    html += `</div><br>`;
+                    html += `</article>`;
                 });
                 
                 // If all forms are inactive, show a message
@@ -159,94 +135,23 @@
                 container.innerHTML = html;
             }
             
-            // Initialize when the document is loaded
-            document.addEventListener('DOMContentLoaded', renderFeedbackForms);
+            document.addEventListener('DOMContentLoaded', function () {
+                renderFeedbackForms();
+                if (window.location.hash) {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        setTimeout(function () {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            target.classList.add('feedback-section--highlight');
+                        }, 300);
+                    }
+                }
+            });
         </script>
 
-        <style>
-            /* Styling for feedback sections */
-            .feedback-section {
-                padding: 15px 20px;
-                margin-bottom: 20px;
-                background-color: rgba(26, 35, 44, 0.8); /* Dark background matching site theme */
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            
-            .feedback-section strong {
-                color: #fff;
-                font-size: 18px;
-                display: block;
-                margin-bottom: 10px;
-            }
-            
-            .POPtext a {
-                color: white;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                display: inline-block;
-                padding: 8px 16px;
-                margin-top: 5px;
-                background-color: rgba(23, 162, 184, 0.7); /* Teal color matching theme */
-                border-radius: 5px;
-            }
-            
-            .POPtext a:hover {
-                color: #ffcc00;
-                transform: scale(1.05);
-                background-color: rgba(23, 162, 184, 0.9);
-                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            }
-            
-            .form-closed {
-                color: #ff6b6b;
-                font-style: italic;
-                padding: 8px 16px;
-                margin-top: 5px;
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 5px;
-                display: inline-block;
-            }
-            
-            .all-forms-closed {
-                text-align: center;
-                padding: 30px 20px;
-                background-color: rgba(26, 35, 44, 0.7);
-                border-radius: 8px;
-                margin: 20px 0;
-            }
-            
-            .all-forms-closed i {
-                font-size: 40px;
-                color: #ffd54f;
-                margin-bottom: 15px;
-            }
-            
-            .all-forms-closed p {
-                color: #e0e0e0;
-                font-size: 16px;
-            }
-            
-            /* Adaptive for mobile */
-            @media (max-width: 768px) {
-                .feedback-section {
-                    padding: 12px;
-                }
-                
-                .POPtext a, .form-closed {
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-        </style>
-
         <div class="nothing"></div>
-        <!-- ============ abomembersut start =================  -->
-        
-        <!-- ============     about end ================= -->
 
         <!-- =================footer start ================ -->
-        </section>
         <footer id="footer" class="footer-1">
             <div class="main-footer widgets-dark typo-light">
                 <div class="container">
@@ -289,8 +194,7 @@
                                 <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
                                 <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. --> </p>
                                 </p>
-                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
-                                <div class="emailfield">
+<div class="emailfield">
                                     </form>
                                 </div>
                             </div>
@@ -301,7 +205,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                                <p>Copyright Embed Club © 2026. All rights reserved.</p>
+                <p class="footer-last-updated">Last updated on 26 May 2026</p>
                             </div>
                         </div>
                     </div>
@@ -311,6 +216,7 @@
 
 
     </div>
+    <script src="../js/sidenav.js"></script>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

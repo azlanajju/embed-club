@@ -22,35 +22,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="./css/loader.css">
-    <style>
-    .custom-card {
-    width: 94%;
-    margin: 10px 30px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* White shadow effect */
-    transition: box-shadow 0.2s; /* Smooth transition */
-    }
-
-    .custom-card:hover {
-        box-shadow: 0 6px 6px rgba(255, 255, 255, 0.7); /* More pronounced shadow on hover */
-    }
-    .card-body h2 {
-                font-weight:lighter; /* Adjust font weight if needed */
-                font-family: 'Roboto Mono', monospace;
-            }
-
-
-    </style>
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/project.css">
 
 </head>
 
 <body>
     <div class="loaderBody">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="loader" aria-label="Loading"></div>
     </div>
     <script>
         window.addEventListener('load', function () {
@@ -76,21 +55,7 @@
         <i id="menuBtn" class="fas fa-bars"></i>
     </div>
 
-    <div id="sideNav" class="sideNav ">
-        <i id="closeBtn" class="fas fa-times closeIcon"></i>
-        <div style="height: 70px;"></div>
-        <a href="../index.html" class="item"><i class="fas fa-home"></i> Home</a>
-        <a href="./events.html" class="item"><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="./resource.html" class="item"><i class="fas fa-book"></i> Resource</a>
-        <a href="./achievements.html" class="item"><i class="fas fa-trophy"></i> Achievements</a>
-        <a href="./members.html" class="item"><i class="fas fa-users"></i> Members</a>
-        <a href="./about.html" class="item"><i class="fas fa-info-circle"></i> About</a>
-        <a href="./gallery.html" class="item"><i class="fas fa-image"></i> Gallery</a>
-        <a href="./project.html" class="item active"><i class="fas fa-lightbulb"></i> Project</a>
-        <a href="./simulator.html" class="item"><i class="fas fa-microchip"></i> Simulator</a>
-        <a href="./contact.html" class="item"><i class="fas fa-envelope"></i> Contact</a>
-        <!-- <a href="#" class="item"><i class="fas fa-comments"></i> FeedBack</a> -->
-    </div>
+    <div id="sideNav" class="sideNav"></div>
 
     <div class="nothing"></div>
 
@@ -103,110 +68,109 @@
                 <p>Home > Projects</p>
             </div>
         </div>
-<!-- Projects content start  -->
-
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5"></h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Smart Wheelchair - Fidhana and Team, 2023, Second Place in ADC</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Sanitary Pad Vending Machine - Shabnaz and Team, 2021, Winner ADC 2023</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Smart Head Massager - Shabnaz and Team, 2023, Kaushal First Place</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Smart Food Detection - Imad and Team, 2021, Received KSCST Grant of 5k</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Beegen - Jouhar and Team, 2022, Received First Prize in Kaushal, ADC Finalist</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">SmartNav AR Navigation - Indore Positioning Systems Using Augmented Reality by Hafiz and Team, 2021, Kaushal Second Prize</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">EMBOT: Stock, Crypto Prediction and Robot Trading System Using Machine Learning, AI and Robotic Process Automation - Mubasheer and Team, 2021, First Place in Kaushal</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Medical Robo - Thafsir and Team, 2021, Received KSCST Grant of 5k</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Smart Thedeolite - Irfan and Team, Received Ktech Grant of 3 Lakhs</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Lora Farming - Hashir and Team, Received Ktech Grant of 3 Lakhs</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Am the Eye - Shayiz KP and Team, 2021, Received Ktech Grant of 2.9 Lakhs, KSCST Grant 5k, and Best Project in Dept for VTU Grant of 5k</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Lora Weather Station - Niyaz and Team, Best Project in Dept 2019</h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="card custom-card">
-        <div class="card-body">
-            <h2 class="h5">Indore Positioning Systems Using WiFi Nodes for Warehouses - Irfan and Team, Best Project in Dept 2020</h2>
-        </div>
-    </div>
-</div>
-<!-- Reversed cards end -->
-
-               <!-- =================footer start ================ -->
+        <section class="projects-page">
+            <div class="projects-intro" data-aos="fade-up">
+                <h2>Student Projects</h2>
+                <p>Competition wins, grants, and department highlights from Embed Club teams.</p>
+            </div>
+            <div class="projects-list">
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-wheelchair" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Smart Wheelchair — Fidhana and Team, 2023, Second Place in ADC</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-female" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Sanitary Pad Vending Machine — Shabnaz and Team, 2021, Winner ADC 2023</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-spa" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Smart Head Massager — Shabnaz and Team, 2023, Kaushal First Place</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-utensils" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Smart Food Detection — Imad and Team, 2021, Received KSCST Grant of 5k</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-seedling" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Beegen — Jouhar and Team, 2022, First Prize in Kaushal, ADC Finalist</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-vr-cardboard" aria-hidden="true"></i></span>
+                        <p class="project-card__text">SmartNav AR Navigation — Indore Positioning Systems Using Augmented Reality by Hafiz and Team, 2021, Kaushal Second Prize</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+                        <p class="project-card__text">EMBOT: Stock, Crypto Prediction and Robot Trading System Using Machine Learning, AI and Robotic Process Automation — Mubasheer and Team, 2021, First Place in Kaushal</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Medical Robo — Thafsir and Team, 2021, Received KSCST Grant of 5k</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-ruler-combined" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Smart Thedeolite — Irfan and Team, Received Ktech Grant of 3 Lakhs</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-tractor" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Lora Farming — Hashir and Team, Received Ktech Grant of 3 Lakhs</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-eye" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Am the Eye — Shayiz KP and Team, 2021, Ktech Grant 2.9 Lakhs, KSCST Grant 5k, Best Project in Dept (VTU Grant 5k)</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-cloud-sun" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Lora Weather Station — Niyaz and Team, Best Project in Dept 2019</p>
+                    </div>
+                </article>
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-card__accent" aria-hidden="true"></div>
+                    <div class="project-card__content">
+                        <span class="project-card__icon"><i class="fas fa-wifi" aria-hidden="true"></i></span>
+                        <p class="project-card__text">Indore Positioning Systems Using WiFi Nodes for Warehouses — Irfan and Team, Best Project in Dept 2020</p>
+                    </div>
+                </article>
+            </div>
         </section>
+
+        <div class="nothing"></div>
+
+        <!-- =================footer start ================ -->
         <footer id="footer" class="footer-1">
             <div class="main-footer widgets-dark typo-light">
                 <div class="container">
@@ -248,8 +212,7 @@
                                 <p>
                                 <div class="thumb-content"><a id="devCred" href="https://github.com/azlanajju/"> Azlan</a></div>
                                 <!-- Authorship credits for design and development are strictly proprietary and are not to be altered. -->                                 </p>
-                                <a href="https://codewizy.in"> <img height="50" style="filter: invert(100%);" src="../images/codewizycredits.png" alt=""></a>
-                                <div class="emailfield">
+<div class="emailfield">
                                     </form>
                                 </div>
                             </div>
@@ -260,7 +223,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <p>Copyright Embed Club © 2024. All rights reserved.</p>
+                                <p>Copyright Embed Club © 2026. All rights reserved.</p>
+                <p class="footer-last-updated">Last updated on 26 May 2026</p>
                             </div>
                         </div>
                     </div>
@@ -270,6 +234,7 @@
 
 
     </div>
+    <script src="../js/sidenav.js"></script>
     <script src="../main.js"></script>
     <script src="../js/event.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

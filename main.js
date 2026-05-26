@@ -1,19 +1,30 @@
-let sideNav = document.getElementById("sideNav");
-let menuButton = document.getElementById("menuBtn");
-let menuClose = document.getElementById("closeBtn");
-
 function navToggle() {
+  const sideNav = document.getElementById("sideNav");
+  if (!sideNav) return;
   sideNav.classList.add("openSideNav");
-  menuButton.style.display = "none";
+  document.body.classList.add("nav-open");
 }
 
 function closeNav() {
+  const sideNav = document.getElementById("sideNav");
+  if (!sideNav) return;
   sideNav.classList.remove("openSideNav");
-  menuButton.style.display = "block";
+  document.body.classList.remove("nav-open");
 }
 
-menuButton.addEventListener("click", navToggle);
-menuClose.addEventListener("click", closeNav);
+function bindSideNavControls() {
+  const menuTrigger = document.querySelector(".menu-icon");
+  if (menuTrigger) {
+    menuTrigger.addEventListener("click", navToggle);
+  }
+  document.addEventListener("click", (e) => {
+    if (e.target.id === "closeBtn" || e.target.closest("#closeBtn")) {
+      closeNav();
+    }
+  });
+}
+
+bindSideNavControls();
 const devCred = document.getElementById("devCred");
 if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
   document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";
@@ -21,16 +32,12 @@ if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
     "Unauthorized changes detected! This website may not function properly."
   );
 }
-// scroll behaviour
+// scroll behaviour (desktop hero only; mobile menu stays dark on light topbar)
 window.addEventListener("scroll", function () {
-  const menuIcon = document.getElementById("menu-icon");
-  const scrollPosition = window.scrollY;
+  const menuBtn = document.getElementById("menuBtn");
+  if (!menuBtn || window.matchMedia("(max-width: 900px)").matches) return;
 
-  if (scrollPosition > 400) {
-    menuIcon.style.color = "black";
-  } else {
-    menuIcon.style.color = "white";
-  }
+  menuBtn.style.color = window.scrollY > 400 ? "#222831" : "#ffffff";
 });
 
 

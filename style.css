@@ -20,28 +20,73 @@ body a:hover {
 }
 .sideNav {
     width: 20vw;
+    min-width: 220px;
+    max-width: 280px;
     height: 100vh;
     background: #222831;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    align-items: stretch;
     position: fixed;
     left: 0;
     transition: 0.3s;
     z-index: 99;
+    overflow: hidden;
+}
+
+.sideNav .nav-spacer {
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.sideNav .nav-groups {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0 12px 20px;
+    box-sizing: border-box;
+}
+
+.sideNav .nav-group {
+    margin-bottom: 4px;
+}
+
+.sideNav .nav-group-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #76ABAE;
+    margin: 10px 0 4px;
+    padding: 0 12px;
+}
+
+.sideNav .nav-group:first-child .nav-group-title {
+    margin-top: 4px;
 }
 
 .sideNav a {
     position: relative;
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 10px 0;
-    width: 230px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    padding: 9px 16px;
+    margin: 2px 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     border-radius: 25px;
     color: #EEEEEE;
     text-decoration: none;
     font-weight: bold;
+}
+
+.sideNav a i {
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .sideNav a:hover {
@@ -67,21 +112,22 @@ body a:hover {
   transform-origin: left;
   transform: scaleX(1);
 }
-.active {
-    color:#76ABAE !important;
+.sideNav a.active {
+    color: #76ABAE !important;
 }
 
 .topBar {
-height: 60px;
-width: 100vw;
-background: #eeeeee;
-display: flex;
-align-items: center;
-z-index: 9999999999;
-position: absolute;
-top: 0;
-margin-left: 20vw;
-width: calc(100vw - 20vw);
+    height: 60px;
+    background: #eeeeee;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-left: 20vw;
+    width: calc(100vw - 20vw);
+    box-sizing: border-box;
 }
 
 .topBar p {
@@ -350,8 +396,8 @@ canvas{
         color: #222831;
     }
    
-      .active {
-          color:#26534b !important;
+      .sideNav a.active {
+          color: #26534b !important;
       }
       .sideNav a:hover {
         color: #26534b;
