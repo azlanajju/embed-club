@@ -40,6 +40,156 @@
       position: fixed;
       transition: 2s;
     }
+
+    .fb-trigger {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #048f8f;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(4, 143, 143, 0.35);
+      z-index: 9999;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .fb-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(4, 143, 143, 0.45);
+    }
+
+    .fb-trigger i {
+      font-size: 16px;
+    }
+
+    .fb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 99998;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fb-overlay.open {
+      display: flex;
+    }
+
+    .fb-modal {
+      background: #1e2530;
+      border-radius: 16px;
+      padding: 32px 28px 28px;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      border: 1px solid rgba(4, 143, 143, 0.3);
+    }
+
+    .fb-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: #aaa;
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .fb-close:hover {
+      color: #fff;
+    }
+
+    .fb-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(4, 143, 143, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      border: 1.5px solid rgba(4, 143, 143, 0.4);
+    }
+
+    .fb-icon i {
+      font-size: 26px;
+      color: #04b8b8;
+    }
+
+    .fb-modal h2 {
+      color: #eee;
+      font-size: 19px;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .fb-modal p {
+      color: #aab;
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin: 0 0 22px;
+    }
+
+    .fb-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #048f8f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .fb-btn:hover {
+      background: #05a8a8;
+      transform: scale(1.03);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .fb-skip {
+      display: block;
+      margin: 14px auto 0;
+      font-size: 12px;
+      color: #778;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .fb-skip:hover {
+      color: #aab;
+    }
+
+    .fb-pulse {
+      animation: fb-pulse 2.5s infinite;
+    }
+
+    @keyframes fb-pulse {
+      0%, 100% {
+        box-shadow: 0 4px 16px rgba(4, 143, 143, 0.35);
+      }
+
+      50% {
+        box-shadow: 0 4px 24px rgba(4, 143, 143, 0.6);
+      }
+    }
   </style>
 </head>
 
@@ -299,6 +449,26 @@
     <!-- ======================footer end =============== -->
 
   </div>
+
+  <div class="fb-overlay" id="fbOverlay">
+    <div class="fb-modal">
+      <button class="fb-close" type="button" id="fbClose" aria-label="Close">✕</button>
+      <div class="fb-icon">
+        <i class="fas fa-comments"></i>
+      </div>
+      <h2>IoT Application Design</h2>
+      <p>We'd love your feedback on our IoT Application Design. Share your thoughts and help us build better embedded experiences!</p>
+      <a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvJc2Hem4fvW8Kax_65sb4k3fUC30rAgFIzxf0GztjVWAxGg/viewform?usp=sharing&ouid=112343350609327532860" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt" style="font-size:13px;"></i> Open Feedback Form
+      </a>
+      <button class="fb-skip" type="button" id="fbSkip">Maybe later</button>
+    </div>
+  </div>
+
+  <button class="fb-trigger fb-pulse" type="button" id="fbTrigger" aria-label="Open feedback form">
+    <i class="fas fa-comments"></i> Feedback
+  </button>
+
   <script>
     // const devCred = document.getElementById("devCred");
     if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
@@ -413,6 +583,51 @@
       }, 1500);
     });
   });
+</script>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('fbOverlay');
+    var trigger = document.getElementById('fbTrigger');
+    var storageKey = 'embedClubFeedbackDismissed';
+
+    function openFeedback() {
+      overlay.classList.add('open');
+      trigger.classList.remove('fb-pulse');
+    }
+
+    function closeFeedback(remember) {
+      overlay.classList.remove('open');
+      if (remember) {
+        try {
+          sessionStorage.setItem(storageKey, '1');
+        } catch (e) {}
+      }
+    }
+
+    document.getElementById('fbClose').addEventListener('click', function () {
+      closeFeedback(false);
+    });
+    document.getElementById('fbSkip').addEventListener('click', function () {
+      closeFeedback(true);
+    });
+    trigger.addEventListener('click', openFeedback);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) {
+        closeFeedback(false);
+      }
+    });
+
+    window.addEventListener('load', function () {
+      var dismissed = false;
+      try {
+        dismissed = sessionStorage.getItem(storageKey) === '1';
+      } catch (e) {}
+      if (!dismissed) {
+        setTimeout(openFeedback, 2000);
+      }
+    });
+  })();
 </script>
 
 </html>
