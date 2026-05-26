@@ -24,7 +24,12 @@ function bindSideNavControls() {
   });
 }
 
-bindSideNavControls();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", bindSideNavControls);
+} else {
+  bindSideNavControls();
+}
+
 const devCred = document.getElementById("devCred");
 if (!devCred || devCred.innerHTML.trim() !== "Azlan") {
   document.body.innerHTML = "<h1>Unauthorized Changes Detected</h1>";

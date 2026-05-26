@@ -8,6 +8,7 @@
     height: 100dvh;
     overflow: hidden;
     z-index: 2000;
+    pointer-events: none;
   }
 
   .topBar {
@@ -47,7 +48,7 @@
     left: 0;
     width: 56px;
     height: 60px;
-    z-index: 1100;
+    z-index: 2100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,6 +56,7 @@
     cursor: pointer;
     background: transparent;
     pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .menu-icon i {
@@ -87,6 +89,7 @@
     top: 0;
     left: 0;
     z-index: 2000;
+    pointer-events: auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
