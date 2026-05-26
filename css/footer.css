@@ -58,9 +58,10 @@ footer ul {
 
 .footer-copyright .footer-last-updated {
     font-size: 10px;
-    color: #6b6b6b;
+    color: #9a9a9a !important;
     margin: 4px 0 0;
     letter-spacing: 0.02em;
+    opacity: 0.85;
 }
 
 /* Footer Top */
