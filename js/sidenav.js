@@ -109,7 +109,7 @@
         .join("");
 
       return `<div class="nav-group">
-        <p class="nav-group-title">${group.title}</p>
+        <span class="nav-group-title">${group.title}</span>
         ${links}
       </div>`;
     }).join("");

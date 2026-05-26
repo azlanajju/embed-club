@@ -3,6 +3,9 @@
     width: 0;
     min-width: 0;
     max-width: none;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     z-index: 2000;
   }
@@ -112,10 +115,12 @@
   }
 
   .openSideNav .nav-group-title {
+    display: block;
     text-align: left;
     padding: 0 16px;
     margin: 14px 0 6px;
     font-size: 11px;
+    color: #76abae !important;
   }
 
   .openSideNav .nav-group:first-child .nav-group-title {
