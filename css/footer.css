@@ -56,12 +56,15 @@ footer ul {
     margin: 2px 0 0;
 }
 
-.footer-copyright .footer-last-updated {
-    font-size: 10px;
-    color: #9a9a9a !important;
-    margin: 4px 0 0;
-    letter-spacing: 0.02em;
-    opacity: 0.85;
+footer#footer .footer-copyright p.footer-last-updated {
+    display: block !important;
+    font-size: 11px !important;
+    color: #8a8a8a !important;
+    margin: 6px 0 0 !important;
+    line-height: 1.35 !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.03em;
+    opacity: 1 !important;
 }
 
 /* Footer Top */
@@ -177,7 +180,7 @@ footer.light .footer-copyright {
 .typo-light h4,
 .typo-light h5,
 .typo-light h6,
-.typo-light p,
+.typo-light p:not(.footer-last-updated),
 .typo-light div,
 .typo-light span,
 .typo-light small {

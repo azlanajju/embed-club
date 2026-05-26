@@ -179,7 +179,7 @@
     width: 100vw;
   }
 
-  .copyright-footer p {
+  .copyright-footer p:not(.footer-last-updated) {
     font-size: 13px;
   }
 }
